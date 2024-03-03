@@ -1,0 +1,207 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG2-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Section 2.4</title>
+
+</head>
+
+<body>
+
+<div class=Section>2.4 Skills</div><br>
+
+<p>Each character class has a skill it can perform. For most classes, the skill improves as they gain levels. The various skills are summarized below.</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=100>
+<tr>
+   <td></td>
+   <td>Warrior:</td>
+   <td>Repair items (as your level goes up the durability loss decreases).</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Rogue:</td>
+   <td>Disarm traps (as your Dexterity goes up the chance of successfully disarming the trap increases).</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Sorcerer:</td>
+   <td>Recharge staves (as your level goes up the charge loss decreases).</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Monk:</td>
+   <td>Search.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Bard:</td>
+   <td>Identify.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Barbarian:</td>
+   <td>Rage (as your level goes up, the improvement in stats during the rage is higher but so is the penalty during the lethargy phase).</td>
+</tr>
+</table>
+
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=25>
+<tr>
+   <td class=BodyBold align=left colspan=3>Warrior</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>The skill of the Warrior works in the following way:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>1.</td>
+   <td>if current durability is equal to max durability, exit </td>
+</tr>
+<tr>
+   <td></td>
+   <td>2.</td>
+   <td>x = 0 </td>
+</tr>
+<tr>
+   <td></td>
+   <td>3.</td>
+   <td>add (clvl + Rnd[clvl]) to x </td>
+</tr>
+<tr>
+   <td></td>
+   <td>4.</td>
+   <td>y = [MaxDur/(clvl+9)], if less than 1 set to 1 </td>
+</tr>
+<tr>
+   <td></td>
+   <td>5.</td>
+   <td>decrease MaxDur by y </td>
+</tr>
+<tr>
+   <td></td>
+   <td>6.</td>
+   <td>if x + CurDur < MaxDur, goto 3. </td>
+</tr>
+<tr>
+   <td></td>
+   <td>7.</td>
+   <td>CurDur = MaxDur</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>If max durability ever reaches 0, the item is of course destroyed.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold align=left colspan=3>Rogue</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>The skill of the Rogue works in the following way:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>1.</td>
+   <td>x = 2·Dex - 5·dlvl </td>
+</tr>
+<tr>
+   <td></td>
+   <td>2.</td>
+   <td>if x > Rnd[100], trap is disarmed</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold align=left colspan=3>Sorcerer</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>The skill of the Sorcerer works in the following way:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>1.</td>
+   <td>if current charges is equal to max charges or max charges is equal to 0, exit </td>
+</tr>
+<tr>
+   <td></td>
+   <td>2.</td>
+   <td>x = Rnd[clvl/qlvl(book)] + 1 </td>
+</tr>
+<tr>
+   <td></td>
+   <td>3.</td>
+   <td>decrease MaxChrg by 1 </td>
+</tr>
+<tr>
+   <td></td>
+   <td>4.</td>
+   <td>add x to CurChrg </td>
+</tr>
+<tr>
+   <td></td>
+   <td>5.</td>
+   <td>if CurChrg < MaxChrg, goto 3. </td>
+</tr>
+<tr>
+   <td></td>
+   <td>6.</td>
+   <td>CurChrg = MaxChrg</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>It seems strange that it is not the qlvl of the spell on a staff, and I wonder what happens for a spell like resurrect where the qlvl value is -1. Any information about this is appreciated.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold align=left colspan=3>Monk</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>The skill of the Monk is identical to the spell with the same name.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold align=left colspan=3>Bard</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>The skill of the Bard is identical to the spell with the same name.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold align=left colspan=3>Barbarian</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>The skill of the Barbarian works in the following way:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>1.</td>
+   <td>For 12 seconds it adds: 2·clvl to Strength and Vitality and 1.5·clvl to Dexterity. </td>
+</tr>
+<tr>
+   <td></td>
+   <td>2.</td>
+   <td>For 12 more seconds, during a lethargy phase, it decreases Strength, Dexterity and Vitality by the same amount (counted from normal values). </td>
+</tr>
+<tr>
+   <td></td>
+   <td>3.</td>
+   <td>Afterwards you lose 2·Vit life. There is a bug however so if you click on any item in your inventory your life is restored.</td>
+</tr>
+</table>
+
+</body>
+
+

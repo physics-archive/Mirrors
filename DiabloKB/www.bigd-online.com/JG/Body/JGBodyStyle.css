@@ -1,0 +1,234 @@
+body {margin-left: 20; 
+	margin-right: 20; 
+	margin-top: 20;
+	margin-bottom: 200; 
+	background: #BBBBBB; 
+	background: #DDDDDD; 
+	color: black; 
+	font-size: 10pt;
+	font-family: Arial
+	}
+
+
+.Title1    {margin-left: 0;
+		font-size: 35pt; 
+	 	font-weight: 900;
+	 	text-decoration: none}
+.Title2    {margin-left: 0;
+		font-size: 24pt; 
+	 	font-weight: 900;
+	 	text-decoration: none}
+.Chapter   {margin-left: 0;
+		font-size: 20pt; 
+		font-weight: 900;
+	 	text-decoration: none}
+.Section   {margin-left: 0cm;
+		font-size: 16pt;
+		font-weight: 900;
+	 	text-decoration: none}
+.Sub       {margin-left: 0cm;
+		font-size: 14pt;
+		font-weight: 900;
+	 	text-decoration: none}
+.BodyBold  {margin-left: 0cm;
+		font-size: 10pt;
+		font-weight: 900;
+	 	text-decoration: none}
+.Body	     {margin-left: 0cm;
+		font-size: 10pt;
+		font-weight: 500;
+	 	text-decoration: none}
+.Table     {margin-left: 0cm;
+		font-size: 10pt;
+		font-weight: 500;
+	 	text-decoration: none}
+.Tablelist {font-size: 10pt;
+		font-weight: 500;
+	 	text-decoration: none}
+.Label     {margin-left: 0cm;
+		font-size: 10pt;
+		font-weight: 900;
+	 	text-decoration: none;
+		background: tan}
+
+
+
+
+
+
+p	     {margin-left: 0cm;
+		font-size: 10pt;
+		font-weight: 500;
+		text-indent: 0cm;
+	 	text-decoration: none}
+
+p.NoInd    {text-indent: 0cm}
+p.Ind      {text-indent: 1.2cm}
+p.HalfInd  {text-indent: 0.6cm}
+
+	
+i     {font-weight: 600}
+
+li	{font-size: 10pt}
+
+hr    {color: black}
+
+table	     {border-color: Black;
+		border-style: solid;
+		border-spacing: 0;
+		border-width: 2;
+		border-collapse: collapse;
+		margin-left: 0cm;
+		font-size: 10pt;
+		font-weight: 500;
+		text-align: center;
+		text-indent: 0cm;
+	 	text-decoration: none}
+th	     {border-color: black;
+		border-style: solid;
+		border-width: 1;
+		border-bottom-width: 2;
+		vertical-align: baseline;
+		padding-left: 3;
+		padding-right: 3;
+		padding-top: 5;
+		padding-bottom: 5;
+		font-weight: 900;
+		background: #999999;
+		background: #BBBBBB}
+td	     {border-color: black;
+		border-style: solid;
+		border-width: 1;
+		vertical-align: bottom;
+		padding-left: 3;
+		padding-right: 3;
+		padding-top: 3;
+		padding-bottom: 3}
+tfoot	     {vertical-align: top;
+		font-size: 8pt;
+		font-weight: 700;
+		text-align: left;
+		padding: 1}
+tfoot td   {border-top-width: 2}
+
+.Left      {text-align: left}
+.LeftTop   {text-align: left;
+		vertical-align: baseline}
+.LeftMid   {text-align: left;
+		vertical-align: center}
+.LeftHead  {text-align: left;
+		vertical-align: baseline;
+		border-right-width: 2;
+		font-weight: 900;
+		background: #999999}
+.Top       {vertical-align: baseline}
+.Mid       {vertical-align: center}
+.Right     {text-align: right}
+.Center    {text-align: center}
+
+.Under2    {border-bottom-width: 2}
+tr.Under2 td  {border-bottom-width: 2}
+
+
+table.LeftTop          {text-align: left;
+				vertical-align: baseline}
+table.LeftTop th       {vertical-align: baseline}
+table.LeftTop td       {vertical-align: baseline}
+
+table.Top              {vertical-align: baseline}
+table.Top th           {vertical-align: baseline}
+table.Top td   	     {vertical-align: baseline}
+
+
+
+table.Texttable        {text-align: left;
+				vertical-align: top;
+			 	border-style: none}
+table.Texttable th     {border-style: none;
+				vertical-align: top}
+table.Texttable td     {border-style: none;
+				vertical-align: top}
+
+
+
+table.Exptable         {text-align: right;
+				width: 100%}
+table.Exptable th      {text-align: center;
+				padding-top: 1;
+				padding-bottom: 1}
+table.Exptable td      {border-top-width: 0;
+				border-bottom-width: 0;
+				padding-top: 0;
+				padding-bottom: 0}
+table.Exptable tfoot td   {border-top-width: 2;
+				   border-bottom-width: 1}
+table.Exptable tr.Line td {border-bottom-width: 1}
+table.Exptable th.Left    {text-align: left}
+table.Exptable th.LeftTop {text-align: left;
+		 		   vertical-align: baseline}
+
+table.Item1            {text-align: center;
+				width: 100%}
+table.Item1 th         {vertical-align: baseline;
+				padding-top: 1;
+				padding-bottom: 1}
+table.Item1 td         {vertical-align: baseline;
+				padding-top: 1;
+				padding-bottom: 1}
+
+table.Spell            {text-align: left;
+				width: 100%}
+table.Spell th         {vertical-align: baseline;
+				border-top-width: 2;
+				padding-top: 1;
+				padding-bottom: 1}
+table.Spell td         {vertical-align: baseline;
+				padding-top: 1;
+				padding-bottom: 1}
+
+table.Spell2           {text-align: right;
+				width: 100%}
+table.Spell2 th        {text-align: center;
+				border-left-width: 0;
+				border-right-width: 0;
+				padding-top: 1;
+				padding-bottom: 1}
+table.Spell2 td        {border-top-width: 0;
+				border-bottom-width: 0;
+				border-left-width: 0;
+				border-right-width: 0;
+				padding-top: 0;
+				padding-bottom: 0}
+table.Spell2 tr.Line td   {border-bottom-width: 1}
+table.Spell2 tr.Line2 td  {border-bottom-width: 2}
+table.Spell2 th.LeftCell  {text-align: left;
+				   border-right-width: 1}
+table.Spell2 td.LeftCell  {text-align: left;
+				   border-right-width: 1}
+
+td.Left2   {text-align: left;
+		vertical-align: baseline;
+	   	border-right-width: 0}
+td.Right2  {text-align: right;
+		vertical-align: baseline;
+	   	border-left-width: 0}
+
+
+
+
+
+A:link {text-decoration: none; color: darkblue}
+A:visited {text-decoration: none; color: darkblue}
+A:active {text-decoration: none; color: red}
+A:hover {text-decoration: none; color: red}
+
+
+A:link IMG {border: 2px solid yellow}
+A:visited IMG {border: 2px solid brown}
+A:active IMG {border: 2px solid red}
+
+
+
+
+
+

@@ -1,0 +1,1269 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG3-8.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Section 3.8</title>
+
+</head>
+
+<body>
+
+<div class=Section>3.8 Item creation in dungeon</div><br>
+
+<p>This chapter tries to explain how the game creates items and what factors affect the creation. Only items generated in the dungeon are discussed. Some of it applies to items created in town as well, but for more details about items created in town, see chapter 3.9. Most of this chapter will not refer specifically to the Hive or the Crypt, but as with much else, they should be equivalent to Caves and Hell. Some quests will give you special items (not counting the special quest items). For information about them, see each individual quest in chapter 8.</p>
+
+<p>In most of the situations below the game has to pick a certain item, prefix/suffix, unique, spell, or other property of an item out of several possible ones or within a range. Unless otherwise noted the probability should be equal for all possible choices in that situation.</p>
+
+<p>Base item in this chapter not only refers to the various equipable items, but also includes scrolls, potions, elixirs, runes, books of and oils of; see chapters 3.1 - 3.2.3 for information about them.</p>
+
+<p>An item can come from many different sources in the dungeon, and depending on the source, the creation routine is a bit different. To facilitate the explanation below let us first define a new term, <I>ilvl.</I> It is defined for various sources in the table below. For information about a monsters mlvl or mlvl<SUB>item</SUB>, see chapters 5.2 and 5.4.</p>
+
+<div align=center>
+<table class=Left border>
+<tr>
+   <th>Source of item</th>
+   <th>Definition of ilvl</th>
+</tr>
+<tr>
+   <td>normal monster</td>
+   <td> mlvl<sup>1</sup></td>
+</tr>
+<tr>
+   <td>unique monster and special monster<sup>2</sup></td>
+   <td> mlvl<sub>item</sub><sup>3</sup></td>
+</tr>
+<tr>
+   <td>decapitated body, sarcophagus, on the ground<sup>4</sup>, bookcase, skeleton tome, library book and racks</td>
+   <td> 2·dlvl<sup>5</sup></td>
+</tr>
+<tr>
+   <td>chest, barrel, pod, urn</td>
+   <td> 2·dlvl or dlvl<sup>5,6</sup></td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=2>
+	<sup>1</sup>Use the mlvl for normal difficulty regardless of what difficulty you are playing on.<br>
+	<sup>2</sup>Note that for the purpose of dropping items, Diablo is neither a special nor a unique monster but a normal one.<br>
+	<sup>3</sup>The +4 bonus will be found in the appropriate steps below.<br>
+	<sup>4</sup>You will often find potions of various sorts on the ground; they are specially placed there and are not generated according to normal rules.<br>
+	<sup>5</sup>The Hive levels are numbered 9-12 and the Crypt levels are numbered 13-16.<br>
+	<sup>6</sup>Most chests, barrels, pods and urns have an ilvl equal to 2·dlvl, although some have it equal to dlvl. Those that have the ilvl equal to dlvl will only generate potions and scrolls (and oils in Hellfire). See chapter 3.8.1 for more information. Items created with an ilvl = dlvl are referred to as <I>special items</I> in this chapter.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<div class=BodyBold>Special items</div>
+
+<p>Special items appear on those occasions where the item created will not follow normal procedures. Such special items will normally only generate potions and scrolls (in Hellfire it also includes oils). For more information about what base items are possible for special items, see chapter 3.8.3.</p>
+
+<div class=Sub id=3.8.1>3.8.1 What is dropped?</div><br>
+
+<p>First the game has do decide if an item is to be dropped at all, if it is going to be gold or an item. The exact probabilities for these are greatly affected by the source of the item. Each source is explained below.</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=250><col width=400>
+<tr>
+   <td class=BodyBold colspan=3>Normal monster</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Gold:</td>
+   <td>30.3%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Item:</td>
+   <td>10.7%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Nothing:</td>
+   <td>59.0%</td>
+</tr>
+<tr>
+   <td colspan=3><ul><li>Some monster types (Winged Fiends and Hork Spawns) never drop items.</li></ul></td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Unique monster</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Item:</td>
+   <td>100%</td>
+</tr>
+<tr>
+   <td colspan=3><ul><li>Unique monsters always drop an item, and it can either be a book or an item that can take on a prefix and/or suffix (or be unique).</li></ul></td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Chest</td>
+</tr>
+<tr>
+   <td colspan=3>Chests can have several possible amounts of items in them and the exact amount is also affected by the size of the chest. The number of <I>possible</I> items from a chest is explained in the table below.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=Center>
+<table border>
+<tr>
+   <th>Number of possible items</th>
+   <th>Small chest</th>
+   <th>Chest</th>
+   <th>Large chest</th>
+</tr>
+<tr>
+   <td>0</td>
+   <td>50%</td>
+   <td>33.3%</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td>1</td>
+   <td>50%</td>
+   <td>33.3%</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td>2</td>
+   <td>-</td>
+   <td>33.3%</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td>3</td>
+   <td>-</td>
+   <td>-</td>
+   <td>25%</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=250><col width=400>
+<tr>
+   <td colspan=3>For each chest the probability of the items in them being created with varying ilvl is:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Special item (ilvl = dlvl):</td>
+   <td>12.5%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Non special item (ilvl = 2·dlvl):</td>
+   <td>87.5%</td>
+</tr>
+<tr>
+   <td colspan=3>All items in a chest will thus either be all special items or all non special items. For each <I>possible </I>item in a chest without special items, the probability is then as follows:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Gold:</td>
+   <td>75%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Item:</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td colspan=3>If the chest is determined to have special items, all possible items will drop as special items. For information about items created by different ilvl, see chapter 3.8.2.</td>
+</tr>
+<tr>
+   <td colspan=3>Chests only exist in church, catacombs, caves and hell.</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Barrels, pods and urns</td>
+</tr>
+<tr>
+   <td colspan=3>Pods and Urns are, for item creation, treated as barrels, so anything said about barrels below applies equally to pods and urns.</td>
+</tr>
+<tr>
+   <td colspan=3>Barrels can be of two different types, exploding and non exploding. For information about exploding barrels, see chapter 4.3. Approximately 20% of all barrels are exploding ones. The information below will only apply to <I>non</I> exploding barrels. Exploding barrels will never have items in them.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Skeleton:</td>
+   <td>20%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Gold:</td>
+   <td>10%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Special item:</td>
+   <td>6.7%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Item:</td>
+   <td>3.3%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Nothing:</td>
+   <td>60%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Barrels can only exist in church, catacombs, caves and hell.</li>
+	   <li>Pods can only exist in the Hive.</li>
+	   <li>Urns can only exists in the Crypt.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Sarcophagus</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Skeleton:</td>
+   <td>20%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Gold:</td>
+   <td>22.5%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Item:</td>
+   <td>7.5%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Nothing:</td>
+   <td>50%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Sarcophagi can only exist in church and in the crypt.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Decapitated bodies</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Gold:</td>
+   <td>75%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Item:</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Decapitated bodies can only exist in catacombs, caves and hell.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Weapon Rack</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Axe:</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Bow:</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Club:</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Sword:</td>
+   <td>25%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Weapon racks can never exist in church.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Armor Rack</td>
+</tr>
+<tr>
+   <td></td>
+   <td>dlvl 5:</td>
+   <td>light armor</td>
+</tr>
+<tr>
+   <td></td>
+   <td>dlvl 6-9:</td>
+   <td>medium armor</td>
+</tr>
+<tr>
+   <td></td>
+   <td>dlvl 10-15:</td>
+   <td>heavy armor</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>See chapter 3.1 for a definition of light, medium and heavy armor.</li>
+	   <li>Armor racks can never exist in church.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Bookcase</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Book:</td>
+   <td>100%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Bookcases can only exist in church and catacombs.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Library book and Skeleton Tome</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Book:</td>
+   <td>20%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Scroll:</td>
+   <td>80%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Only scrolls of Apocalypse, Healing, Identify, Infravision, Nova, Mana Shield, Phasing, Teleport, and Town Portal are possible.</li>
+	   <li>Library books and Skeleton Tomes can only exist in church and catacombs.</li>
+	</ul>
+   </td>
+</tr>
+</table>
+</div>
+
+<br>
+<div class=Sub id=3.8.2>3.8.2 Item type</div><br>
+
+<p>Next, the item type that is to be generated is determined, and the procedure is as follows (this step is skipped for gold and special items).</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=250><col width=400>
+<tr>
+   <td class=BodyBold colspan=3>Determination of base item</td>
+</tr>
+<tr>
+   <td colspan=3>First, it has to be determined what the base item should be. For information about base items, see chapters 3.1 and 3.2. Each base item has a qlvl, and those within the ranges below can be dropped. Depending on the source of the item some base items are, of course, excluded (see chapter 3.8.1).</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Normal and special monster:</td>
+   <td>1 to mlvl</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Unique monster:</td>
+   <td>1 to mlvl<SUB>battle</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Other:</td>
+   <td>1 to ilvl</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Note that the mlvl is the one modified for difficulty level when the item comes from a monster.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td colspan=3>Of all the possible base items, one is chosen at random with an equal probability for all items. Bows, however, are actually counted twice if the item is dropped by a normal (non unique or special) monster, and thus have a double chance of being created. Note that some base items like rings, amulets, and books have several different base items with different qlvl. You will never notice any difference when playing other than them being more common as the ilvl and mlvl go up (as more of each type is possible at higher ilvl and mlvl). See chapter 3.13.1. for a list of base items in the order of their qlvl.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Is it magical?</td>
+</tr>
+<tr>
+   <td colspan=3>Now it is time to determine if the item is magical or not. Only items that can have a prefix/suffix (or be unique) can be magical. For other items this test is not done. The probability of being magical is as follows depending on the source of the item:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Unique monster:</td>
+   <td>100%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>On the ground:</td>
+   <td>100%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Weapon rack:</td>
+   <td>100%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Armor rack on dlvl 5 and 13-15:</td>
+   <td>100%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Armor rack on dlvl 6-9:</td>
+   <td>(55.5 + 0.445·(ilvl+1))%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Armor rack on dlvl 10-12:</td>
+   <td>(11 + 0.89·(ilvl+1))%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Monster:</td>
+   <td>(11 + 0.89·(ilvl+1))%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Other:</td>
+   <td>(11 + 0.89·(ilvl+1))%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Only equipable items can be magical; for other base items this step is not performed.</li>
+	   <li>Rings and amulets are always magical.</li>
+	   <li>Staves are always magical if they have no spell, see chapter 3.8.3 under <I>Staff</I> for more information.</li>
+	   <li>On the ground only refers to equipable items found, often in special rooms, in the dungeon. It is quite possible that the probability of those items being magical is less than 100% outside of Hell.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Is it unique?</td>
+</tr>
+<tr>
+   <td colspan=3>If the item was determined to be magical it is next checked for to see if it is unique. The probability of being unique is listed below depending on source. Note that the probability to be unique is applied for this step only. The total probability of an item to be unique is of course less as not all items are magical or even could be magical.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Unique Monster:</td>
+   <td>16%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Other:</td>
+   <td>2%</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div class=Sub id=3.8.3>3.8.3 Item properties</div><br>
+
+<p>Once the base item has been determined, the properties of the item are to be decided. In many cases the item can't have additional properties. That is the case for scrolls, potions, non magical items (as determined by the step above), runes, and some oils (see chapter 3.2.1). If so, this step is not performed. Otherwise, the properties have to be determined, and the procedure depends a bit on what type of item it is. Thus, each item type will be dealt with separately.</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=250><col width=400>
+<tr>
+   <td class=BodyBold colspan=3>Gold</td>
+</tr>
+<tr>
+   <td colspan=3>The amount of gold dropped or found on the dungeon floor is determined by the formulas below:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Normal difficulty:</td>
+   <td>5·dlvl to 15·dlvl - 1</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Nightmare difficulty:</td>
+   <td>5·(16 + dlvl) to 15·(16 + dlvl) - 1</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Hell difficulty:</td>
+   <td>5·(32 + dlvl) to 15·(32 + dlvl) - 1</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>The Hive levels are numbered 9-12 and the Crypt levels are numbered 13-16.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td colspan=3>Furthermore, on any hell dungeon level (dlvl 13-16) or Crypt dungeon level (dlvl 13-16) the amount of gold is increased by:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Hell or Crypt dungeon level:</td>
+   <td>amount · 1.125</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>The amount is taken from the appropriate formula above depending on the difficulty level.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Unique item</td>
+</tr>
+<tr>
+   <td colspan=3>If the item is determined to be unique, the game will drop the unique item that is of the correct base item (determined above) and that has a qlvl according to below:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Unique and special monster:</td>
+   <td>1 to ilvl+4</td>
+</tr>
+<tr>
+   <td></td>
+   <td>All other sources:</td>
+   <td>1 to ilvl</td>
+</tr>
+<tr>
+   <td colspan=3>If several unique items are possible, the one with the highest qlvl will be dropped. If several unique items that are possible have the same qlvl, the one that happens to be first in the list will be dropped. This is the reason that some unique items will never be dropped as there is always another unique item with the same qlvl (and being of the same base item) that will be dropped instead. See chapter 3.5.2 for a list of such unique items.</td>
+</tr>
+<tr>
+   <td colspan=3>In single player (but not in multi player) the game keeps track of what unique items have been dropped (or recreated at game start in a characters inventory) and if the same item is determined to be dropped again (or regenerated at game start), the next one with the same qlvl or the one with the next lower qlvl will instead be dropped. Thus in single player you can actually find those &quot;unfindable&quot; unique items but you must find at last one other unique item of the same base item first. The game will forget the list of found unique items when you restart a new game however. The list is saved when you save the game in single player but not restored upon load except for those items you have equipped.</td>
+</tr>
+<tr>
+   <td colspan=3>A unique item has up to 6 special properties, which are described in more detail in chapter 3.5. If for any reason the game fails to select a unique item (for example if there is no unique item with a low enough qlvl), the game will then proceed to create the item as a normal magical item instead.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Magical item</td>
+</tr>
+<tr>
+   <td colspan=3>A magical item has a prefix and/or a suffix (it can of course also be unique but that is covered above). Below are the probabilities for an item having a prefix, a suffix, or both of them.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Prefix only:</td>
+   <td>20.8%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Suffix only:</td>
+   <td>62.5%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Prefix and suffix:</td>
+   <td>16.7%</td>
+</tr>
+<tr>
+   <td colspan=3>The qlvl of the prefix and/or suffix must be within the range given below:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Unique and special monster:</td>
+   <td>[(ilvl+4)/2] to ilvl+4</td>
+</tr>
+<tr>
+   <td></td>
+   <td>All other sources:</td>
+   <td>[ilvl/2] to ilvl</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Round down the minimum level. If it is higher than 25, it is set to 25.</li>
+	   <li>The actual value of the prefix or suffix is chosen randomly within its range.</li>
+	   <li>Some prefixes has a double chance of being picked, see below.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td colspan=3>The range above means that unless the lower limit is set to 25, the highest qlvl of an item with both a prefix and a suffix can't be more than twice the level of the lower one. This rule is good to know when you want to see if a prefix and a suffix can coexist on an item. It is also worth noticing that as the range above is based on the mlvl, <I>not</I> modified for difficulty level (or 2·dlvl), so the prefix and suffix with the highest qlvl you will ever find in the dungeon has qlvl 34. There is no prefix or suffix in the range of 32-34, so qlvl 31 is the highest one you will find, and only emerald has that qlvl. In Hellfire (but not Diablo), Diablo is level 45, so he can drop items with prefixes and suffixes of qlvl up to 45. Similarly, Na-Krul can drop items with prefixes and suffixes of qlvl up to 44 as he is level 40, and the +4 bonus for being a unique monster applies to him. If for any reason the game fails to select a prefix and/or a suffix, the game will then proceed to create the item as a normal non magical item instead. See chapter 3.13.3 for a list of prefixes and suffixes in the order of their qlvl.</td>
+</tr>
+<tr>
+   <td colspan=3>Some prefixes actually has a double chance of being chosen. The table below list all prefixes that has a double chance of being chosen.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=center>
+<table class=Left border>
+<tr>
+   <th class=Left>+% Armor Class</th>
+   <th>+% To Hit</th>
+   <th>+% To Hit /<br>+% Damage Done</th>
+   <th>+% Damage Done</th>
+</tr>
+<tr>
+   <td class=Left> vulnerable<sup>1</sup></td>
+   <td> tin<sup>1</sup></td>
+   <td> clumsy<sup>1</sup></td>
+   <td> useless<sup>1</sup></td>
+</tr>
+<tr>
+   <td class=Left> rusted<sup>1</sup></td>
+   <td> brass<sup>1</sup></td>
+   <td> dull<sup>1</sup></td>
+   <td> bent<sup>1</sup></td>
+</tr>
+<tr>
+   <td class=Left> fine</td>
+   <td> bronze</td>
+   <td> sharp<sup>1</sup></td>
+   <td> weak</td>
+</tr>
+<tr>
+   <td class=Left> strong</td>
+   <td> iron</td>
+   <td> fine</td>
+   <td> jagged</td>
+</tr>
+<tr>
+   <td class=Left> grand</td>
+   <td> steel</td>
+   <td> Warrior’s</td>
+   <td> deadly</td>
+</tr>
+<tr>
+   <td class=Left> valiant</td>
+   <td> silver</td>
+   <td> soldier’s</td>
+   <td> heavy</td>
+</tr>
+<tr>
+   <td class=Left> glorious</td>
+   <td> gold</td>
+   <td> lord’s</td>
+   <td> vicious</td>
+</tr>
+<tr>
+   <td class=Left> blessed</td>
+   <td> platinum</td>
+   <td> knight’s</td>
+   <td> brutal</td>
+</tr>
+<tr>
+   <td class=Left> saintly</td>
+   <td> mithril</td>
+   <td> master’s</td>
+   <td> massive</td>
+</tr>
+<tr>
+   <td class=Left> awesome</td>
+   <td> meteoric</td>
+   <td> champion’s</td>
+   <td> savage</td>
+</tr>
+<tr>
+   <td class=Left> holy</td>
+   <td> weird</td>
+   <td> king’s</td>
+   <td> ruthless</td>
+</tr>
+<tr>
+   <td class=Left> godly</td>
+   <td> strange</td>
+   <td>&nbsp;</td>
+   <td> merciless</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=4>
+	<sup>1</sup>A cursed prefix. See below for more information when possible.<br>
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<tr>
+   <td>Despite what has been said above, there are some combinations of prefixes and suffixes that can-not exist on the same item. The table below list all combinations that are. As the game always picks the prefix first, it is always the suffix that will be discarded; this can be important to know if one wants to figure out exactly what items are possible and the probabilities of them.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=center>
+<table class=Left border>
+<tr>
+   <th colspan=3>None of the combinations below can exist on the same item</th>
+</tr>
+<tr>
+   <td>angel’s // trouble</td>
+   <td>gold // pain</td>
+   <td>silver // corruption</td>
+</tr>
+<tr>
+   <td>arch-angel’s // trouble</td>
+   <td>gold // the dark</td>
+   <td>silver // pain</td>
+</tr>
+<tr>
+   <td>blessed // trouble</td>
+   <td>gold // the bear</td>
+   <td>silver // the dark</td>
+</tr>
+<tr>
+   <td>frog’s // vitality</td>
+   <td>mithril // trouble</td>
+   <td>silver // the bear</td>
+</tr>
+<tr>
+   <td>glorious // trouble</td>
+   <td>platinum // trouble</td>
+   <td>spider’s // vitality</td>
+</tr>
+<tr>
+   <td>gold // pit</td>
+   <td>saintly // trouble</td>
+   <td>vicious // vim</td>
+</tr>
+<tr>
+   <td>gold // the vulture</td>
+   <td>silver // pit</td>
+   <td>vicious // vigor</td>
+</tr>
+<tr>
+   <td>gold // corruption</td>
+   <td>silver // the vulture</td>
+   <td>vicious // radiance</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=250><col width=400>
+<tr>
+   <td colspan=3>Cursed prefixes and suffixes are those who give some sort of drawback to your character when you wear them. It is quite obvious for most prefixes and suffixes. For the ones affecting the light radius, the ones decreasing it are considered as cursed ones. The prefix <I>sharp</I> is also treated as cursed, most likely due to a bug. Cursed items are not allowed to appear when the item comes from certain sources. Below is listed if a source can give out cursed items, and if it can, how large the chance is compared to non cursed prefixes and suffixes.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Unique monsters:</td>
+   <td>No</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Weapon Rack:</td>
+   <td>No</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Armor Rack on dlvl 5 and 13-15:</td>
+   <td>No</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Armor Rack on dlvl 6-9:</td>
+   <td>16.5%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Armor Rack on dlvl 10-12:</td>
+   <td>33.0%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Adria, Griswold, Pepin and Wirt:</td>
+   <td>No</td>
+</tr>
+<tr>
+   <td></td>
+   <td>On the ground:</td>
+   <td>No</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Other:</td>
+   <td>33.0%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Sources that will not produce equipable items can never produce cursed items.</li>
+	   <li>If possible, a cursed prefix will, if it is found in the table above with prefixes with a double chance of being chosen, have a double chance compared to other cursed prefixes.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Staff</td>
+</tr>
+<tr>
+   <td colspan=3>Staves can either have a spell or be normal magical items (of course, they can also be plain staves but that is very rare).  The chances for what type the staff will be is as follows:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Chance for having spell:</td>
+   <td>75%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Chance for having prefix if it has a spell:</td>
+   <td>10%</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Staves from a location that has a 100% chance of being magical will, if they have a spell, always have a prefix. as staves with spells without a prefix will not be considered as magical by the game.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td colspan=3>Staves that do not have a spell, are treated the same way as any other magical item; see above. However, if they have a spell, they are created a bit differently. For the spell and the prefix they follow the ranges below:</td>
+</tr>
+</table>
+</div>
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=450><col width=200>
+<tr>
+   <td></td>
+   <td>Range of qlvl for spell on staves from unique and special monster:</td>
+   <td>1 to [(ilvl+4/)2]</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Range of qlvl for spell on staves from all other sources:</td>
+   <td>1 to ilvl/2</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Range of qlvl for prefix on staff with spell from unique and special monster:</td>
+   <td>1 to ilvl+4</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Range of qlvl for prefix on staff with spell from all other sources:</td>
+   <td>1 to ilvl</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Note that the qlvl of a spell is different depending on whether it appears on a staff or on a book.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td colspan=3>When found in the dungeon, all non unique staves with spells have full charges. Unique staves has a specific number of current charges according to the table below. All staves bought in town have full charges, of course.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=center>
+<table border>
+<tr>
+   <th class=Left>Unique staff</th>
+   <th>Number of charges when found1</th>
+</tr>
+<tr>
+   <td class=Left>Gleamsong</td>
+   <td>10</td>
+</tr>
+<tr>
+   <td class=Left>Mindcry</td>
+   <td>13</td>
+</tr>
+<tr>
+   <td class=Left>Naj’s Puzzler</td>
+   <td>23</td>
+</tr>
+<tr>
+   <td class=Left>The Protector</td>
+   <td>2</td>
+</tr>
+<tr>
+   <td class=Left>Rod of Onan</td>
+   <td>21</td>
+</tr>
+<tr>
+   <td class=Left>Thundercall</td>
+   <td>3</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=2>
+	<sup>1</sup>I would say this is a bug and the intention was to make unique staves also have full charges when found. As it is now, the number of charges is the same as the slot number in which you find the spell on the item in the internal spell table.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<tr>
+   <td colspan=3>Due to the way the game picks a random spell, some spells have a higher chance to be selected than others at a given situation. As the probabilities are different for different ilvl, it is hard to give exact numbers. The general procedure is as follows:</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ol>
+	   <li>calculate x = Rnd[37] + 1 (in Hellfire, calculate x = Rnd[52] + 1)</li>
+	   <li>start with the first spell in the internal list of spells</li>
+	   <li>step forward until a spell that exists on staves (or books if it is for a book) and has low enough ilvl is found (if you ever reach the end, restart from the beginning)</li>
+	   <li>decrease x by one</li>
+	   <li>if x is not 0, goto step 3</li>
+	   <li>the last spell found in step 3, is the one chosen to appear on the staff (or book)</li>
+	</ol>
+   </td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>In single player, the spells Heal Other and Resurrect are automatically skipped and do not count even if their ilvl is high enough.</li>
+	   <li>Spells at the start of the list will have a higher probability than those later in the list. The exact cut off depends on the ilvl. This means that there will be two different levels of probabilities for the spells, a higher one for spells at the start of the list and a lower one for spells at the end of the list. At rare occasions all spells will have the same probability.</li>
+	   <li>The order of the spells is <I>not</I> the same as in your spell book or any of the other lists in this Guide. The table below lists the order of the spells for the purpose of selecting a spell for a staff or a book.</li>
+	</ul>
+   </td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=center>
+<table border>
+<tr>
+   <th class=Right>Position<sup>1</sup></th>
+   <th class=Left>Spell</th>
+   <th>Book</th>
+   <th>Staff</th>
+   <th class=Right>Position<sup>1</sup></th>
+   <th class=Left>Spell</th>
+   <th>Book</th>
+   <th>Staff</th>
+</tr>
+<tr>
+   <td class=Right>1</td>
+   <td class=Left>Firebolt</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>19</td>
+   <td class=Left>Charged Bolt</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>2</td>
+   <td class=Left>Healing</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>20</td>
+   <td class=Left>Holy Bolt</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>3</td>
+   <td class=Left>Lightning</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>21</td>
+   <td class=Left>Ressurect<sup>3</sup></td>
+   <td>-</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>4</td>
+   <td class=Left>Flash</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>22</td>
+   <td class=Left>Telekinesis</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>5</td>
+   <td class=Left>Fire Wall</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>23</td>
+   <td class=Left>Heal Other<sup>3</sup></td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>6</td>
+   <td class=Left>Town Portal</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>24</td>
+   <td class=Left>Blood Star</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>7</td>
+   <td class=Left>Stone Curse</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>25</td>
+   <td class=Left>Bone Spirit</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>8</td>
+   <td class=Left>Phasing</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>26</td>
+   <td class=Left>Mana</td>
+   <td>-</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>9</td>
+   <td class=Left>Mana Shield</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>27</td>
+   <td class=Left>Magi</td>
+   <td>-</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>10</td>
+   <td class=Left>Fireball</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>28</td>
+   <td class=Left>Jester</td>
+   <td>-</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>11</td>
+   <td class=Left>Guardian</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>29</td>
+   <td class=Left>Lightning Wall</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>12</td>
+   <td class=Left>Chain Lightning</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>30</td>
+   <td class=Left>Immolation</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>13</td>
+   <td class=Left>Flame Wave</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>31</td>
+   <td class=Left>Warp</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>14</td>
+   <td class=Left>Nova</td>
+   <td>Yes<sup>2</sup></td>
+   <td>Yes</td>
+   <td class=Right>32</td>
+   <td class=Left>Reflect</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>15</td>
+   <td class=Left>Golem</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>33</td>
+   <td class=Left>Berserk</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>16</td>
+   <td class=Left>Teleport</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td class=Right>34</td>
+   <td class=Left>Ring of Fire</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>17</td>
+   <td class=Left>Apocalypse</td>
+   <td>Yes<sup>2</sup></td>
+   <td>Yes</td>
+   <td class=Right>35</td>
+   <td class=Left>Search</td>
+   <td>Yes</td>
+   <td>Yes</td>
+</tr>
+<tr>
+   <td class=Right>18</td>
+   <td class=Left>Elemental</td>
+   <td>Yes</td>
+   <td>Yes</td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=8>
+	<sup>1</sup>Position 26 to 35 only exist in Hellfire.<br>
+	<sup>2</sup>Only exists as books in Hellfire.<br>
+	<sup>3</sup>In single player, the spells Heal Other and Resurrect are automatically skipped and do not count even if the ilvl is high enough.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=250><col width=400>
+<tr>
+   <td class=BodyBold colspan=3>Book</td>
+</tr>
+<tr>
+   <td colspan=3>If the item type is a <I>book of,</I> the game then attaches a spell to the book. The qlvl of the spell can be in the range given below. For a list of qlvl of spells on books see chapter 3.2.3.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Range of qlvl for spell on books:</td>
+   <td>1 to ilvl/2</td>
+</tr>
+<tr>
+   <td colspan=3>
+	<ul>
+	   <li>Note that the qlvl of a spell is different depending on whether it appears on a book or on a staff.</li>
+	</ul>
+   </td>
+</tr>
+<tr>
+   <td colspan=3>For information about how the spell is chosen, see above under Staff.</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Oil</td>
+</tr>
+<tr>
+   <td colspan=3>Oils can, as noted in chapter 3.2.1, be of two types; either the oil together with its type is treated as a base item, just like a potion and thus no further processing of the oil is needed, or it can be created as the base item <I>oil of</I>, to which an oil type is then attached. See chapter 3.2.1 for more information on which oils can be created in which way. If the case is the latter one, the oil type attached to the oil follows the range below:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Range of qlvl for oil type:</td>
+   <td>1 to ilvl</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Special item</td>
+</tr>
+<tr>
+   <td colspan=3>A special item can only be of a limited number of base items. In Diablo, the list below shows what base items are possible and their probabilities.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Scroll of Town Portal</td>
+   <td>33.3%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Potion of Healing</td>
+   <td>33.3%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Potion of Mana</td>
+   <td>33.3%</td>
+</tr>
+<tr>
+   <td colspan=3>In Hellfire the list is slightly modified and depends on the dlvl. For dlvl 1 the list of probabilities is:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Potion of Healing</td>
+   <td>42.9%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Potion of Mana</td>
+   <td>42.9%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Blacksmith Oil</td>
+   <td>14.3%</td>
+</tr>
+<tr>
+   <td colspan=3>For any dlvl higher than 1 in Hellfire, the list of probabilities is:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Scroll of Town Portal</td>
+   <td>28.6%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Potion of Healing</td>
+   <td>28.6%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Potion of Mana</td>
+   <td>28.6%</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Blacksmith Oil</td>
+   <td>14.3%</td>
+</tr>
+</table>
+</div>
+
+</body>
+
+

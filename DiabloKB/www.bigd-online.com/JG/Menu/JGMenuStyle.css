@@ -1,0 +1,79 @@
+body {margin-left: 2; 
+	margin-right: 0; 
+	margin-top: 0; 
+	background: #999999; 
+	background: #CCCCCC; 
+	color: black; 
+	font-family: Arial
+	}
+
+.Menu      {font-size: 20pt; 
+	 	font-weight: 900;
+	 	text-decoration: underline}
+.Chapter   {font-size: 12pt; 
+		font-weight: 900;
+		line-height: 1;
+	 	text-decoration: none}
+.Section   {font-size: 8pt;
+		font-weight: 900;
+		line-height: 1;
+	 	text-decoration: none}
+.Sub       {font-size: 7pt;
+		font-weight: 900;
+		line-height: 1;
+	 	text-decoration: none}
+.Return    {font-size: 8pt;
+		font-weight: 900;
+		text-decoration: none}
+
+A:link {text-decoration: none; color: darkblue}
+A:visited {text-decoration: none; color: darkblue}
+A:active {text-decoration: none; color: red}
+A:hover {text-decoration: none; color: red}
+
+A:link.Black {text-decoration: underline; color: black}
+A:visited.Black {text-decoration: underline; color: black}
+A:active.Black {text-decoration: underline; color: black}
+A:hover.Black {text-decoration: underline; color: black}
+
+A:link.Dakota {text-decoration: none; color: darkblue}
+A:visited.Dakota {text-decoration: none; color: darkblue}
+A:active.Dakota {text-decoration: none; color: red}
+A:hover.Dakota {text-decoration: none; color: red}
+
+
+ol	{margin-left: 25}
+
+hr    {color: black}
+
+table	     {margin-left: 0cm;
+		text-align: left;
+		text-indent: 0cm}
+td	     {border-style: line;
+		vertical-align: top;
+		font-size: 1pt;
+		border-spacing: 0;
+		padding-left: 0;
+		padding-top: 0;
+		padding-bottom: 0}
+
+tr.Menu       {font-size: 20pt; 
+	         font-weight: 900;
+	 	   text-decoration: underline}
+tr.Chapter td {font-size: 12pt; 
+		   font-weight: 900;
+	 	   line-height: 1;
+	 	   text-decoration: none}
+tr.Section td {font-size: 8pt;
+		   font-weight: 900;
+		   line-height: 1;
+	 	   text-decoration: none}
+tr.Sub td     {font-size: 7pt;
+	   	   font-weight: 900;
+		   line-height: 1;
+	 	   text-decoration: none}
+
+
+
+
+

@@ -1,0 +1,2004 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG4-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Section 4.1</title>
+
+</head>
+
+<body>
+
+<div class=Section>4.1 Spells available to players</div><br>
+
+<p>All spells in Diablo and Hellfire are equally learnable for all character classes. To learn them to a high slvl one needs a high magic attribute, and not all character classes have the ability to reach the needed 255 magic attribute that is needed for the highest spell levels.</p>
+
+<div class=Sub id=4.1.1>4.1.1 List of spells and spell effects</div><br>
+
+<p>Below is a summary of all spells you will find in Diablo and Hellfire. They are arranged in the same way they appear in your spell book. Page 5, Jester, Magi and Mana only exist in Hellfire.</p>
+
+<div align=center>
+<table class=Left border>
+<tr>
+   <th>Page One</th>
+   <th>Page Two</th>
+   <th>Page Three</th>
+   <th>Page Four</th>
+   <th>Page Five<sup>5</sup></th>
+   <th>Not in Book</th>
+</tr>
+<tr>
+   <td><I>Skill</I></td>
+   <td>Resurrect<sup>1,2</sup></td>
+   <td>Phasing</td>
+   <td>Nova<sup>2</sup></td>
+   <td>Lightning Wall</td>
+   <td>Identify<sup>3</sup></td>
+</tr>
+<tr>
+   <td>Firebolt</td>
+   <td>Fire Wall</td>
+   <td>Mana Shield</td>
+   <td>Golem</td>
+   <td>Immolation</td>
+   <td>Infravision<sup>3</sup></td>
+</tr>
+<tr>
+   <td>Charged Bolt</td>
+   <td>Telekinesis</td>
+   <td>Elemental</td>
+   <td>Teleport</td>
+   <td>Warp</td>
+   <td>Jester<sup>4,5</sup></td>
+</tr>
+<tr>
+   <td>Holy Bolt</td>
+   <td>Lightning</td>
+   <td>Fireball</td>
+   <td>Apocalypse<sup>2</sup></td>
+   <td>Reflect</td>
+   <td>Magi<sup>4,5</sup></td>
+</tr>
+<tr>
+   <td>Healing</td>
+   <td>Town Portal</td>
+   <td>Flame Wave</td>
+   <td>Bone Spirit</td>
+   <td>Berserk</td>
+   <td>Mana<sup>4,5</sup></td>
+</tr>
+<tr>
+   <td>Heal Other<sup>1</sup></td>
+   <td>Flash</td>
+   <td>Chain Lightning</td>
+   <td>Blood Star</td>
+   <td>Ring of Fire</td>
+   <td>&nbsp;</td>
+</tr>
+<tr>
+   <td>Inferno</td>
+   <td>Stone Curse</td>
+   <td>Guardian</td>
+   <td class=Center>-</td>
+   <td>Search</td>
+   <td>&nbsp;</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=6>
+      <sup>1</sup>Only appear in multi player games.<br>
+      <sup>2</sup>Only appear on scrolls or staves. In Hellfire you can learn Nova and Apocalypse normally though.<br>
+      <sup>3</sup>Only appear on scrolls.<br>
+      <sup>4</sup>Only appear on staves.<br>
+      <sup>5</sup>Found in Hellfire only.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<div class=Sub id=4.1.2>4.1.2 Details about spells</div><br>
+
+<p>Now follows some details about each spell. Not all types of data are applicable for each spell. Below is an explanation of what is told about most spells. If no information type is given for a specific spell, it is either due to it not applying (for example the speed of a stationary effect), or due to it not being known to me. For more details about how spells attack, see chapter 5.6.5 and more specifically chapter 6.1.8.</p>
+
+<p>In previous versions there existed information for spells if they had any distance factor included in their To Hit calculation. From what I have found, no spell has a distance factor; or rather, it is always 0. Only arrows (including fire and lightning arrows and arrows from traps and monsters) have a distance factor. As a consequence, I have removed any reference to a distance in the detailed list of spells.</p>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=150>
+<tr>
+   <td></td>
+   <td>Type:</td>
+   <td>Magic, fire or lightning. Some spells are not of one of the three main types and are listed as n/a.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Damage:</td>
+   <td>Stated damage in spell book (see below for more details), can be split up into min. and max. damage where appropriate.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Quick Damage:</td>
+   <td>A quicker way to calculate damage but not as accurate. Can be split up into min. and max. damage where appropriate.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Real Damage:</td>
+   <td>The real damage as used by the game. This is not necessarily the same as the stated damage, especially for non missile spells, as they instead can often attack several times. If no real damage is stated, it is identical to the damage stated. Also, if the real damage distribution is linear within the range given, it is not shown either. All this is done to reduce the amount of data presented, as it is already extensive.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Duration:</td>
+   <td>This is how long each spell lasts. The time given is always in seconds unless otherwise stated. Moving spells will generally be terminated if they hit any dungeon feature, such as a wall.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Speed:</td>
+   <td>This is the speed at which the spell effect travels. It is a relative number used for comparison between different spells and normal arrows, and is not to be confused with walk speed for players and monsters. The higher the value, the faster it is. For information about the speed of arrows, see chapter 2.2.3.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Blockable:</td>
+   <td>This will tell if a spell is blockable or not. In Diablo, you will only block if you have 0% resistance. In Hellfire, you will block anything blockable regardless of your resistance.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=150><col width=350><col width=400>
+<tr>
+   <td class=BodyBold colspan=4>Damage</td>
+</tr>
+<tr>
+   <td colspan=4>Some spells use a recursive formula to calculate damage. The notation for these spells was introduced by Sourceror and I have used it here too. Here follows an explanation on how it works. To make it easier to write damage formulas for spells using multiple random numbers, I have also added a notation for that.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>[ ]</td>
+   <td>round down</td>
+   <td></td>
+</tr>
+<tr>
+   <td></td>
+   <td>Rnd[x]</td>
+   <td>is a random number in the range 0 to x-1</td>
+   <td></td>
+</tr>
+<tr>
+   <td></td>
+   <td>Rec(slvl, slvl0)</td>
+   <td>recursive function, defined as follows:</td>
+   <td></td>
+</tr>
+<tr>
+   <td></td>
+   <td></td>
+   <td>Rec(0, slvl0):</td>
+   <td>[slvl0]</td>
+</tr>
+<tr>
+   <td></td>
+   <td></td>
+   <td>and for slvl&gt;0; Rec(slvl, slvl0):</td>
+   <td>[Rec(slvl-1, slvl0) · 9/8]</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Itt(nbr, value)</td>
+   <td>iterative function, defined as follows:</td>
+   <td></td>
+</tr>
+<tr>
+   <td></td>
+   <td></td>
+   <td>Itt(0, value):</td>
+   <td>value</td>
+</tr>
+<tr>
+   <td></td>
+   <td></td>
+   <td>and for nbr&gt;0; Itt(nbr, value):</td>
+   <td>Itt(nbr-1, value) + value</td>
+</tr>
+<tr>
+   <td colspan=4>&nbsp;</td>
+</tr>
+<tr>
+   <td colspan=4>The easiest way to understand how the recursive function works is to make an example. A Fireball's maximum damage for a level 30 character is:</td>
+</tr>
+<tr>
+   <td colspan=4>
+	<ol>
+	   <li>Rec(slvl, 40 + 2·clvl); clvl=30</li>
+	   <li>First calculate damage for spell level 0:40 + 2·clvl = 100</li>
+	   <li>Damage for spell level 1 can then be calculated as:[100 · 9/8] = 112</li>
+	   <li>Damage for spell level 2 can then be calculated as:[112 · 9/8] = 126</li>
+	   <li>and so on…</li>
+	</ol>
+   </td>
+</tr>
+<tr>
+   <td colspan=4>&nbsp;</td>
+</tr>
+<tr>
+   <td colspan=4>Note that it is very important to round down. For those spells using this recursive formula I have also given a quick formula. For a Fireball's maximum damage it is:</td>
+</tr>
+<tr>
+   <td></td>
+   <td colspan=3>(40 + 2·clvl) · (9/8)<sup>^slvl</sup></td>
+</tr>
+<tr>
+   <td colspan=4>&nbsp;</td>
+</tr>
+<tr>
+   <td colspan=4>Note that this formula does not round down and you will therefore get a damage a bit too high, but it will still be more or less accurate. For a level 20 fireball from a level 50 character the correct maximum damage is 1442, while this quick method gives 1476. In the table below, I have listed values for use with the quick formula.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=center>
+<table border>
+<tr>
+   <th class=Left colspan=4>Summary for quick damage</th>
+</tr>
+<tr>
+   <td>(9/8)<sup>^1</sup>&nbsp;&nbsp;&nbsp;1.125</td>
+   <td>(9/8)<sup>^6</sup>&nbsp;&nbsp;&nbsp;2.027</td>
+   <td>(9/8)<sup>^11</sup>&nbsp;&nbsp;&nbsp;3.653</td>
+   <td>(9/8)<sup>^16</sup>&nbsp;&nbsp;&nbsp;6.583</td>
+</tr>
+<tr>
+   <td>(9/8)<sup>^2</sup>&nbsp;&nbsp;&nbsp;1.266</td>
+   <td>(9/8)<sup>^7</sup>&nbsp;&nbsp;&nbsp;2.281</td>
+   <td>(9/8)<sup>^12</sup>&nbsp;&nbsp;&nbsp;4.110</td>
+   <td>(9/8)<sup>^17</sup>&nbsp;&nbsp;&nbsp;7.406</td>
+</tr>
+<tr>
+   <td>(9/8)<sup>^3</sup>&nbsp;&nbsp;&nbsp;1.424</td>
+   <td>(9/8)<sup>^8</sup>&nbsp;&nbsp;&nbsp;2.566</td>
+   <td>(9/8)<sup>^13</sup>&nbsp;&nbsp;&nbsp;4.624</td>
+   <td>(9/8)<sup>^18</sup>&nbsp;&nbsp;&nbsp;8.332</td>
+</tr>
+<tr>
+   <td>(9/8)<sup>^4</sup>&nbsp;&nbsp;&nbsp;1.602</td>
+   <td>(9/8)<sup>^9</sup>&nbsp;&nbsp;&nbsp;2.887</td>
+   <td>(9/8)<sup>^14</sup>&nbsp;&nbsp;&nbsp;5.202</td>
+   <td>(9/8)<sup>^19</sup>&nbsp;&nbsp;&nbsp;9.373</td>
+</tr>
+<tr>
+   <td>(9/8)<sup>^5</sup>&nbsp;&nbsp;&nbsp;1.802</td>
+   <td>(9/8)<sup>^10</sup>&nbsp;&nbsp;&nbsp;3.247</td>
+   <td>(9/8)<sup>^15</sup>&nbsp;&nbsp;&nbsp;5.852</td>
+   <td>(9/8)<sup>^20</sup>&nbsp;&nbsp;&nbsp;10.545</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=left>
+<table width=100% class=Texttable valign=top>
+<col width=20><col width=250><col width=400>
+<tr>
+   <td colspan=3>Lets make an example for the iterative function as well. Take the damage of the flash spell (case 1). It uses a recursive formulas where the slvl0 (see above) is actually first calculated using an iterative formula. Lets calculate slvl0 for a level 30 character:</td>
+</tr>
+<tr>
+   <td></td>
+   <td colspan=2>slvl0 = Itt(clvl, Rnd[20] + 1); clvl=30</td>
+</tr>
+<tr>
+   <td colspan=3>This means we should, 30 times, calculate Rnd[20] + 1 and add all those 30 values together. For each value, a new random number should be created, for if the same random number would be used, it would have been written as clvl·(Rnd[20] + 1) instead. This sum of 30 values, ranging from 1 to 20 in the example, is the slvl0 which is then used in the recursive formula. It is worth noticing that if there is any random number used in the iterative formula, the result would typically be a distribution of the values as in a bell curve.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Splash damage</td>
+</tr>
+<tr>
+   <td colspan=3>Some spells do additional splash damage. Splash damage is always considered a separate attack and thus does its own to hit check and can hit or miss independently from the initial attack. Of course, there need to be some hit before the splash damage is applied. Such a hit can be either a normal target or such a thing as a wall. As an example a fireball will cause splash damage to all adjacent locations when it hits a wall.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div class=Sub id=4.1.3>4.1.3 Spells available in Diablo</div><br>
+
+<p>The spells below are listed in alphabetical order and are available in both Diablo and Hellfire. For skills, see chapter 2.4. In those cases a spell can be used by a monster, see chapter 0.</p>
+
+<br>
+<div align=center>
+<table class=Spell border>
+<col width=50%><col width=50%>
+<tr>
+   <th>Apocalypse</th>
+   <th>Blood Star</th>
+</tr>
+<tr>
+   <td>Type: n/a
+      <br>Min. Damage: clvl
+      <br>Max. Damage: 6·clvl
+      <br>Real damage: Itt(clvl, Rnd[6] + 1)
+      <br>Blockable: Yes</td>
+   <td>Type: magic
+      <br>Damage: 3·slvl + [Mag/2] - [Mag/8]
+      <br>Speed: 16
+      <br>Blockable: Yes</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Works against all monsters, even triple immune ones.
+      <br>*&nbsp;&nbsp;In Hellfire, this spell only works on monsters you have a line of sight to.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Costs 5 life to cast or 5 extra mana if you use Mana Shield. This cost is applied even if the spell is cast from a staff.</td>
+</tr>
+<tr>
+   <th>Bone Spirit</th>
+   <th>Chain Lightning</th>
+</tr>
+<tr>
+   <td>Type: magic
+      <br>Damage against monster: 1/3 of targets HP
+      <br>Damage against player: 1/6 of targets life
+      <br>Speed: 16
+      <br>Blockable: Yes
+      <br>*&nbsp;&nbsp;Note that the damage value given above is still subject to reduction due to resistance.</td>
+   <td>Type: lightning
+      <br>Min. Damage: 4
+      <br>Max. Damage: 4 + 2·clvl
+      <br>Real Damage: Rnd[clvl] + Rnd[2] + 2
+      <br>Bolts: 1 + numbers of monsters in range
+      <br>Range: 2 + slvl (max 18)
+      <br>Speed: 32
+      <br>Duration: ([slvl/2] + 6)/20 seconds
+      <br>Blockable: No</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Costs 6 life to cast or 6 extra mana if you use Mana Shield. This cost is applied even if the spell is cast from a staff.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;You get one bolt in the direction where you aim with your mouse and one additional bolt for each monster in range.
+      <br>*&nbsp;&nbsp;This spell is well known for causing gaps at high levels and/or when there are many monsters within range.
+      <br>*&nbsp;&nbsp;The lightning is actually a stationary effect, but the initiation will be delayed the further away it appears, thus giving an appearance of moving. This delay &quot;travels&quot; with a speed of 32.
+      <br>*&nbsp;&nbsp;The bolt will try to hit once each 0.05 seconds for a total of [slvl/2] + 6 times.</td>
+</tr>
+<tr>
+   <th>Charged Bolt</th>
+   <th>Elemental</th>
+</tr>
+<tr>
+   <td>Type: lightning
+      <br>Min. Damage: 1
+      <br>Max. Damage: 1 + [Mag/4]
+      <br>Number of bolts: 4 + [slvl/2]
+      <br>Speed: 8
+      <br>Blockable: Yes</td>
+   <td>Type: fire
+      <br>Min. Damage: Rec(slvl, 4 + 2·clvl)
+      <br>Max. Damage: Rec(slvl, 40 + 2·clvl)
+      <br>Quick Min. Damage: (4 + 2·clvl) · (9/8)<SUP>^slvl</SUP>
+      <br>Quick Max. Damage: (40 + 2·clvl) · (9/8)<SUP>^slvl</SUP>
+      <br>Real Damage: Rec(slvl, 2·(Rnd[10]+Rnd[10]+clvl) + 4)/2
+      <br>Speed: 16
+      <br>Blockable: Yes</td>
+</tr>
+<tr>
+   <td>&nbsp;</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;This is basically a fireball that has some homing abilities.
+      <br>*&nbsp;&nbsp;It does half the damage of a fireball, but can hit two targets.
+      <br>*&nbsp;&nbsp;Splash damage is 1/64<SUP>th</SUP> of the damage and is applied for 0.7 seconds and will try to hit every 0.05 second (for a total of 14 times) and is not blockable.</td>
+</tr>
+<tr>
+   <th>Fireball</th>
+   <th>Firebolt</th>
+</tr>
+<tr>
+   <td>Type: fire
+      <br>Min. Damage: Rec(slvl, 4 + 2·clvl)
+      <br>Max. Damage: Rec(slvl, 40 + 2·clvl)
+      <br>Quick Min. Damage: (4 + 2·clvl) · (9/8)<SUP>^slvl</SUP>
+      <br>Quick Max. Damage: (40 + 2·clvl) · (9/8)<SUP>^slvl</SUP>
+      <br>Real Damage: Rec(slvl, 2·(Rnd[10]+Rnd[10]+clvl) + 4)
+      <br>Speed: 16 + 2·slvl (max 50)
+      <br>Blockable: Yes</td>
+   <td>Type: fire
+      <br>Min. Damage: 1 + slvl + [Mag/8]
+      <br>Max. Damage: 10 + slvl + [Mag/8]
+      <br>Real Damage: Rnd[10] + slvl + [Mag/8] + 1
+      <br>Speed: 16 + 2·slvl
+      <br>Blockable: Yes</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;A fireball cause splash damage in adjacent hexes as well as in the target hex. Splash damage is equal to the damage of the fireball itself.
+      <br>*&nbsp;&nbsp;If the fireball has traveled over some obstacle on its way to its target, the splash damage normally does not occur.
+      <br>*&nbsp;&nbsp;You can block either the fireball or the splash, but not both.</td>
+   <td>&nbsp;</td>
+</tr>
+<tr>
+   <th>Fire Wall</th>
+   <th>Flame Wave</th>
+</tr>
+<tr>
+   <td>Type: fire
+      <br>Min. Damage: 4 + 2·clvl
+      <br>Max. Damage: 40 + 2·clvl
+      <br>Real Damage: (Rnd[10] + Rnd[10] + clvl + 2)/8
+      <br>Duration: 8 + 8·slvl seconds (12 + 8·slvl in Hellfire)
+      <br>Number of flames: 11
+      <br>Blockable: No</td>
+   <td>Type: fire
+      <br>Min. Damage: 6 + 6·clvl
+      <br>Max. Damage: 60 + 6·clvl
+      <br>Real Damage: Rnd[10] + clvl + 1
+      <br>Speed: 16
+      <br>Number of flames: 5 + [slvl/2]
+      <br>Blockable: Yes</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;The central fire wall flame actually consists of two flames on top of each other, with the result of a damage for that &quot;flame&quot; being double.
+      <br>*&nbsp;&nbsp;The Fire Wall will disappear immediately if you gain any level in the spell.
+      <br>*&nbsp;&nbsp;Fire Walls are treated as traps against players, including the caster.
+      <br>*&nbsp;&nbsp;The flame will try to hit once every 0.05 seconds for a total of 160 + 160·slvl times (240 + 160·slvl times in Hellfire).</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Flame Waves are treated as traps against players, including the caster.</td>
+</tr>
+<tr>
+   <th>Flash</th>
+   <th>Golem</th>
+</tr>
+<tr>
+   <td>Type: magic  (but uses same animation as lightning)
+      <br>Min. Damage: [3·Rec(slvl, clvl)/2]
+      <br>Max. Damage: 2·[3·Rec(slvl, clvl)/2]
+      <br>Quick Min. Damage: 3·clvl/2 · (9/8)<SUP>^slvl</SUP>
+      <br>Quick Max. Damage: 3·clvl · (9/8)<SUP>^slvl</SUP>
+      <br>Real Damage 1: [3·Rec(slvl, Itt(clvl, Rnd[20] + 1))/2]/64
+      <br>Real Damage 2: [3·Rec(slvl, Itt(clvl, Rnd[2] + 1))/2]/64
+      <br>Duration: 0.95 seconds
+      <br>Blockable: No</td>
+   <td>Type: n/a (but uses same animation as fire)
+      <br>Stated damage: 11-17 (quite meaningless number)
+      <br>The golem has the following stats:
+      <br>&nbsp;&nbsp;HP: 2·maxmana/3 + 10·slvl
+      <br>&nbsp;&nbsp;AC: 25
+      <br>&nbsp;&nbsp;To Hit: 40 + 2·clvl + 5·slvl
+      <br>&nbsp;&nbsp;Min. Damage: 8 + 2·slvl
+      <br>&nbsp;&nbsp;Max. Damage: 16 + 2·slvl
+      <br>&nbsp;&nbsp;mlvl: 12 (modified for difficulty)
+      <br>HP regeneration: 1.9, 4.1 and 6.6 each second on normal, nightmare and hell difficulty (same as for normal monster)
+      <br>Resistances: None
+      <br>Immunities: Apocalypse, Stone Curse and Telekinesis</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;The Flash spell is actually composed of two different effects, the two different Real Damages given are for the two different effects. The first hit in front of you and to the sides, the other behind you.
+      <br>*&nbsp;&nbsp;You seem to be able to do two flashes in a row, then you have to wait for them to finish. Don't know how this affects damage though.
+      <br>*&nbsp;&nbsp;While casting Flash, you are temporarily invulnerable and can't access the normal GUI.
+      <br>*&nbsp;&nbsp;The flash will try to hit once every 0.05 seconds for a total of 19 times.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Each player can have only one golem alive at a time. If you cast the spell again, the first golem will be destroyed.
+      <br>*&nbsp;&nbsp;If more than one player casts golem, they will seek each other out and fight until one of them is destroyed.
+      <br>*&nbsp;&nbsp;You will get normal experience for any monster that your golem kills.
+      <br>*&nbsp;&nbsp;If no monster is close enough to the golem, he will walk in the same direction the owning player is facing.</td>
+</tr>
+<tr>
+   <th>Guardian</th>
+   <th>Healing</th>
+</tr>
+<tr>
+   <td>Type: fire
+      <br>Min. Damage: Rec(slvl, 1 + [clvl/2])
+      <br>Max. Damage: Rec(slvl, 10 + [clvl/2])
+      <br>Quick Min. Damage: (1 + clvl/2) · (9/8)<SUP>^slvl</SUP>
+      <br>Quick Max. Damage: (10 + clvl/2) · (9/8)<SUP>^slvl</SUP>
+      <br>Duration: 4·slvl/5 + 2·clvl/5 seconds (maximum 24 seconds, minimum 0.8 seconds)
+      <br>Fire frequency: every 0.8 second
+      <br>Blockable: Yes
+</td>
+   <td>Type: n/a
+      <br>Mana Cost: 8 + 2·clvl - 3·slvl
+      <br>Min. Healing: bonus·(1 + clvl + slvl)
+      <br>Max. Healing: bonus·(10 + 4·clvl + 6·slvl)
+      <br>Real Healing: bonus·(Rnd[10] + Itt(clvl, Rnd[4]+1) + Itt(slvl, Rnd[6]+1) + 1)
+      <br>Bonus:
+      <br>&nbsp;&nbsp;Warrior, Monk and Barbarian: 2.0
+      <br>&nbsp;&nbsp;Rogue and Bard: 1.5
+      <br>&nbsp;&nbsp;Sorcerer: 1.0</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;The fire bolts shot by a Guardian are determined by the slvl of your Firebolt spell, so the shown damage is actually bogus.
+      <br>*&nbsp;&nbsp;You will get normal experience for any monster that your guardians kill.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;The actual distribution of the healing is bell curve shaped.</td>
+</tr>
+<tr>
+   <th>Heal Other</th>
+   <th>Holy Bolt</th>
+</tr>
+<tr>
+   <td>Type: n/a
+      <br>Mana Cost: 8 + 2·clvl - 3·slvl
+      <br>Min. Healing: bonus·(1 + clvl + slvl)
+      <br>Max. Healing: bonus·(10 + 4·clvl + 6·slvl)
+      <br>Real Healing: bonus·(Rnd[10] + Itt(clvl, Rnd[4]+1) + Itt(slvl, Rnd[6]+1) + 1)
+      <br>Bonus:
+      <br>&nbsp;&nbsp;Monk:3.0
+      <br>&nbsp;&nbsp;Warrior and Barbarian: 2.0
+      <br>&nbsp;&nbsp;Rogue and Bard: 1.5
+      <br>&nbsp;&nbsp;Sorcerer: 1.0
+</td>
+   <td>Type: n/a
+      <br>Min. Damage: 9 + clvl
+      <br>Max. Damage: 18 + clvl
+      <br>Speed: 16 + 2·slvl</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;The actual distribution of the healing is bell curve shaped.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;This spell only works on undead monsters and Diablo. See chapter 5.2 for information about which monsters are undead. It does not work against players.
+      <br>*&nbsp;&nbsp;In Hellfire, Diablo and Bone Demons are resistant to Holy Bolt.</td>
+</tr>
+<tr>
+   <th>Identify</th>
+   <th>Inferno</th>
+</tr>
+<tr>
+   <td>Type: n/a</td>
+   <td>Type: fire
+      <br>Min. Damage: 3
+      <br>Max. Damage: 6 + 3·clvl/2
+      <br>Real Damage: (3·(Rnd[clvl]+Rnd[2]) + 6)/16
+      <br>Range: 3
+      <br>Duration: 1, 1.25 and 1.50 seconds
+      <br>Blockable: No</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Identifies magical and unique items.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;This spell always affect the same area and has the same duration, regardless of spell level.
+      <br>*&nbsp;&nbsp;The three values for duration are for the three target locations starting with the one closest to the caster.
+      <br>*&nbsp;&nbsp;The flame will try to hit once each 0.05 second for a total of 20, 25 and 30 times.</td>
+</tr>
+<tr>
+   <th>Infravision</th>
+   <th>Lightning</th>
+</tr>
+<tr>
+   <td>Type: n/a
+      <br>Duration: Rec(slvl, 79.2) seconds
+      <br>Murky pools:
+      <br>&nbsp;&nbsp;Church: slvl = 2
+      <br>&nbsp;&nbsp;Catacombs: slvl = 4
+      <br>&nbsp;&nbsp;Caves: slvl = 6
+      <br>&nbsp;&nbsp;Hell: slvl = 8</td>
+   <td>Type: lightning
+      <br>Min. Damage: 4
+      <br>Max. Damage: 4 + 2·clvl
+      <br>Real Damage: Rnd[clvl]+ Rnd[2] + 2
+      <br>Speed: 32
+      <br>Duration: ([slvl/2]+6)/20 seconds
+      <br>Blockable: No</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Lets you see a &quot;heat&quot; image of monsters and players outside of your normal view and through walls.
+      <br>*&nbsp;&nbsp;As far as I know, you will never find Murky Pools in the Hive or in the Crypt.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;The lightning is actually a stationary effect, but the initiation will be delayed the further away it appears, thus giving an appearance of moving. This delay &quot;travels&quot; with a speed of 32.
+      <br>*&nbsp;&nbsp;The bolt will try to hit once every 0.05 seconds for a total of [slvl/2]+6 times.</td>
+</tr>
+<tr>
+   <th>Mana Shield</th>
+   <th>Nova</th>
+</tr>
+<tr>
+   <td>Type: n/a
+      <br>Damage reduction in Diablo: 33%
+      <br>Damage reduction in Hellfire: see below
+      <br>Duration: until mana reaches 0 or you leave the current dlvl</td>
+   <td>Type: lightning
+      <br>Min. Damage: 5·Rec(slvl, 2 + [clvl/2])
+      <br>Max. Damage: 5·Rec(slvl, 15 + [clvl/2])
+      <br>Quick Min. Damage: 5·(2 + clvl/2) · (9/8)<SUP>^slvl</SUP>
+      <br>Quick Max. Damage: 5·(15 + clvl/2) · (9/8)<SUP>^slvl</SUP>
+      <br>Real Damage: Rec(slvl, (Itt(5, Rnd[6]) + clvl + 5)/2)
+      <br>Number of bolts: 92
+      <br>Speed: 16
+      <br>Blockable: No</td>
+</tr>
+<tr>
+   <td>Note for Hellfire only:
+      <br>*&nbsp;&nbsp;A Mana shield decreases the damage taken, but due to a bug the reduction actually decreases as slvl goes up. The damage is reduced by the following amount:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100/(3· slvl)%
+      <br>*&nbsp;&nbsp;If slvl is higher than 7, set slvl to 7.
+      <br>Note for both Diablo and Hellfire:
+      <br>*&nbsp;&nbsp;For slvl 0 there is never any reduction of the damage.
+      <br>*&nbsp;&nbsp;Due to a bug you will neither be stunned nor pushed back by <I>the bear</I> or Diablo if you receive damage (before modification by the Mana Shield) greater than your current life.</td>
+   <td>&nbsp;</td>
+</tr>
+<tr>
+   <th>Phasing</th>
+   <th>Resurrect</th>
+</tr>
+<tr>
+   <td>Type: n/a</td>
+   <td>Type: n/a</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Due to being a non targeting spell, it is slightly faster than Teleport and it may thus be easier to escape with this spell than with Teleport.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Brings another player back to life. The player will have 10 life (or his max life if it is less than 10) and 0 mana.</td>
+</tr>
+<tr>
+   <th>Stone Curse</th>
+   <th>Telekinesis</th>
+</tr>
+<tr>
+   <td>Type: n/a
+      <br>Duration: 4.8 + 0.8·slvl seconds (max 12 seconds)</td>
+   <td>Type: n/a</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Stone Curse works on all monsters except Diablo and Na-Krul.
+      <br>*&nbsp;&nbsp;Stone Curse does not work on other players.
+      <br>*&nbsp;&nbsp;Any monster already stoned, charging, phasing in or phasing out is temporary immune to Stone Curse.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Can be used to open doors, chests, bookcases, shrines etc. from a distance.
+      <br>*&nbsp;&nbsp;Can also be used to pick up items from a distance.
+      <br>*&nbsp;&nbsp;Can be used to &quot;knock&quot; monsters back. This &quot;attack&quot;, although it does not inflict any damage, is sufficient for receiving full experience points when the monster later dies. The following Unique or Special monsters are immune to Telekinesis: Snotspill, Gharbad the Weak, Zhar the Mad, Warlord of Blood, Lachdanan, Arch-Bishop Lazarus, Blackjade and Red Vex.
+      <br>*&nbsp;&nbsp;A monster will immediately lose any Stone Curse status if it is targeted with Telekinesis.</td>
+</tr>
+<tr>
+   <th>Teleport</th>
+   <th>Town Portal</th>
+</tr>
+<tr>
+   <td>Type: n/a</td>
+   <td>Type: n/a</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;You can teleport to anywhere within the screen. I have noticed that if you quickly move your cursor before teleporting you often end up teleporting to where your cursor was just before you moved it.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Makes a portal to town and disappears when the caster uses it to go down to the dungeon.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div class=Sub id=4.1.4>4.1.4 New spells in Hellfire</div><br>
+
+<p>The spells in the table below are new spells in Hellfire. Apocalypse and Nova, although new as learnable spells in Hellfire, exist in Diablo and no changes have been done to them. See chapter 4.1.3 for information about Apocalypse and Nova.</p>
+
+
+<br>
+<div align=center>
+<table class=Spell border>
+<col width=50%><col width=50%>
+<tr>
+   <th>Berserk</th>
+   <th>Immolation</th>
+</tr>
+<tr>
+   <td>Type: magic</td>
+   <td>Type: fire
+      <br>Min. Damage: 5·Rec(slvl, 2 + clvl/2)
+      <br>Max. Damage: 5·Rec(slvl, 15 + clvl/2)
+      <br>Quick Min. Damage: 5·(2 + clvl/2) · (9/8)<SUP>^slvl</SUP>
+      <br>Quick Max. Damage: 5·(15 + clvl/2) · (9/8)<SUP>^slvl</SUP>
+      <br>Real Damage: Rec(slvl, (Itt(5, Rnd[6]) + clvl + 5)/2)
+      <br>Number of bolts: 92
+      <br>Speed: 16 + slvl</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;All unique and special monsters are immune to Berserk.
+      <br>*&nbsp;&nbsp;Any monster charging, phasing in or phasing out is temporary immune to Berserk.
+      <br>When cast on a monster, it will consider other monsters as possible targets too.
+      <br>*&nbsp;&nbsp;It will increase the damage done by the monster by between 20 and 30%, plus the level of the spell (possible problem with overflow if value gets higher than 255).
+      <br>*&nbsp;&nbsp;You will not receive any experience for monsters killed by a berserk monster.
+      <br>*&nbsp;&nbsp;Monsters resistant to Magic, will have a 50% chance of escaping the spell. Monsters immune to Magic are of course immune to this spell.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Does the same damage as Nova.
+      <br>*&nbsp;&nbsp;Immolation will use bolts that are basically fireballs (including splash damage), they just has a different damage and speed compared to normal fireballs.</td>
+</tr>
+<tr>
+   <th>Jester</th>
+   <th>Lightning Wall</th>
+</tr>
+<tr>
+   <td>Type: random
+      <br>The following spells are cast by a staff of jester:
+      <br>&nbsp;&nbsp;Firebolt 20%
+      <br>&nbsp;&nbsp;Apocalypse 10%
+      <br>&nbsp;&nbsp;Chain lightning 10%
+      <br>&nbsp;&nbsp;Fireball 10%
+      <br>&nbsp;&nbsp;Fire Wall 10%
+      <br>&nbsp;&nbsp;Guardian 10%
+      <br>&nbsp;&nbsp;Teleport 10%
+      <br>&nbsp;&nbsp;Town Portal 10%
+      <br>&nbsp;&nbsp;Stone Curse 10%</td>
+   <td>Type: lightning
+      <br>Min. Damage: 4 + 2·clvl
+      <br>Max. Damage: 40 + 2·clvl
+      <br>Real Damage: (Rnd[10] + Rnd[10] + clvl + 2)/4
+      <br>Duration: 12.75 + 12.75·slvl seconds
+      <br>Number of bolts: 11
+      <br>Blockable: No</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;This spell can only occur on staves and casts a random spell.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;The central lightning wall bolt actually consists of two bolts on top of each other, with the result of a damage for that &quot;bolt&quot; being double.
+      <br>*&nbsp;&nbsp;Does twice the damage of a Fire Wall and lasts longer.
+      <br>*&nbsp;&nbsp;The flame will try to hit once every 0.05 seconds for a total of 255 + 255·slvl times.</td>
+</tr>
+<tr>
+   <th>Magi</th>
+   <th>Mana</th>
+</tr>
+<tr>
+   <td>Type: n/a</td>
+   <td>Type: n/a
+      <br>Min. Mana: bonus·(1 + clvl + slvl)
+      <br>Max. Mana: bonus·(10 + 4·clvl + 6·slvl)
+      <br>Real Mana restore: bonus·(Itt(clvl, Rnd[4]+1) + Itt(slvl, Rnd[6] + 1) + Rnd[10] + 1)
+      <br>Bonus:
+      <br>&nbsp;&nbsp;Sorcerer:2.0
+      <br>&nbsp;&nbsp;Rogue and Bard:1.5
+      <br>&nbsp;&nbsp;Warrior, Monk and Barbarian:1.0</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Completely restores mana.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;The actual distribution of healing is bell curve shaped.
+      <br>*&nbsp;&nbsp;This spell works like Healing but affects your mana instead of your life.</td>
+</tr>
+<tr>
+   <th>Reflect</th>
+   <th>Ring of Fire</th>
+</tr>
+<tr>
+   <td>Type: n/a
+      <br>Duration: slvl·clvl hits</td>
+   <td>Type: fire
+      <br>Min. Damage: 4 + clvl·2
+      <br>Max. Damage: 40 + clvl·2
+      <br>Duration: 12 + 8·slvl seconds
+      <br>Real Damage: (Rnd[10] + Rnd[10] + clvl + 2)/8
+      <br>Duration: 8 + 8·slvl seconds (12 + 8·slvl in Hellfire)
+      <br>Number of flames: 22
+      <br>Blockable: No</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Reduces melee damage by 20-29% and reflects it back to the attacking monster. Spell level determines number of hits it lasts.
+      <br>*&nbsp;&nbsp;Even if you block an attack, 20-29% of the damage is reflected back to the attacking monster.
+      <br>*&nbsp;&nbsp;An attack counts as a hit even if you block it as it will reflect some damage.
+      <br>*&nbsp;&nbsp;The Reflect will be terminated if you die or leave the current dlvl.</td>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Does the same damage as a Fire Wall and lasts the same amount of time.
+      <br>*&nbsp;&nbsp;The Ring of Fire will disappear immediately if you gain any level in the spell.
+      <br>*&nbsp;&nbsp;Fire Walls are treated as traps against players, including the caster.
+      <br>*&nbsp;&nbsp;The flame will try to hit once every 0.05 seconds for a total of 160 + 160·slvl times.</td>
+</tr>
+<tr>
+   <th>Search</th>
+   <th>Warp</th>
+</tr>
+<tr>
+   <td>Type: n/a
+      <br>Duration: 12.25 + 10·slvl + clvl seconds</td>
+   <td>Type: n/a</td>
+</tr>
+<tr>
+   <td>Note:
+      <br>*&nbsp;&nbsp;Makes items on the ground shine.
+      <br>*&nbsp;&nbsp;Makes items show up on the map.</td>
+   <td>Note: 
+      <br>*&nbsp;&nbsp;Teleports you to the nearest stair.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div class=Sub id=4.1.5>4.1.5 Mana cost and magic requirements for spells</div><br>
+
+<p>Casting spells costs mana and each spell has an initial mana cost at slvl 1. For each slvl the mana cost then decreases by a certain amount specific for each spell until it reaches its minimum mana cost. The table below shows the mana cost for each spell as well as the slvl you reach the minimum mana cost (unless stated otherwise, use the 100% value in the table unless stated otherwise for a character class). Note that Rogues, Monks and Bards only pay 75% of the mana cost (use the 75% value in the table). In Hellfire (after patch 1.01) the Sorcerer only pays 50% of the mana cost (use the 50% value in the table for Hellfire and the 100% value for Diablo). However, no character class ever pays less than the minimum mana cost. Casting spells from scrolls and staves do not cost any mana, but you have to have the required magic to do so.</p>
+
+<p>For staves, the required magic to cast a spell from it is the same as it is to learn the same spell to the first slvl. For scrolls, the mana required to cast a spell is normally a bit less. The table below also shows those required magic levels. For information about prices and slvl of books, scrolls, and staves with spells, see chapter 3.2.3.</p>
+
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left rowspan=2>Name of Spell</th>
+   <th colspan=4>Mana cost</th>
+   <th colspan=2>Magic requirement</th>
+</tr>
+<tr>
+   <th>Initial<sup>1</sup></th>
+   <th>Decrease<br>per slvl</th>
+   <th>Minimum</th>
+   <th>slvl you reaches<br>minimum<br>(100%/75%/50%)</th>
+   <th>Staff<sup>2</sup> and<br>slvl 1</th>
+   <th>Scroll</th>
+</tr>
+<tr>
+   <td class=Left>Apocalypse<sup>3</sup></td>
+   <td>150</td>
+   <td>6</td>
+   <td>90</td>
+   <td>11 / 6 / 1</td>
+   <td>149</td>
+   <td>117</td>
+</tr>
+<tr>
+   <td class=Left>Blood Star</td>
+   <td>25</td>
+   <td>2</td>
+   <td>14</td>
+   <td>7 / 5 / 1</td>
+   <td>70</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Bone Spirit</td>
+   <td>24</td>
+   <td>1</td>
+   <td>12</td>
+   <td>13 / 9 / 1</td>
+   <td>34</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Chain Lightning</td>
+   <td>30</td>
+   <td>1</td>
+   <td>18</td>
+   <td>13 / 7 / 1</td>
+   <td>54</td>
+   <td>35</td>
+</tr>
+<tr>
+   <td class=Left>Charged Bolt</td>
+   <td>6</td>
+   <td>0</td>
+   <td>6</td>
+   <td>1 / 1 / 1</td>
+   <td>25</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Elemental</td>
+   <td>35</td>
+   <td>2</td>
+   <td>20</td>
+   <td>9 / 6 / 1</td>
+   <td>68</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Fireball</td>
+   <td>16</td>
+   <td>1</td>
+   <td>10</td>
+   <td>7 / 4 / 1</td>
+   <td>48</td>
+   <td>31</td>
+</tr>
+<tr>
+   <td class=Left>Firebolt</td>
+   <td>6</td>
+   <td>0.5</td>
+   <td>3</td>
+   <td>7 / 5 / 1</td>
+   <td>15</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Fire Wall</td>
+   <td>28</td>
+   <td>2</td>
+   <td>16</td>
+   <td>7 / 5 / 1</td>
+   <td>27</td>
+   <td>17</td>
+</tr>
+<tr>
+   <td class=Left>Flame Wave</td>
+   <td>35</td>
+   <td>3</td>
+   <td>20</td>
+   <td>6 / 4 / 1</td>
+   <td>54</td>
+   <td>29</td>
+</tr>
+<tr>
+   <td class=Left>Flash</td>
+   <td>30</td>
+   <td>2</td>
+   <td>16</td>
+   <td>8 / 6 / 1</td>
+   <td>33</td>
+   <td>21</td>
+</tr>
+<tr>
+   <td class=Left>Golem</td>
+   <td>100</td>
+   <td>6</td>
+   <td>60</td>
+   <td>8 / 5 / 1</td>
+   <td>81</td>
+   <td>51</td>
+</tr>
+<tr>
+   <td class=Left>Guardian</td>
+   <td>50</td>
+   <td>2</td>
+   <td>30</td>
+   <td>11 / 6 / 1</td>
+   <td>61</td>
+   <td>47</td>
+</tr>
+<tr>
+   <td class=Left>Healing</td>
+   <td colspan=4>special<sup>4</sup></td>
+   <td>17</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td class=Left>Heal Other</td>
+   <td colspan=4>special<sup>4</sup></td>
+   <td>17</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Holy Bolt</td>
+   <td>7</td>
+   <td>1</td>
+   <td>3</td>
+   <td>5 / 4 / 2</td>
+   <td>20</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Identify</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>- / - / -</td>
+   <td>-</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td class=Left>Inferno</td>
+   <td>11</td>
+   <td>1</td>
+   <td>6</td>
+   <td>6 / 4 / 1</td>
+   <td>20</td>
+   <td>19</td>
+</tr>
+<tr>
+   <td class=Left>Infravision</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>- / - / -</td>
+   <td>-</td>
+   <td>23</td>
+</tr>
+<tr>
+   <td class=Left>Lightning</td>
+   <td>10</td>
+   <td>1</td>
+   <td>6</td>
+   <td>5 / 3 / 1</td>
+   <td>20</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td class=Left>Mana Shield</td>
+   <td>33</td>
+   <td>0</td>
+   <td>33</td>
+   <td>1 / 1 / 1</td>
+   <td>25</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td class=Left>Nova<sup>3</sup></td>
+   <td>60</td>
+   <td>3</td>
+   <td>35</td>
+   <td>10 / 6 / 1</td>
+   <td>87</td>
+   <td>57</td>
+</tr>
+<tr>
+   <td class=Left>Phasing</td>
+   <td>12</td>
+   <td>2</td>
+   <td>4</td>
+   <td>5 / 5 / 3</td>
+   <td>39</td>
+   <td>25</td>
+</tr>
+<tr>
+   <td class=Left>Resurrect</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>- / - / -</td>
+   <td>30</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td class=Left>Stone Curse</td>
+   <td>60</td>
+   <td>3</td>
+   <td>40</td>
+   <td>8 / 4 / 1</td>
+   <td>51</td>
+   <td>33</td>
+</tr>
+<tr>
+   <td class=Left>Telekinesis</td>
+   <td>15</td>
+   <td>2</td>
+   <td>8</td>
+   <td>5 / 4 / 1</td>
+   <td>33</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Teleport</td>
+   <td>35</td>
+   <td>3</td>
+   <td>15</td>
+   <td>8 / 6 / 3</td>
+   <td>105</td>
+   <td>81</td>
+</tr>
+<tr>
+   <td class=Left>Town Portal</td>
+   <td>35</td>
+   <td>3</td>
+   <td>18</td>
+   <td>7 / 5 / 1</td>
+   <td>20</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td class=Left>Berserk</td>
+   <td>35</td>
+   <td>3</td>
+   <td>15</td>
+   <td>8 / 6 / 3</td>
+   <td>35</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Immolation</td>
+   <td>60</td>
+   <td>3</td>
+   <td>35</td>
+   <td>10 / 5 / 1</td>
+   <td>87</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Jester</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>- / - / -</td>
+   <td>30</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Lightning Wall</td>
+   <td>28</td>
+   <td>2</td>
+   <td>16</td>
+   <td>7 / 5 / 1</td>
+   <td>27</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Magi</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>- / - / -</td>
+   <td>45</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Mana</td>
+   <td>-</td>
+   <td>-</td>
+   <td>-</td>
+   <td>- / - / -</td>
+   <td>17</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Reflect</td>
+   <td>35</td>
+   <td>3</td>
+   <td>15</td>
+   <td>8 / 6 / 3</td>
+   <td>25</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Ring of Fire</td>
+   <td>28</td>
+   <td>2</td>
+   <td>16</td>
+   <td>7 / 5 / 1</td>
+   <td>27</td>
+   <td>-</td>
+</tr>
+<tr>
+   <td class=Left>Search</td>
+   <td>15</td>
+   <td>1</td>
+   <td>1</td>
+   <td>15 / 15 / 14</td>
+   <td>25</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td class=Left>Warp</td>
+   <td>35</td>
+   <td>3</td>
+   <td>18</td>
+   <td>7 / 5 / 1</td>
+   <td>25</td>
+   <td>0</td>
+</tr>
+
+<tfoot>
+<tr>
+   <td colspan=7>
+      <sup>1</sup>This is also the amount of mana you receive when you read a book of the spell.<br>
+      <sup>2</sup>There is no requirement to cast a spell from a unique staff.<br>
+      <sup>3</sup>You can only learn this spell in Hellfire.<br>
+      <sup>4</sup>Heal and Heal Other cost 8 + 2·clvl - 3·slvl mana to cast.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<p>The table above has the magic requirement to learn a spell to level 1. For each additional spell level the magic requirement is 20% higher to learn. To make it easier for you, the table below lists the magic requirement for each spell and spell level. Note that if the magic requirement is 213 or higher, it is always adjusted to 255.</p>
+
+<br>
+<div align=center>
+<table class=Spell2 border>
+<tr>
+   <th class=LeftCell>Name of Spell</th>
+   <th>1</th>
+   <th>2</th>
+   <th>3</th>
+   <th>4</th>
+   <th>5</th>
+   <th>6</th>
+   <th>7</th>
+   <th>8</th>
+   <th>9</th>
+   <th>10</th>
+   <th>11</th>
+   <th>12</th>
+   <th>13</th>
+   <th>14</th>
+   <th>15</th>
+</tr>
+<tr>
+   <td class=LeftCell>Blood Star</td>
+   <td>70</td>
+   <td>84</td>
+   <td>100</td>
+   <td>120</td>
+   <td>144</td>
+   <td>172</td>
+   <td>206</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Bone Spirit</td>
+   <td>34</td>
+   <td>40</td>
+   <td>48</td>
+   <td>57</td>
+   <td>68</td>
+   <td>81</td>
+   <td>97</td>
+   <td>116</td>
+   <td>139</td>
+   <td>166</td>
+   <td>199</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Chain Lightning</td>
+   <td>54</td>
+   <td>64</td>
+   <td>76</td>
+   <td>91</td>
+   <td>109</td>
+   <td>130</td>
+   <td>156</td>
+   <td>187</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Charged Bolt</td>
+   <td>25</td>
+   <td>30</td>
+   <td>36</td>
+   <td>43</td>
+   <td>51</td>
+   <td>61</td>
+   <td>73</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr class=Line>
+   <td class=LeftCell>Elemental</td>
+   <td>68</td>
+   <td>81</td>
+   <td>97</td>
+   <td>116</td>
+   <td>139</td>
+   <td>166</td>
+   <td>199</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Fireball</td>
+   <td>48</td>
+   <td>57</td>
+   <td>68</td>
+   <td>81</td>
+   <td>97</td>
+   <td>116</td>
+   <td>139</td>
+   <td>166</td>
+   <td>199</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Firebolt</td>
+   <td>15</td>
+   <td>18</td>
+   <td>21</td>
+   <td>25</td>
+   <td>30</td>
+   <td>36</td>
+   <td>43</td>
+   <td>51</td>
+   <td>61</td>
+   <td>73</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+</tr>
+<tr>
+   <td class=LeftCell>Fire Wall</td>
+   <td>27</td>
+   <td>32</td>
+   <td>38</td>
+   <td>45</td>
+   <td>54</td>
+   <td>64</td>
+   <td>76</td>
+   <td>91</td>
+   <td>109</td>
+   <td>130</td>
+   <td>156</td>
+   <td>187</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Flame Wave</td>
+   <td>54</td>
+   <td>64</td>
+   <td>76</td>
+   <td>91</td>
+   <td>109</td>
+   <td>130</td>
+   <td>156</td>
+   <td>187</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr class=Line>
+   <td class=LeftCell>Flash</td>
+   <td>33</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Golem</td>
+   <td>81</td>
+   <td>97</td>
+   <td>116</td>
+   <td>139</td>
+   <td>166</td>
+   <td>199</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Guardian</td>
+   <td>61</td>
+   <td>73</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Healing</td>
+   <td>17</td>
+   <td>20</td>
+   <td>24</td>
+   <td>28</td>
+   <td>33</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+</tr>
+<tr>
+   <td class=LeftCell>Heal Other</td>
+   <td>17</td>
+   <td>20</td>
+   <td>24</td>
+   <td>28</td>
+   <td>33</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+</tr>
+<tr class=Line>
+   <td class=LeftCell>Holy Bolt</td>
+   <td>20</td>
+   <td>24</td>
+   <td>28</td>
+   <td>33</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Inferno</td>
+   <td>20</td>
+   <td>24</td>
+   <td>28</td>
+   <td>33</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Lightning</td>
+   <td>20</td>
+   <td>24</td>
+   <td>28</td>
+   <td>33</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Mana Shield</td>
+   <td>25</td>
+   <td>30</td>
+   <td>36</td>
+   <td>43</td>
+   <td>51</td>
+   <td>61</td>
+   <td>73</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Phasing</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr class=Line>
+   <td class=LeftCell>Stone Curse</td>
+   <td>51</td>
+   <td>61</td>
+   <td>73</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Telekinesis</td>
+   <td>33</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Teleport</td>
+   <td>105</td>
+   <td>126</td>
+   <td>151</td>
+   <td>181</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr class=Line2>
+   <td class=LeftCell>Town Portal</td>
+   <td>20</td>
+   <td>24</td>
+   <td>28</td>
+   <td>33</td>
+   <td>39</td>
+   <td>46</td>
+   <td>55</td>
+   <td>66</td>
+   <td>79</td>
+   <td>94</td>
+   <td>112</td>
+   <td>134</td>
+   <td>160</td>
+   <td>192</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Apocalypse</td>
+   <td>149</td>
+   <td>178</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Berserk</td>
+   <td>35</td>
+   <td>42</td>
+   <td>50</td>
+   <td>60</td>
+   <td>72</td>
+   <td>86</td>
+   <td>103</td>
+   <td>123</td>
+   <td>147</td>
+   <td>176</td>
+   <td>211</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Immolation</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Lightning Wall</td>
+   <td>27</td>
+   <td>32</td>
+   <td>38</td>
+   <td>45</td>
+   <td>54</td>
+   <td>64</td>
+   <td>76</td>
+   <td>91</td>
+   <td>109</td>
+   <td>130</td>
+   <td>156</td>
+   <td>187</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr class=Line>
+   <td class=LeftCell>Nova</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Reflect</td>
+   <td>30</td>
+   <td>36</td>
+   <td>43</td>
+   <td>51</td>
+   <td>61</td>
+   <td>73</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Ring of Fire</td>
+   <td>27</td>
+   <td>32</td>
+   <td>38</td>
+   <td>45</td>
+   <td>54</td>
+   <td>64</td>
+   <td>76</td>
+   <td>91</td>
+   <td>109</td>
+   <td>130</td>
+   <td>156</td>
+   <td>187</td>
+   <td>255</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Search</td>
+   <td>25</td>
+   <td>30</td>
+   <td>36</td>
+   <td>43</td>
+   <td>51</td>
+   <td>61</td>
+   <td>73</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+<tr>
+   <td class=LeftCell>Warp</td>
+   <td>25</td>
+   <td>30</td>
+   <td>36</td>
+   <td>43</td>
+   <td>51</td>
+   <td>61</td>
+   <td>73</td>
+   <td>87</td>
+   <td>104</td>
+   <td>124</td>
+   <td>148</td>
+   <td>177</td>
+   <td>212</td>
+   <td>255</td>
+   <td>255</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div class=Sub id=4.1.6>4.1.6 Spell level of cast spells</div><br>
+
+<p>When you cast a spell, it will always be cast at the slvl you know the spell plus any additional levels you get from items. As your slvl can go down (by hitting an Enchanted shrine, for example), it is possible to get a known spell to slvl 0. When this happens, you can no longer use the spell, unless some items you are wearing raise the slvl above 0. The slvl can never be negative. Maximum base slvl is 15. With the correct items equipped, the modified slvl can be brought to a maximum of 20.</p>
+
+<p>When casting a spell from a scroll or staff, it will have the same slvl as the slvl you know the spell (including any modifications from items). If you don't know the spell it will be cast at slvl 1 (plus any modifications from items). There is a bug, however. If you cast a spell from a scroll and currently have another spell hot keyed, it will use the slvl of the hot keyed spell instead of the spell you are casting. This is true even if you don't know the spell.</p>
+
+<br>
+<br>
+<div class=Sub id=4.1.7>4.1.7 Targeting of spells</div><br>
+
+<p>The casting of spells in Diablo and Hellfire is normally easy to do. Just click on the mouse. Some spells need to be targeted, some change the cursor, and others just cast no matter where you are targeting it. The table below is a summary of how different spells behave.</p>
+
+<p>It is worth noticing that there can be a small delay between the time you click on the mouse and the actual cast of the spell. If you change the cursor position during the time in between, or change the spell, you will normally cast the new spell and the target will be the new position of the cursor. Another side effect of this is that the actual mana reduction is done when the spell is cast which may at times lead to mana reaching negative values (the check for enough mana to cast the spell is done when you click the mouse, while the actual reduction is done when it is cast; due to this effect , one can, if one clicks fast enough, end up with negative mana, or be able to cast a spell twice from a scroll, or squeeze out an extra spell from a staff).</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<tr>
+   <td class=BodyBold colspan=3>Area</td>
+</tr>
+<tr>
+   <td colspan=3>The spell does not target in any way and normally affects a larger area. It does not matter where on the screen you position the cursor when you cast this spell. Nova is such a spell.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Cursor</td>
+</tr>
+<tr>
+   <td colspan=3>The spell will, when cast, change the cursor. You will then have to click on the desired target to be affected by the spell. It does not matter where on the screen you position the cursor when you cast the spell initially. A good example of a spell that affects the cursor is Telekinesis.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Direction</td>
+</tr>
+<tr>
+   <td colspan=3>The spell is only controllable in that you can affect in what direction from your character the spell will go. Flame Wave is such a spell.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Target</td>
+</tr>
+<tr>
+   <td colspan=3>The effect of the spell will target the location (or monster) on the screen where the cursor is positioned at the time you cast the spell. Lightning is such a spell.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Auto</td>
+</tr>
+<tr>
+   <td colspan=3>This spell targets a monster but you do not have to actually point the cursor on the monster, since it will automatically target a specific monster (normally the one closest to the cursor). Some spells are both targeted and automatically seek up a target. This is true for spells like Elemental and Bone Spirit, they are cast at the position you cursor is at but will then automatically seek out a target as well.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold colspan=3>Self</td>
+</tr>
+<tr>
+   <td colspan=3>The spell affects your character directly. Infravision is such a spell.</td>
+</tr>
+<tr>
+   <td colspan=3>&nbsp;</td>
+</tr>
+</table>
+</div>
+
+<div align=center>
+<table class=Left border>
+<tr>
+   <th>Spell</th>
+   <th>Behavior</th>
+   <th>Spell</th>
+   <th>Behavior</th>
+   <th>Spell</th>
+   <th>Behavior</th>
+</tr>
+<tr>
+   <td>Apocalypse</td>
+   <td>Area</td>
+   <td>Healing</td>
+   <td>Self</td>
+   <td>Teleport</td>
+   <td>Target</td>
+</tr>
+<tr>
+   <td>Blood Star</td>
+   <td>Target</td>
+   <td>Heal Other</td>
+   <td>Cursor</td>
+   <td>Town Portal</td>
+   <td>Target</td>
+</tr>
+<tr>
+   <td>Bone Spirit</td>
+   <td>Target/Auto</td>
+   <td>Holy Bolt</td>
+   <td>Target</td>
+   <td>Berserk<sup>2</sup></td>
+   <td>Target/Auto</td>
+</tr>
+<tr>
+   <td>Chain Lightning</td>
+   <td>Target/Auto<sup>1</sup></td>
+   <td>Identify</td>
+   <td>Cursor</td>
+   <td>Immolation</td>
+   <td>Area</td>
+</tr>
+<tr>
+   <td>Charged Bolt</td>
+   <td>Direction</td>
+   <td>Inferno</td>
+   <td>Direction</td>
+   <td>Jester<sup>3</sup></td>
+   <td>n/a</td>
+</tr>
+<tr>
+   <td>Elemental</td>
+   <td>Target/Auto</td>
+   <td>Infravision</td>
+   <td>Self</td>
+   <td>Lightning Wall</td>
+   <td>Target<sup>4</sup></td>
+</tr>
+<tr>
+   <td>Fireball</td>
+   <td>Target</td>
+   <td>Lightning</td>
+   <td>Target</td>
+   <td>Magi</td>
+   <td>Self</td>
+</tr>
+<tr>
+   <td>Firebolt</td>
+   <td>Target</td>
+   <td>Mana Shield</td>
+   <td>Self</td>
+   <td>Mana</td>
+   <td>Self</td>
+</tr>
+<tr>
+   <td>Fire Wall</td>
+   <td>Target<sup>4</sup></td>
+   <td>Nova</td>
+   <td>Area</td>
+   <td>Reflect</td>
+   <td>Self</td>
+</tr>
+<tr>
+   <td>Flame Wave</td>
+   <td>Direction</td>
+   <td>Phasing</td>
+   <td>Self/Auto</td>
+   <td>Ring of Fire</td>
+   <td>Area</td>
+</tr>
+<tr>
+   <td>Flash</td>
+   <td>Area</td>
+   <td>Resurrect</td>
+   <td>Cursor</td>
+   <td>Search</td>
+   <td>Self</td>
+</tr>
+<tr>
+   <td>Golem</td>
+   <td>Target/Auto</td>
+   <td>Stone Curse<sup>2</sup></td>
+   <td>Target/Auto</td>
+   <td>Warp</td>
+   <td>Self/Auto</td>
+</tr>
+<tr>
+   <td>Guardian</td>
+   <td>Target/Auto</td>
+   <td>Telekinesis</td>
+   <td>Cursor</td>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=6>
+      <sup>1</sup>Chain Lightning will produce one lightning bolt that is targeted just as normal lightning. The other bolts are automatically targeted.<br>
+      <sup>2</sup>If there is no monster targeted, Stone Curse and Berserk will affect the monster closest to the cursor.<br>
+      <sup>3</sup>This spell casts another random spell. See each individual spell for the behavior.<br>
+      <sup>4</sup>The direction of the wall is always perpendicular to the caster.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+
+
+
+
+
+</body>
+
+

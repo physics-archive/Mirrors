@@ -1,0 +1,2229 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG5-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Section 5.3</title>
+
+</head>
+
+<body>
+
+<div class=Section>5.3 Monster properties</div><br>
+
+<p>Apart from the data given in earlier chapters, monsters have other properties that are often shared within a monster type. This chapter will list such properties, which might be of interest in various ways. Currently the information includes monster size and how it affects selection of monsters for a specific dungeon level, attack types (for information in more detail about the behavior of the monsters according to attack type, see chapter 5.5), intelligence factor, abilities to open doors and follow target around corners, and timing information.</p>
+
+<div class=Sub id=5.3.1>5.3.1 Monster size</div><br>
+
+<p>Each monster type has a size associated with it. That size is used when selecting monsters for a specific level of the dungeon. Maximum total size of all monsters types on a level is 4000. Most monsters in the church, for example, have small sizes, and that is the reason why you will see many different monsters on each level. Monsters in hell and the Crypt normally have large sizes and thus you will only see two or three different monster types at once. In the tables below you can find the size of all monster types in the game. Note that golems also have a size, which is important for monster selection (see below).</p>
+
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=6>Monsters in Diablo</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th class=Right>Size</th>
+   <th class=Left>Monster type</th>
+   <th class=Right>Size</th>
+   <th class=Left>Monster type</th>
+   <th class=Right>Size</th>
+</tr>
+<tr>
+   <td class=Left>Zombies</td>
+   <td class=Right>799</td>
+   <td class=Left>Goat Men</td>
+   <td class=Right>1 030</td>
+   <td class=Left>Vipers</td>
+   <td class=Right>1 270</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One, spear</td>
+   <td class=Right>543</td>
+   <td class=Left>Goat Men Archers</td>
+   <td class=Right>1 040</td>
+   <td class=Left>Succubi</td>
+   <td class=Right>980</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One, sword</td>
+   <td class=Right>623</td>
+   <td class=Left>Overlords</td>
+   <td class=Right>1 130</td>
+   <td class=Left>Knights</td>
+   <td class=Right>2 120</td>
+</tr>
+<tr>
+   <td class=Left>Skeletons</td>
+   <td class=Right>553</td>
+   <td class=Left>Gargoyles</td>
+   <td class=Right>1 650</td>
+   <td class=Left>Mages</td>
+   <td class=Right>2 000</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Archers</td>
+   <td class=Right>567</td>
+   <td class=Left>Magma Demons</td>
+   <td class=Right>1 680</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Captains</td>
+   <td class=Right>575</td>
+   <td class=Left>Horned Demons</td>
+   <td class=Right>1 630</td>
+   <td class=Left>Golem</td>
+   <td class=Right>386</td>
+</tr>
+<tr>
+   <td class=Left>Scavengers</td>
+   <td class=Right>410</td>
+   <td class=Left>Spitting Terrors</td>
+   <td class=Right>716</td>
+   <td class=Left>The Butcher</td>
+   <td class=Right>980</td>
+</tr>
+<tr>
+   <td class=Left>Winged Fiends</td>
+   <td class=Right>364</td>
+   <td class=Left>Lightning Demons</td>
+   <td class=Right>1 740</td>
+   <td class=Left>Skeleton King</td>
+   <td class=Right>1 010</td>
+</tr>
+<tr>
+   <td class=Left>The Hiddens</td>
+   <td class=Right>992</td>
+   <td class=Left>Balrogs</td>
+   <td class=Right>2 200</td>
+   <td class=Left>Diablo</td>
+   <td class=Right>2 000</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=6>New monsters in Hellfire</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th class=Right>Size</th>
+   <th class=Left>Monster type</th>
+   <th class=Right>Size</th>
+   <th class=Left>Monster type</th>
+   <th class=Right>Size</th>
+</tr>
+<tr>
+   <td class=Left>The Shredded</td>
+   <td class=Right>484</td>
+   <td class=Left>Lashworm</td>
+   <td class=Right>800</td>
+   <td class=Left>Arch Lich</td>
+   <td class=Right>800</td>
+</tr>
+<tr>
+   <td class=Left>Felltwin</td>
+   <td class=Right>800</td>
+   <td class=Left>Torchant</td>
+   <td class=Right>800</td>
+   <td class=Left>Satyr Lord</td>
+   <td class=Right>800</td>
+</tr>
+<tr>
+   <td class=Left>Hellboar</td>
+   <td class=Right>800</td>
+   <td class=Left>Gravedigger</td>
+   <td class=Right>800</td>
+   <td class=Left>Crypt Demon</td>
+   <td class=Right>800</td>
+</tr>
+<tr>
+   <td class=Left>Hork Spawn</td>
+   <td class=Right>520</td>
+   <td class=Left>Tomb Rat</td>
+   <td class=Right>550</td>
+   <td class=Left>Biclops</td>
+   <td class=Right>800</td>
+</tr>
+<tr>
+   <td class=Left>Stinger</td>
+   <td class=Right>305</td>
+   <td class=Left>Devil Kin Brute</td>
+   <td class=Right>800</td>
+   <td class=Left>Flesh Thing</td>
+   <td class=Right>800</td>
+</tr>
+<tr>
+   <td class=Left>Venomtail</td>
+   <td class=Right>305</td>
+   <td class=Left>Firebat</td>
+   <td class=Right>550</td>
+   <td class=Left>Reaper</td>
+   <td class=Right>800</td>
+</tr>
+<tr>
+   <td class=Left>Psychorb</td>
+   <td class=Right>800</td>
+   <td class=Left>Hellbat</td>
+   <td class=Right>550</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Necromorb</td>
+   <td class=Right>800</td>
+   <td class=Left>Skullwing</td>
+   <td class=Right>1 740</td>
+   <td class=Left>Hork Demon</td>
+   <td class=Right>800</td>
+</tr>
+<tr>
+   <td class=Left>Arachnon</td>
+   <td class=Right>800</td>
+   <td class=Left>Bone Demon</td>
+   <td class=Right>1 740</td>
+   <td class=Left>The Defiler</td>
+   <td class=Right>800</td>
+</tr>
+<tr>
+   <td class=Left>Spider Lord</td>
+   <td class=Right>800</td>
+   <td class=Left>Lich</td>
+   <td class=Right>800</td>
+   <td class=Left>Na-Krul</td>
+   <td class=Right>1 200</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div class=Sub id=5.3.2>5.3.2 Monster occurrences in the dungeons</div><br>
+
+<p class=NoInd>The process of selecting monsters for a dungeon level is as follows:</p>
+
+<ol>
+   <li>Subtract the golem's size from the total size as it can always exist on every level.</li>
+   <li>If there are any special quest monsters on a dungeon level (like Snotspill, The Butcher, Lachdanan, Hork Demon and so on) subtract the size of that monster type. That monster type will also appear, if possible, on that dungeon level of course.</li>
+   <li>In Hellfire, if the dungeon level is level 2 or 3 of the Hive, subtract the size of the Hork Spawn. That monster type will also appear on those dungeon levels of course.</li>
+   <li>In Hellfire, if the dungeon level is level 4 of the Crypt, subtract the size of the Arch Lich. That monster type will also appear on that dungeon level of course.</li>
+   <li>In multi player, if it is the same dungeon level as the Skeleton King appears on (dlvl 3), pick a random skeleton type that can appear on that dungeon level. Subtract its size. It can now appear on that dungeon level and will be the skeleton type that appears around the Skeleton King.</li>
+   <li>If possible, pick a random monster type of the ones that has not yet been picked that can appear on the dungeon level in question, and whose size is equal or less than the size left. Subtract that monsters size; it can now appear on the level.</li>
+   <li>If there are still monsters that have a size less than the size left, go to step 6. Otherwise, end monster type selection.</li>
+   <li>If any monster type that was picked has a unique monster set to appear on the dlvl in question, that unique monster will always appear.</li>
+</ol>
+
+<p>All special mini levels found in single player are created by special code and thus are not created according to the above. The same is true for dlvl 16. Which is also created by special code and does not follow the above steps. In the same way, the monsters in Arch-Bishop Lazarus' room on dlvl 15 in multi player are not counted toward the size limit. They are considered when the game picks possible unique monsters for the dungeon level, though. That is the reason you will always see Bloodlust on dlvl 15 in multi player.</p>
+
+<p>With the algorithm above and the monster size also from the tables above, it is quite easy to calculate the probability of a specific monster appearing on a dlvl. The table below has been calculated using the above information. For information about on what dlvl monsters can occur, see chapter 5.2.1 and 5.2.3.</p>
+
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left>dlvl 1 - Church</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 3 - Church</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 4 - Church</th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>Zombie</td>
+   <td class=Right>100</td>
+   <td class=Left>Ghoul</td>
+   <td class=Right>13</td>
+   <td class=Left>Rotting Carcass</td>
+   <td class=Right>24</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One (spear)</td>
+   <td class=Right>100</td>
+   <td class=Left>Rotting Carcass</td>
+   <td class=Right>13</td>
+   <td class=Left>Black Death</td>
+   <td class=Right>24</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton</td>
+   <td class=Right>100</td>
+   <td class=Left>Black Death</td>
+   <td class=Right>13</td>
+   <td class=Left>Devil Kin (spear)</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One (sword)</td>
+   <td class=Right>100</td>
+   <td class=Left>Carver (spear)</td>
+   <td class=Right>15</td>
+   <td class=Left>Dark One (spear)</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Scavenger</td>
+   <td class=Right>100</td>
+   <td class=Left>Devil Kin (spear)</td>
+   <td class=Right>15</td>
+   <td class=Left>Devil Kin (sword)</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Captain</td>
+   <td class=Right>100</td>
+   <td class=Left>Dark One (spear)</td>
+   <td class=Right>15</td>
+   <td class=Left>Dark One (sword)</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <th class=Left>dlvl 2 - Church</th>
+   <th class=Right>%</th>
+   <td class=Left>Carver (sword)</td>
+   <td class=Right>14</td>
+   <td class=Left>Burning Dead</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Zombie</td>
+   <td class=Right>18</td>
+   <td class=Left>Devil Kin (sword)</td>
+   <td class=Right>14</td>
+   <td class=Left>Horror</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Ghoul</td>
+   <td class=Right>18</td>
+   <td class=Left>Dark One (sword)</td>
+   <td class=Right>14</td>
+   <td class=Left>Corpse Bow</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Rotting Carcass</td>
+   <td class=Right>18</td>
+   <td class=Left>Corpse Axe</td>
+   <td class=Right>24</td>
+   <td class=Left>Burning Dead Archer</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One (spear)</td>
+   <td class=Right>20</td>
+   <td class=Left>Burning Dead</td>
+   <td class=Right>24</td>
+   <td class=Left>Horror Archer</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Carver (spear)</td>
+   <td class=Right>20</td>
+   <td class=Left>Horror</td>
+   <td class=Right>24</td>
+   <td class=Left>Corpse Captain</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Devil Kin (spear)</td>
+   <td class=Right>20</td>
+   <td class=Left>Skeleton Archer</td>
+   <td class=Right>24</td>
+   <td class=Left>Burning Dead Captain</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One (sword)</td>
+   <td class=Right>20</td>
+   <td class=Left>Corpse Bow</td>
+   <td class=Right>24</td>
+   <td class=Left>Horror Captain</td>
+   <td class=Right>26</td>
+</tr>
+<tr>
+   <td class=Left>Carver (sword)</td>
+   <td class=Right>20</td>
+   <td class=Left>Burning Dead Archer</td>
+   <td class=Right>24</td>
+   <td class=Left>Plague Eater</td>
+   <td class=Right>31</td>
+</tr>
+<tr>
+   <td class=Left>Devil Kin (sword)</td>
+   <td class=Right>20</td>
+   <td class=Left>Skeleton Captain</td>
+   <td class=Right>24</td>
+   <td class=Left>Shadow Beast</td>
+   <td class=Right>31</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton</td>
+   <td class=Right>20</td>
+   <td class=Left>Corpse Captain</td>
+   <td class=Right>24</td>
+   <td class=Left>Bone Gasher</td>
+   <td class=Right>31</td>
+</tr>
+<tr>
+   <td class=Left>Corpse Axe</td>
+   <td class=Right>20</td>
+   <td class=Left>Burning Dead Captain</td>
+   <td class=Right>25</td>
+   <td class=Left>Blink</td>
+   <td class=Right>34</td>
+</tr>
+<tr>
+   <td class=Left>Burning Dead</td>
+   <td class=Right>20</td>
+   <td class=Left>Scavenger</td>
+   <td class=Right>20</td>
+   <td class=Left>Gloom</td>
+   <td class=Right>34</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Archer</td>
+   <td class=Right>20</td>
+   <td class=Left>Plague Eater</td>
+   <td class=Right>20</td>
+   <td class=Left>Hidden</td>
+   <td class=Right>22</td>
+</tr>
+<tr>
+   <td class=Left>Corpse Bow</td>
+   <td class=Right>20</td>
+   <td class=Left>Shadow Beast</td>
+   <td class=Right>20</td>
+   <td class=Left>Flesh Clan</td>
+   <td class=Right>22</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Captain</td>
+   <td class=Right>20</td>
+   <td class=Left>Fiend</td>
+   <td class=Right>23</td>
+   <td class=Left>Flesh Clan Archer</td>
+   <td class=Right>22</td>
+</tr>
+<tr>
+   <td class=Left>Corpse Captain</td>
+   <td class=Right>20</td>
+   <td class=Left>Blink</td>
+   <td class=Right>23</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Scavenger</td>
+   <td class=Right>28</td>
+   <td class=Left>Hidden</td>
+   <td class=Right>11</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Plague Eater</td>
+   <td class=Right>28</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Fiend</td>
+   <td class=Right>35</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Hidden</td>
+   <td class=Right>16</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <th class=Left>dlvl 5 - Catacombs</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 6 - Catacombs</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 7 - Catacombs</th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>Black Death</td>
+   <td class=Right>23</td>
+   <td class=Left>Horror Archer</td>
+   <td class=Right>31</td>
+   <td class=Left>Familiar</td>
+   <td class=Right>75</td>
+</tr>
+<tr>
+   <td class=Left>Dark One (spear)</td>
+   <td class=Right>26</td>
+   <td class=Left>Horror Captain</td>
+   <td class=Right>31</td>
+   <td class=Left>Stalker</td>
+   <td class=Right>20</td>
+</tr>
+<tr>
+   <td class=Left>Dark One (sword)</td>
+   <td class=Right>26</td>
+   <td class=Left>Bone Gasher</td>
+   <td class=Right>44</td>
+   <td class=Left>Unseen</td>
+   <td class=Right>20</td>
+</tr>
+<tr>
+   <td class=Left>Horror</td>
+   <td class=Right>26</td>
+   <td class=Left>Gloom</td>
+   <td class=Right>47</td>
+   <td class=Left>Stone Clan</td>
+   <td class=Right>20</td>
+</tr>
+<tr>
+   <td class=Left>Burning Dead Archer</td>
+   <td class=Right>26</td>
+   <td class=Left>Familiar</td>
+   <td class=Right>47</td>
+   <td class=Left>Fire Clan</td>
+   <td class=Right>20</td>
+</tr>
+<tr>
+   <td class=Left>Horror Archer</td>
+   <td class=Right>26</td>
+   <td class=Left>Stalker</td>
+   <td class=Right>23</td>
+   <td class=Left>Night Clan</td>
+   <td class=Right>20</td>
+</tr>
+<tr>
+   <td class=Left>Burning Dead Captain</td>
+   <td class=Right>25</td>
+   <td class=Left>Unseen</td>
+   <td class=Right>23</td>
+   <td class=Left>Stone Clan Archer</td>
+   <td class=Right>20</td>
+</tr>
+<tr>
+   <td class=Left>Horror Captain</td>
+   <td class=Right>25</td>
+   <td class=Left>Flesh Clan</td>
+   <td class=Right>22</td>
+   <td class=Left>Fire Clan Archer</td>
+   <td class=Right>20</td>
+</tr>
+<tr>
+   <td class=Left>Shadow Beast</td>
+   <td class=Right>32</td>
+   <td class=Left>Stone Clan</td>
+   <td class=Right>22</td>
+   <td class=Left>Night Clan Archer</td>
+   <td class=Right>20</td>
+</tr>
+<tr>
+   <td class=Left>Bone Gasher</td>
+   <td class=Right>32</td>
+   <td class=Left>Fire Clan</td>
+   <td class=Right>22</td>
+   <td class=Left>Overlord</td>
+   <td class=Right>19</td>
+</tr>
+<tr>
+   <td class=Left>Blink</td>
+   <td class=Right>36</td>
+   <td class=Left>Flesh Clan Archer</td>
+   <td class=Right>22</td>
+   <td class=Left>Mud Man</td>
+   <td class=Right>19</td>
+</tr>
+<tr>
+   <td class=Left>Gloom</td>
+   <td class=Right>36</td>
+   <td class=Left>Stone Clan Archer</td>
+   <td class=Right>22</td>
+   <td class=Left>Winged-Demon</td>
+   <td class=Right>15</td>
+</tr>
+<tr>
+   <td class=Left>Hidden</td>
+   <td class=Right>21</td>
+   <td class=Left>Fire Clan Archer</td>
+   <td class=Right>22</td>
+   <td class=Left>Gargoyle</td>
+   <td class=Right>15</td>
+</tr>
+<tr>
+   <td class=Left>Stalker</td>
+   <td class=Right>21</td>
+   <td class=Left>Overlord</td>
+   <td class=Right>22</td>
+   <td class=Left>Horned Demon</td>
+   <td class=Right>15</td>
+</tr>
+<tr>
+   <td class=Left>Flesh Clan</td>
+   <td class=Right>20</td>
+   <td class=Left>Winged-Demon</td>
+   <td class=Right>17</td>
+   <td class=Left>Acid Beast</td>
+   <td class=Right>34</td>
+</tr>
+<tr>
+   <td class=Left>Stone Clan</td>
+   <td class=Right>20</td>
+   <td class=Left>Acid Beast</td>
+   <td class=Right>28</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Flesh Clan Archer</td>
+   <td class=Right>20</td>
+   <th class=Left>dlvl 8 - Catacombs</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 8 - Catacombs</th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>Stone Clan Archer</td>
+   <td class=Right>20</td>
+   <td class=Left>Familiar</td>
+   <td class=Right>49</td>
+   <td class=Left>Toad Demon</td>
+   <td class=Right>18</td>
+</tr>
+<tr>
+   <td class=Left>Overlord</td>
+   <td class=Right>20</td>
+   <td class=Left>Unseen</td>
+   <td class=Right>19</td>
+   <td class=Left>Gargoyle</td>
+   <td class=Right>15</td>
+</tr>
+<tr>
+   <td class=Left>Winged-Demon</td>
+   <td class=Right>16</td>
+   <td class=Left>Illusion Weaver</td>
+   <td class=Right>19</td>
+   <td class=Left>Magma Demon</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Fire Clan</td>
+   <td class=Right>18</td>
+   <td class=Left>Blood Stone</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Night Clan</td>
+   <td class=Right>18</td>
+   <td class=Left>Horned Demon</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Fire Clan Archer</td>
+   <td class=Right>18</td>
+   <td class=Left>Mud Runner</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Night Clan Archer</td>
+   <td class=Right>18</td>
+   <td class=Left>Acid Beast</td>
+   <td class=Right>33</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Mud Man</td>
+   <td class=Right>18</td>
+   <td class=Left>Poison Spitter</td>
+   <td class=Right>33</td>
+</tr>
+<tr>
+   <th class=Left>dlvl 9 - Caves</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 10 - Caves</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 11 - Caves</th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>Illusion Weaver</td>
+   <td class=Right>16</td>
+   <td class=Left>Illusion Weaver</td>
+   <td class=Right>19</td>
+   <td class=Left>Flayed One</td>
+   <td class=Right>31</td>
+</tr>
+<tr>
+   <td class=Left>Night Clan</td>
+   <td class=Right>16</td>
+   <td class=Left>Toad Demon</td>
+   <td class=Right>19</td>
+   <td class=Left>Blood Claw</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Night Clan Archer</td>
+   <td class=Right>16</td>
+   <td class=Left>Flayed One</td>
+   <td class=Right>19</td>
+   <td class=Left>Death Wing</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Mud Man</td>
+   <td class=Right>16</td>
+   <td class=Left>Blood Claw</td>
+   <td class=Right>13</td>
+   <td class=Left>Hell Stone</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Toad Demon</td>
+   <td class=Right>16</td>
+   <td class=Left>Death Wing</td>
+   <td class=Right>13</td>
+   <td class=Left>Lava Lord</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Gargoyle</td>
+   <td class=Right>13</td>
+   <td class=Left>Blood Stone</td>
+   <td class=Right>13</td>
+   <td class=Left>Frost Charger</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Blood Claw</td>
+   <td class=Right>13</td>
+   <td class=Left>Hell Stone</td>
+   <td class=Right>13</td>
+   <td class=Left>Obsidian Lord</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Magma Demon</td>
+   <td class=Right>13</td>
+   <td class=Left>Lava Lord</td>
+   <td class=Right>13</td>
+   <td class=Left>Pit Beast</td>
+   <td class=Right>31</td>
+</tr>
+<tr>
+   <td class=Left>Blood Stone</td>
+   <td class=Right>13</td>
+   <td class=Left>Mud Runner</td>
+   <td class=Right>13</td>
+   <td class=Left>Red Storm</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Hell Stone</td>
+   <td class=Right>13</td>
+   <td class=Left>Frost Charger</td>
+   <td class=Right>13</td>
+   <td class=Left>Storm Rider</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Lava Lord</td>
+   <td class=Right>13</td>
+   <td class=Left>Obsidian Lord</td>
+   <td class=Right>13</td>
+   <td class=Left>Storm Lord</td>
+   <td class=Right>14</td>
+</tr>
+<tr>
+   <td class=Left>Horned Demon</td>
+   <td class=Right>13</td>
+   <td class=Left>Poison Spitter</td>
+   <td class=Right>31</td>
+   <td class=Left>Slayer</td>
+   <td class=Right>9</td>
+</tr>
+<tr>
+   <td class=Left>Mud Runner</td>
+   <td class=Right>13</td>
+   <td class=Left>Pit Beast</td>
+   <td class=Right>31</td>
+   <td class=Left>Guardian</td>
+   <td class=Right>9</td>
+</tr>
+<tr>
+   <td class=Left>Frost Charger</td>
+   <td class=Right>13</td>
+   <td class=Left>Red Storm</td>
+   <td class=Right>13</td>
+   <td class=Left>Cave Viper</td>
+   <td class=Right>19</td>
+</tr>
+<tr>
+   <td class=Left>Poison Spitter</td>
+   <td class=Right>56</td>
+   <td class=Left>Storm Rider</td>
+   <td class=Right>13</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Red Storm</td>
+   <td class=Right>13</td>
+   <td class=Left>Slayer</td>
+   <td class=Right>8</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <th class=Left>dlvl 12 - Caves</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 12 - Caves</th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Flayed One</td>
+   <td class=Right>22</td>
+   <td class=Left>Slayer</td>
+   <td class=Right>9</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Death Wing</td>
+   <td class=Right>13</td>
+   <td class=Left>Guardian</td>
+   <td class=Right>9</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Obsidian Lord</td>
+   <td class=Right>13</td>
+   <td class=Left>Vortex Lord</td>
+   <td class=Right>9</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Pit Beast</td>
+   <td class=Right>29</td>
+   <td class=Left>Cave Viper</td>
+   <td class=Right>18</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Lava Maw</td>
+   <td class=Right>29</td>
+   <td class=Left>Fire Drake</td>
+   <td class=Right>18</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Storm Rider</td>
+   <td class=Right>13</td>
+   <td class=Left>Succubus</td>
+   <td class=Right>23</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Storm Lord</td>
+   <td class=Right>13</td>
+   <td class=Left>Black Knight</td>
+   <td class=Right>9</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Maelstorm</td>
+   <td class=Right>13</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <th class=Left>dlvl 13 - Hell</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 14 - Hell</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl 15 - Hell<sup>1</sup></th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>Lava Maw</td>
+   <td class=Right>27</td>
+   <td class=Left>Lava Maw</td>
+   <td class=Right>26</td>
+   <td class=Left>Balrog</td>
+   <td class=Right>17</td>
+</tr>
+<tr>
+   <td class=Left>Storm Lord</td>
+   <td class=Right>11</td>
+   <td class=Left>Maelstorm</td>
+   <td class=Right>10</td>
+   <td class=Left>Azure Drake</td>
+   <td class=Right>33</td>
+</tr>
+<tr>
+   <td class=Left>Maelstorm</td>
+   <td class=Right>11</td>
+   <td class=Left>Vortex Lord</td>
+   <td class=Right>9</td>
+   <td class=Left>Snow Witch</td>
+   <td class=Right>33</td>
+</tr>
+<tr>
+   <td class=Left>Guardian</td>
+   <td class=Right>9</td>
+   <td class=Left>Balrog</td>
+   <td class=Right>9</td>
+   <td class=Left>Hell Spawn</td>
+   <td class=Right>33</td>
+</tr>
+<tr>
+   <td class=Left>Vortex Lord</td>
+   <td class=Right>9</td>
+   <td class=Left>Fire Drake</td>
+   <td class=Right>21</td>
+   <td class=Left>Soul Burner</td>
+   <td class=Right>33</td>
+</tr>
+<tr>
+   <td class=Left>Balrog</td>
+   <td class=Right>9</td>
+   <td class=Left>Gold Viper</td>
+   <td class=Right>21</td>
+   <td class=Left>Doom Guard</td>
+   <td class=Right>17</td>
+</tr>
+<tr>
+   <td class=Left>Cave Viper</td>
+   <td class=Right>21</td>
+   <td class=Left>Succubus</td>
+   <td class=Right>22</td>
+   <td class=Left>Steel Lord</td>
+   <td class=Right>17</td>
+</tr>
+<tr>
+   <td class=Left>Fire Drake</td>
+   <td class=Right>21</td>
+   <td class=Left>Snow Witch</td>
+   <td class=Right>22</td>
+   <td class=Left>Magistrate</td>
+   <td class=Right>17</td>
+</tr>
+<tr>
+   <td class=Left>Gold Viper</td>
+   <td class=Right>21</td>
+   <td class=Left>Hell Spawn</td>
+   <td class=Right>22</td>
+   <td class=Left>Cabalist</td>
+   <td class=Right>17</td>
+</tr>
+<tr>
+   <td class=Left>Succubus</td>
+   <td class=Right>23</td>
+   <td class=Left>Black Knight</td>
+   <td class=Right>10</td>
+   <th class=Left>dlvl 16 - Hell</th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>Snow Witch</td>
+   <td class=Right>23</td>
+   <td class=Left>Doom Guard</td>
+   <td class=Right>10</td>
+   <td class=Left>Black Knight</td>
+   <td class=Right>100</td>
+</tr>
+<tr>
+   <td class=Left>Black Knight</td>
+   <td class=Right>10</td>
+   <td class=Left>Steel Lord</td>
+   <td class=Right>10</td>
+   <td class=Left>Blood Knight</td>
+   <td class=Right>100</td>
+</tr>
+<tr>
+   <td class=Left>Doom Guard</td>
+   <td class=Right>10</td>
+   <td class=Left>Blood Knight</td>
+   <td class=Right>10</td>
+   <td class=Left>Advocate</td>
+   <td class=Right>100</td>
+</tr>
+<tr>
+   <td class=Left>Steel Lord</td>
+   <td class=Right>10</td>
+   <td class=Left>Counselor</td>
+   <td class=Right>10</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Blood Knight</td>
+   <td class=Right>10</td>
+   <td class=Left>Magistrate</td>
+   <td class=Right>10</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Counselor</td>
+   <td class=Right>9</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=6>
+	<sup>1</sup>Not including Arch-Bishop Lazarus' room in multi player.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left>Dlvl H1 - Hive</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl H2 - Hive</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl H3 - Hive</th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>The Shredded</td>
+   <td class=Right>80</td>
+   <td class=Left>The Shredded</td>
+   <td class=Right>70</td>
+   <td class=Left>Hork Spawn</td>
+   <td class=Right>100</td>
+</tr>
+<tr>
+   <td class=Left>Felltwin</td>
+   <td class=Right>80</td>
+   <td class=Left>Felltwin</td>
+   <td class=Right>65</td>
+   <td class=Left>Venomtail</td>
+   <td class=Right>100</td>
+</tr>
+<tr>
+   <td class=Left>Hellboar</td>
+   <td class=Right>80</td>
+   <td class=Left>Hellboar</td>
+   <td class=Right>65</td>
+   <td class=Left>Necromorb</td>
+   <td class=Right>50</td>
+</tr>
+<tr>
+   <td class=Left>Stinger</td>
+   <td class=Right>100</td>
+   <td class=Left>Hork Spawn</td>
+   <td class=Right>100</td>
+   <td class=Left>Spider Lord</td>
+   <td class=Right>50</td>
+</tr>
+<tr>
+   <td class=Left>Psychorb</td>
+   <td class=Right>80</td>
+   <td class=Left>Stinger</td>
+   <td class=Right>70</td>
+   <td class=Left>Lashworm</td>
+   <td class=Right>50</td>
+</tr>
+<tr>
+   <td class=Left>Arachnon</td>
+   <td class=Right>80</td>
+   <td class=Left>Psychorb</td>
+   <td class=Right>65</td>
+   <td class=Left>Torchant</td>
+   <td class=Right>50</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Arachnon</td>
+   <td class=Right>65</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <th class=Left>dlvl H4 - Hive</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl C1 - Crypt</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl C2 - Crypt</th>
+   <th class=Right>%</th>
+</tr>
+<tr>
+   <td class=Left>Venomtail</td>
+   <td class=Right>100</td>
+   <td class=Left>Gravedigger</td>
+   <td class=Right>58</td>
+   <td class=Left>Tomb Rat</td>
+   <td class=Right>67</td>
+</tr>
+<tr>
+   <td class=Left>Necromorb</td>
+   <td class=Right>75</td>
+   <td class=Left>Tomb Rat</td>
+   <td class=Right>67</td>
+   <td class=Left>Devil Kin Brute</td>
+   <td class=Right>58</td>
+</tr>
+<tr>
+   <td class=Left>Spider Lord</td>
+   <td class=Right>75</td>
+   <td class=Left>Devil Kin Brute</td>
+   <td class=Right>58</td>
+   <td class=Left>Firebat</td>
+   <td class=Right>67</td>
+</tr>
+<tr>
+   <td class=Left>Lashworm</td>
+   <td class=Right>75</td>
+   <td class=Left>Firebat</td>
+   <td class=Right>67</td>
+   <td class=Left>Skullwing</td>
+   <td class=Right>43</td>
+</tr>
+<tr>
+   <td class=Left>Torchant</td>
+   <td class=Right>75</td>
+   <td class=Left>Skullwing</td>
+   <td class=Right>43</td>
+   <td class=Left>Lich</td>
+   <td class=Right>58</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Lich</td>
+   <td class=Right>58</td>
+   <td class=Left>Satyr Lord</td>
+   <td class=Right>58</td>
+</tr>
+<tr>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>Satyr Lord</td>
+   <td class=Right>58</td>
+   <td class=Left>Crypt Demon</td>
+   <td class=Right>58</td>
+</tr>
+<tr>
+   <th class=Left>dlvl C3 - Crypt</th>
+   <th class=Right>%</th>
+   <th class=Left>dlvl C4 - Crypt</th>
+   <th class=Right>%</th>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Hellbat</td>
+   <td class=Right>53</td>
+   <td class=Left>Hellbat</td>
+   <td class=Right>55</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Bone Demon</td>
+   <td class=Right>43</td>
+   <td class=Left>Bone Demon</td>
+   <td class=Right>40</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Arch Lich</td>
+   <td class=Right>53</td>
+   <td class=Left>Arch Lich1</td>
+   <td class=Right>100</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Crypt Demon</td>
+   <td class=Right>52</td>
+   <td class=Left>Biclops</td>
+   <td class=Right>55</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Biclops</td>
+   <td class=Right>52</td>
+   <td class=Left>Flesh Thing</td>
+   <td class=Right>55</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Flesh Thing</td>
+   <td class=Right>52</td>
+   <td class=Left>Reaper</td>
+   <td class=Right>55</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Reaper</td>
+   <td class=Right>52</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Right>&nbsp;</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=6>
+	<sup>1</sup>There will always be Arch Liches on level 4 of the Crypt.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<br>
+<div class=Sub id=5.3.3>5.3.3 Attack types</div><br>
+
+<p>Most monster types have their own unique way of attacking and moving. However, some of the monster types share some common attack types. The table below lists the various attack types that exist. I have used the name of the first monster type that uses that attack type. For example, skeletons and knights use the same attack type, but I have called it <I>skeleton</I> because they appear first. All monsters of a monster type share the same attack type, so I have only listed attack types for monster types. Since Hellfire does not have monster types, I have listed the attack type for each monster.</p>
+
+<p>When a unique monster is present, it and its mob may have a different attack type than the normal one for that monster type. See chapter 5.4 for information about such attack type changes.</p>
+
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=6>Monsters in Diablo</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th class=Left>Attack type</th>
+   <th class=Left>Monster type</th>
+   <th class=Left>Attack type</th>
+   <th class=Left>Monster type</th>
+   <th class=Left>Attack type</th>
+</tr>
+<tr>
+   <td class=Left>Zombies</td>
+   <td class=Left>Zombie</td>
+   <td class=Left>Goat Men</td>
+   <td class=Left>Goat Man</td>
+   <td class=Left>Vipers</td>
+   <td class=Left>Viper</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One, spear</td>
+   <td class=Left>Fallen One</td>
+   <td class=Left>Goat Men Archers</td>
+   <td class=Left>Goat Archer</td>
+   <td class=Left>Succubi</td>
+   <td class=Left>Goat Archer</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One, sword</td>
+   <td class=Left>Fallen One</td>
+   <td class=Left>Overlords</td>
+   <td class=Left>Overlord</td>
+   <td class=Left>Knights</td>
+   <td class=Left>Skeleton</td>
+</tr>
+<tr>
+   <td class=Left>Skeletons</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Gargoyles</td>
+   <td class=Left>Gargoyle</td>
+   <td class=Left>Mages</td>
+   <td class=Left>Mage</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Archers</td>
+   <td class=Left>Skeleton Archer</td>
+   <td class=Left>Magma Demons</td>
+   <td class=Left>Magma Demon</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Captains</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Horned Demons</td>
+   <td class=Left>Horned Demon</td>
+   <td class=Left>Golem</td>
+   <td class=Left>Golem</td>
+</tr>
+<tr>
+   <td class=Left>Scavengers</td>
+   <td class=Left>Scavenger</td>
+   <td class=Left>Spitting Terrors</td>
+   <td class=Left>Spit</td>
+   <td class=Left>The Butcher</td>
+   <td class=Left>Butcher</td>
+</tr>
+<tr>
+   <td class=Left>Winged Fiends</td>
+   <td class=Left>Winged Fiend</td>
+   <td class=Left>Lightning Demons</td>
+   <td class=Left>Magma Demon</td>
+   <td class=Left>Skeleton King</td>
+   <td class=Left>Skeleton King</td>
+</tr>
+<tr>
+   <td class=Left>The Hiddens</td>
+   <td class=Left>Hidden</td>
+   <td class=Left>Balrogs</td>
+   <td class=Left>Balrog</td>
+   <td class=Left>Diablo</td>
+   <td class=Left>Magma Demon</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=6>New monsters in Hellfire</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th class=Left>Attack type</th>
+   <th class=Left>Monster type</th>
+   <th class=Left>Attack type</th>
+   <th class=Left>Monster type</th>
+   <th class=Left>Attack type</th>
+</tr>
+<tr>
+   <td class=Left>The Shredded</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Lashworm</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Arch Lich</td>
+   <td class=Left>Goat Archer</td>
+</tr>
+<tr>
+   <td class=Left>Felltwin</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Torchant</td>
+   <td class=Left>Goat Archer</td>
+   <td class=Left>Satyr Lord</td>
+   <td class=Left>Skeleton</td>
+</tr>
+<tr>
+   <td class=Left>Hellboar</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Gravedigger</td>
+   <td class=Left>Scavenger</td>
+   <td class=Left>Crypt Demon</td>
+   <td class=Left>Skeleton</td>
+</tr>
+<tr>
+   <td class=Left>Hork Spawn</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Tomb Rat</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Biclops</td>
+   <td class=Left>Skeleton</td>
+</tr>
+<tr>
+   <td class=Left>Stinger</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Devil Kin Brute</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Flesh Thing</td>
+   <td class=Left>Skeleton</td>
+</tr>
+<tr>
+   <td class=Left>Venomtail</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Firebat</td>
+   <td class=Left>Goat Archer</td>
+   <td class=Left>Reaper</td>
+   <td class=Left>Skeleton</td>
+</tr>
+<tr>
+   <td class=Left>Psychorb</td>
+   <td class=Left>Goat Archer</td>
+   <td class=Left>Hellbat</td>
+   <td class=Left>Goat Archer</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Necromorb</td>
+   <td class=Left>Goat Archer</td>
+   <td class=Left>Skullwing</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Hork Demon</td>
+   <td class=Left>Skeleton</td>
+</tr>
+<tr>
+   <td class=Left>Arachnon</td>
+   <td class=Left>Skeleton</td>
+   <td class=Left>Bone Demon</td>
+   <td class=Left>Magma Demon</td>
+   <td class=Left>The Defiler</td>
+   <td class=Left>Skeleton</td>
+</tr>
+<tr>
+   <td class=Left>Spider Lord</td>
+   <td class=Left>Spit</td>
+   <td class=Left>Lich</td>
+   <td class=Left>Goat Archer</td>
+   <td class=Left>Na-Krul</td>
+   <td class=Left>Skeleton</td>
+</tr>
+</table>
+</div>
+
+<p>The attack type does not only affect the actual attack but also how the monsters move around. Many monsters that share a specific attack type still cast different spells as the attack type does not in itself include spell (or arrow) cast. For information about what spell specific monsters cast, see 4.2. Others may be similar at some parts; for example, at a distance greater than Inferno range (3 squares) a Balrog will behave like a Skeleton in its movements, and it is not until it gets closer that it will start to circle the player. There are many similar features between the different attack types. Most of them are also heavily triggered by the distance to the target; that is, the behavior of the monster changes as it gets to a specific distance(s) to the target. Monsters can also gain a different attack type if they are part of a mob of a unique monster with a different attack type. The way monsters behave is not affected by difficulty level. For a more detailed explanation of how the attack types work, see chapter 5.5.</p>
+
+<p>It is worth noticing that within a certain monster type the various monsters normally have an increasing &quot;intelligence&quot;. A good way to see this difference is the look the various Goat Archers. Run up to them and you will see that a normal Flesh Clan Archer will not run a way immediately while a Night Clan Archer will normally run away before you even get close. Similar differences can be seen for most monster types. The table below will list the intelligence factor (Intf) within each monster type. It is basically a number between 0 and 3 (inclusive). The higher the number, the higher the intelligence of the monster. For monster types with 4 subtypes in Diablo, I have listed the four values after each other. For monsters that have no subtypes, there is only one number. Otherwise, there is no value given. For information about what intelligence factor unique monsters have, see chapter 5.4.</p>
+
+<p>Presented in the table below is also the ability to open doors and to follow characters around walls. If a character disappears from the line of visibility of a player, they will normally move to the last position where they saw the character. Some monsters have the improved ability to also find the way around obstacles and follow you even further. This makes it possible for them to even follow you around a wall should you just teleport to the other side of it. If they do not have that ability, they will normally end up where you teleported from. These abilities are also presented below in the same way as the intelligence factor. A <I>D</I> means the monster can open doors and an <I>F</I> that means they will follow you.</p>
+
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=6>Monsters in Diablo</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th>Intf</th>
+   <th>Behavior</th>
+   <th class=Left>Monster type</th>
+   <th>Intf</th>
+   <th>Behavior</th>
+</tr>
+<tr>
+   <td class=Left>Zombies</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Horned Demons</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>DF DF DF DF</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One, spear</td>
+   <td class=Left>0 2 2 3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Spitting Terrors</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Fallen One, sword</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Lightning Demons</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>DF DF DF DF</td>
+</tr>
+<tr>
+   <td class=Left>Skeletons</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Balrogs</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>DF DF DF DF</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Archers</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Vipers</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>-F -F -F -F</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Captains</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>-- -- -- F-</td>
+   <td class=Left>Succubi</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>D- D- DF DF</td>
+</tr>
+<tr>
+   <td class=Left>Scavengers</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Knights</td>
+   <td class=Left>0 0 1 1 </td>
+   <td class=Left>-F -F -F -F</td>
+</tr>
+<tr>
+   <td class=Left>Winged Fiends</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>-- -- -F -F</td>
+   <td class=Left>Mages</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>D- D- D- D-</td>
+</tr>
+<tr>
+   <td class=Left>The Hiddens</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>-- -F -F -F</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Goat Men</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>DF DF DF DF</td>
+   <td class=Left>Golem</td>
+   <td class=Left>0</td>
+   <td class=Left>D-</td>
+</tr>
+<tr>
+   <td class=Left>Goat Men Archers</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>D-D-DFDF</td>
+   <td class=Left>The Butcher</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Overlords</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>-- -F -F -F</td>
+   <td class=Left>Skeleton King</td>
+   <td class=Left>3</td>
+   <td class=Left>DF</td>
+</tr>
+<tr>
+   <td class=Left>Gargoyles</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>D- D- D- D-</td>
+   <td class=Left>Diablo</td>
+   <td class=Left>3</td>
+   <td class=Left>DF</td>
+</tr>
+<tr>
+   <td class=Left>Magma Demons</td>
+   <td class=Left>0 1 2 3</td>
+   <td class=Left>DF DF DF DF</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=6>New monsters in Hellfire</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th>Intelligence factor</th>
+   <th>Behavior</th>
+   <th class=Left>Monster type</th>
+   <th>Intelligence factor</th>
+   <th>Behavior</th>
+</tr>
+<tr>
+   <td class=Left>The Shredded</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Firebat</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Felltwin</td>
+   <td class=Left>3</td>
+   <td class=Left>DF</td>
+   <td class=Left>Hellbat</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Hellboar</td>
+   <td class=Left>2</td>
+   <td class=Left>-F</td>
+   <td class=Left>Skullwing</td>
+   <td class=Left>0</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Hork Spawn</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Bone Demon</td>
+   <td class=Left>0</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Stinger</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Lich</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Venomtail</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Arch Lich</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Psychorb</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Satyr Lord</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Necromorb</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Crypt Demon</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Arachnon</td>
+   <td class=Left>3</td>
+   <td class=Left>-F</td>
+   <td class=Left>Biclops</td>
+   <td class=Left>3</td>
+   <td class=Left>D-</td>
+</tr>
+<tr>
+   <td class=Left>Spider Lord</td>
+   <td class=Left>3</td>
+   <td class=Left>-F</td>
+   <td class=Left>Flesh Thing</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Lashworm</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Reaper</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Torchant</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Gravedigger</td>
+   <td class=Left>3</td>
+   <td class=Left>D-</td>
+   <td class=Left>Hork Demon</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+</tr>
+<tr>
+   <td class=Left>Tomb Rat</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>The Defiler</td>
+   <td class=Left>3</td>
+   <td class=Left>-F</td>
+</tr>
+<tr>
+   <td class=Left>Devil Kin Brute</td>
+   <td class=Left>3</td>
+   <td class=Left>&nbsp;</td>
+   <td class=Left>Na-Krul</td>
+   <td class=Left>3</td>
+   <td class=Left>DF</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div class=Sub id=5.3.4>5.3.4 Timing information</div><br>
+
+<p>This chapter deals with the time it takes for different monsters to do different things. The data given is explained below. In almost every case the data is the same for each monster type and thus is not given for each subtype (as it is the same). Note that for all the actions below, the time is only valid for the case when the monsters are actually walking, swinging and so on. Most monsters will, for example, make pauses occasionally when they walk, so that the average walking speed over a longer time is slower. The same applies for when monsters attack players. Sometimes they make pauses. Even monsters within a monster type may act differently as, for example, the duration of a pause is generally affected by the intelligence factor. The data below does <I>not</I> take such things into consideration. However, the actual time to do an action does not vary between different difficulty levels and subtypes of monsters. All times are given in seconds.</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<tr>
+   <td class=BodyBold>Walk time</td>
+</tr>
+<tr>
+   <td>This is the time it takes for the monster to walk one square. For a player, it takes 0.40 seconds. Due to the fact that many monsters make pauses in the walking, you can often outrun monsters with a walk speed of 0.40 seconds.</td>
+</tr>
+<tr>
+   <td>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold>Hit recovery time</td>
+</tr>
+<tr>
+   <td>This is the time it takes for a monster to go through a hit recovery (stun). To stun lock a monster, you need to hit it again before it has finished its hit recovery and either hit you (hit time) or moved away (for information about entering a new location, see chapter 6.1.9). For the monster to actually go into a hit recovery, you have to hit it and do damage equal or exceeding mlvl+3 (monsters of The Hiddens go into hit recovery regardless of the damage as long as they have no resistance to the attack type). Thanks to concre+e for initial information about monsters and hit recoveries.</td>
+</tr>
+<tr>
+   <td>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold>Attack time</td>
+</tr>
+<tr>
+   <td>This is the time it takes a monster to do a complete attack against you, in much the same way as the swing speed of the characters in chapter 2.2.3 works. Some monsters can actually hit you twice in one attack. Many monsters have more than one attack, in such cases, two times are given. The first attack will be the main attack, that is, the one that have data within the tables in chapter 5.2 while the second is the one explained in the foot notes. Usually the main attack will be the melee attack while the second attack is a spell attack.</td>
+</tr>
+<tr>
+   <td>&nbsp;</td>
+</tr>
+<tr>
+   <td class=BodyBold>Hit time</td>
+</tr>
+<tr>
+   <td>Within the swing this is the time it takes to reach the frame where the actual hit on a player occurs. This is of course always identical or shorter than the complete attack time. When there exist two attacks and thus two attack times, there will also be two hit times given. For Magma Demons and Lightning Demons there are actually three times given, where the first two relate to the melee attack which, as described above, can hit you twice in the same attack and the last number correspond to the spell attack.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=5>Diablo</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th>Walk time</th>
+   <th>Hit recovery time</th>
+   <th>Attack time</th>
+   <th>Hit time</th>
+</tr>
+<tr>
+   <td class=Left>Zombies</td>
+   <td>1.2</td>
+   <td>0.3</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Fallen Ones with spear</td>
+   <td>0.55</td>
+   <td>0.55</td>
+   <td>0.65 / 0.65<sup>1</sup></td>
+   <td>0.35 / 0.25<sup>1</sup></td>
+</tr>
+<tr>
+   <td class=Left>Fallen Ones with sword</td>
+   <td>0.6</td>
+   <td>0.55</td>
+   <td>0.65 / 0.75<sup>1</sup></td>
+   <td>0.40 / 0.25<sup>1</sup></td>
+</tr>
+<tr>
+   <td class=Left>Skeletons</td>
+   <td>0.40 / 0.80<sup>2</sup></td>
+   <td>0.3</td>
+   <td>0.65</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Archers</td>
+   <td>0.40 / 0.80<sup>2</sup></td>
+   <td>0.25</td>
+   <td>0.8</td>
+   <td>0.6</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton Captains</td>
+   <td>0.40 / 0.80<sup>2</sup></td>
+   <td>0.35</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Scavengers</td>
+   <td>0.40 / 0.55<sup>3</sup></td>
+   <td>0.3</td>
+   <td>0.6</td>
+   <td>0.35</td>
+</tr>
+<tr>
+   <td class=Left>Winged Fiends</td>
+   <td>0.65</td>
+   <td>0.45</td>
+   <td>0.5</td>
+   <td>0.25</td>
+</tr>
+<tr>
+   <td class=Left>The Hiddens</td>
+   <td>0.40 / 0.55<sup>3</sup></td>
+   <td>0.4</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Goat Men</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>0.60 / 0.60</td>
+   <td>0.40 / 0.00</td>
+</tr>
+<tr>
+   <td class=Left>Goat Men Archers</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>0.8</td>
+   <td>0.65</td>
+</tr>
+<tr>
+   <td class=Left>Overlords</td>
+   <td>0.5</td>
+   <td>0.3</td>
+   <td>0.75 / 0.50</td>
+   <td>0.40 / 0.00</td>
+</tr>
+<tr>
+   <td class=Left>Gargoyles</td>
+   <td>0.7</td>
+   <td>0.5</td>
+   <td>0.7</td>
+   <td>0.35</td>
+</tr>
+<tr>
+   <td class=Left>Magma Demons</td>
+   <td>0.5</td>
+   <td>0.35</td>
+   <td>0.70 / 0.90</td>
+   <td>0.20 - 0.45<sup>4</sup> / 0.70<sup>5</sup></td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=5>
+      <sup>1</sup>The second value is for the War Cry animation (see chapter 5.5.9 under Fallen One for more information).<br>
+      <sup>2</sup>The second value is for the fade in/out animation.<br>
+      <sup>3</sup>The second value is for the feasting upon a carcass animation.<br>
+      <sup>4</sup>Have two hits in one attack.<br>
+      <sup>5</sup>The Magma Demon actually hit at 0.65 while the other three types hit at 0.70.<br>
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=5>Diablo</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th>Walk time</th>
+   <th>Hit recovery time</th>
+   <th>Attack time</th>
+   <th>Hit time</th>
+</tr>
+<tr>
+   <td class=Left>Horned Demons</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>0.7</td>
+   <td>0.35</td>
+</tr>
+<tr>
+   <td class=Left>Spitting Terrors</td>
+   <td>0.4</td>
+   <td>0.4</td>
+   <td>0.60 / 0.20</td>
+   <td>0.40 / 0.00</td>
+</tr>
+<tr>
+   <td class=Left>Lightning Demons</td>
+   <td>0.4</td>
+   <td>0.2</td>
+   <td>0.90 / 0.70</td>
+   <td>0.25 - 0.65<sup>1</sup> / 0.40</td>
+</tr>
+<tr>
+   <td class=Left>Balrogs</td>
+   <td>0.35</td>
+   <td>0.05</td>
+   <td>0.70 / 1.00</td>
+   <td>0.40 / 0.15</td>
+</tr>
+<tr>
+   <td class=Left>Vipers</td>
+   <td>0.55</td>
+   <td>0.25</td>
+   <td>0.65</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Succubi</td>
+   <td>0.4</td>
+   <td>0.35</td>
+   <td>0.8</td>
+   <td>0.5</td>
+</tr>
+<tr>
+   <td class=Left>Knights</td>
+   <td>0.4</td>
+   <td>0.2</td>
+   <td>0.8</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Mages</td>
+   <td>0.05 / 1.00<sup>2</sup></td>
+   <td>0.4</td>
+   <td>1</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>The Butcher</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Skeleton King</td>
+   <td>0.3</td>
+   <td>0.3</td>
+   <td>0.80 / 0.30<sup>3</sup></td>
+   <td>0.40 / 0.00<sup>3</sup></td>
+</tr>
+<tr>
+   <td class=Left>Diablo (Diablo)</td>
+   <td>0.3</td>
+   <td>0.3</td>
+   <td>0.80 / 0.80</td>
+   <td>0.20 / 0.55</td>
+</tr>
+<tr>
+   <td class=Left>Diablo (Hellfire)</td>
+   <td>0.3</td>
+   <td>0.1</td>
+   <td>0.80 / 0.80</td>
+   <td>0.20 / 0.55</td>
+</tr>
+<tr>
+   <td class=Left>Golem</td>
+   <td>0.80 / 1.00<sup>4</sup></td>
+   <td>0</td>
+   <td>0.6</td>
+   <td>0.35</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=5>
+      <sup>1</sup>Have two hits in one attack.<br>
+      <sup>2</sup>The second value is for the fade in/out animation.<br>
+      <sup>3</sup>The second value is for the revive skeleton animation.<br>
+      <sup>4</sup>The second value is for the fade in animation.<br>
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=5>Hellfire - Hive</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th>Walk time</th>
+   <th>Hit recovery time</th>
+   <th>Attack time</th>
+   <th>Hit time</th>
+</tr>
+<tr>
+   <td class=Left>The Shredded</td>
+   <td>0.5</td>
+   <td>0.25</td>
+   <td>0.6</td>
+   <td>0.35</td>
+</tr>
+<tr>
+   <td class=Left>Felltwin</td>
+   <td>0.65</td>
+   <td>0.55</td>
+   <td>0.75</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Hellboar</td>
+   <td>0.5</td>
+   <td>0.3</td>
+   <td>0.75</td>
+   <td>0.35</td>
+</tr>
+<tr>
+   <td class=Left>Hork Spawn</td>
+   <td>0.6</td>
+   <td>0.55</td>
+   <td>0.7</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Stinger</td>
+   <td>0.5</td>
+   <td>0.3</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Venomtail</td>
+   <td>0.5</td>
+   <td>0.3</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Psychorb</td>
+   <td>0.65</td>
+   <td>0.35</td>
+   <td>0.65</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Necromorb</td>
+   <td>0.65</td>
+   <td>0.35</td>
+   <td>0.65</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Arachnon</td>
+   <td>0.5</td>
+   <td>0.3</td>
+   <td>0.75</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Spider Lord</td>
+   <td>0.5</td>
+   <td>0.3</td>
+   <td>0.75 / 0.50</td>
+   <td>0.40 / 0.40</td>
+</tr>
+<tr>
+   <td class=Left>Lashworm</td>
+   <td>0.65</td>
+   <td>0.3</td>
+   <td>0.75</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Torchant</td>
+   <td>0.6</td>
+   <td>0.3</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Hork Demon</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>0.80 / 0.45<sup>1</sup></td>
+   <td>0.40 / 0.40<sup>1</sup></td>
+</tr>
+<tr>
+   <td class=Left>The Defiler</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>0.70 / 0.60</td>
+   <td>0.40 / 0.40</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=5>
+      <sup>1</sup>The second value is for the spawning Hell Spawn animation.<br>
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=5>Hellfire - Crypt</th>
+</tr>
+<tr>
+   <th class=Left>Monster type</th>
+   <th>Walk time</th>
+   <th>Hit recovery time</th>
+   <th>Attack time</th>
+   <th>Hit time</th>
+</tr>
+<tr>
+   <td class=Left>Gravedigger</td>
+   <td>1.20 / 0.80<sup>1</sup></td>
+   <td>0.3</td>
+   <td>0.6</td>
+   <td>0.3</td>
+</tr>
+<tr>
+   <td class=Left>Tomb Rat</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Devil Kin Brute</td>
+   <td>0.4</td>
+   <td>0.4</td>
+   <td>0.55</td>
+   <td>0.3</td>
+</tr>
+<tr>
+   <td class=Left>Firebat</td>
+   <td>0.8</td>
+   <td>0.3</td>
+   <td>0.7</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Hellbat</td>
+   <td>0.8</td>
+   <td>0.3</td>
+   <td>0.7</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Skullwing</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>1</td>
+   <td>0.35</td>
+</tr>
+<tr>
+   <td class=Left>Bone Demon</td>
+   <td>0.4</td>
+   <td>0.3</td>
+   <td>1.00 / 0.80</td>
+   <td>0.40 / 0.60</td>
+</tr>
+<tr>
+   <td class=Left>Lich</td>
+   <td>0.5</td>
+   <td>0.35</td>
+   <td>0.5</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Arch Lich</td>
+   <td>0.5</td>
+   <td>0.35</td>
+   <td>0.5</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Satyr Lord</td>
+   <td>0.65</td>
+   <td>0.45</td>
+   <td>0.7</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Crypt Demon</td>
+   <td>0.9</td>
+   <td>0.4</td>
+   <td>0.6</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Biclops</td>
+   <td>0.55</td>
+   <td>0.3</td>
+   <td>0.8</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Flesh Thing</td>
+   <td>1.2</td>
+   <td>0.3</td>
+   <td>0.75</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Reaper</td>
+   <td>0.5</td>
+   <td>0.3</td>
+   <td>0.7</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td class=Left>Na-Krul</td>
+   <td>0.3</td>
+   <td>0.15</td>
+   <td>0.80 / 0.80</td>
+   <td>0.35 / 0.25</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=5>
+      <sup>1</sup>The second value is for the digging upon a carcass animation.<br>
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+</body>
+
+

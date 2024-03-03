@@ -1,0 +1,353 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG10.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Chapter 10</title>
+
+</head>
+
+<body>
+
+<div class=Chapter>10. Other useful information</div><br>
+
+<div class=Section id=10.1>10.1 Hot keyed messages while playing</div><br>
+
+<p>While playing multi player games, you can set the four keys F9 - F12 to have four special messages that you can send to the other players in the game. This could be good for messages that you need to send quickly while fighting. To change these messages on a PC, you should edit the files <I>diablo.ini</I> in Diablo and <I>hellfire.ini</I> in Hellfire. For Hellfire, you must first create the file. The easiest way to do this is to copy the <I>diablo.ini</I> file from your Diablo folder into the Hellfire folder and then rename it. The syntax of the two files is identical.</p>
+
+<div class=Section id=10.2>10.2 Save files</div><br>
+
+<p>In single player, you can save (and must save) your game whenever you want. The save files are stored in the Diablo/Hellfire folder and can easily be transferred to other computers. In multi player, you can't save the game. Your character, its stats and items that it has equipped or carries, is saved automatically by the game as soon as you make any changes to it. Thus, there is never any need to save it. Your character in multi player is also saved in the Diablo folder. The names of the save files are summarized in the tables below. In versions previous to 1.08, the game used to save your multiplayer files in the Windows (!) folder on the PC, so you may still find those save files there. Whenever you run Diablo v1.08 or later, it will move those files to the Diablo folder but will not remove them from the Windows folder. As Hellfire is based on the 1.04 version of Diablo, it still saves the multiplayer files in the Windows folder.</p>
+
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=3>PC</th>
+</tr>
+<tr>
+   <th class=Left>Game type</th>
+   <th class=Left>Folder</th>
+   <th class=Left>Name</th>
+</tr>
+<tr>
+   <td class=Left>Diablo single player</td>
+   <td class=Left>Diablo</td>
+   <td class=Left>single_#.svWhere # is a number in the range 0..9</td>
+</tr>
+<tr>
+   <td class=Left>Hellfire single player</td>
+   <td class=Left>Hellfire</td>
+   <td class=Left>single_#.hsvWhere # is a number in the range 0..9</td>
+</tr>
+<tr>
+   <td class=Left>Diablo multi player</td>
+   <td class=Left>Diablo</td>
+   <td class=Left>multi_#.svWhere # is a number in the range 0..9</td>
+</tr>
+<tr>
+   <td class=Left>Hellfire multi player</td>
+   <td class=Left>Windows<sup>1</sup></td>
+   <td class=Left>hrinfo_#.drvWhere # is a number in the range 0..9</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=3>
+      <sup>1</sup>Since the files end with .drv, the files would normally be hidden by Windows. You might have to activate show hidden files to see them.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left colspan=3>Macintosh</th>
+</tr>
+<tr>
+   <th class=Left>Game type</th>
+   <th class=Left>Folder</th>
+   <th class=Left>Name</th>
+</tr>
+<tr>
+   <td class=Left>Diablo single player</td>
+   <td class=Left>Diablo</td>
+   <td class=Left>diablo single #Where # is a number in the range 0..9</td>
+</tr>
+<tr>
+   <td class=Left>Diablo multi player</td>
+   <td class=Left>Diablo</td>
+   <td class=Left>diablo multi #Where # is a number in the range 0..9</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div class=Section id=10.3>10.3 Transferring save files</div><br>
+
+<p>There is no way to transfer a save file (and thus a character) to/from single and multi player. To transfer files between computers (and even between a PC and a Mac), simply copy the save files over. Since the 1.08 patch, this is now possible without any problems for multi player files as well. For information on how to transfer a character from Diablo to Hellfire, see the <I>readme.txt</I> file in your Hellfire folder.</p>
+
+<p>To transfer a multi player character from one computer to another in Hellfire (and in Diablo on the PC previous to the 1.08 patch) is a bit tricky. The reason for this is that the game has included the computer name into the save file (you can find the computer name under network in the control panel). Thus, for a save file to be playable on another machine, the computer name has to be the same as on the computer you take the character from. Otherwise, Hellfire will not recognize the save. If the computer name of the two computers is the same, one can simply copy the multi player save file from one of the computers to the other. Don't forget to put it in the Windows folder of the new computer if it is a PC. Single player files seems to be transferable between computers, even between a PC and a Mac) without problems in any version.</p>
+
+<p>If the number of the save file (the # in the name above) is already in use on the new computer it should be safe to change it to a non used number in the 0..9 range. It is very important to make sure you don't get two characters with the exact same name this way as Diablo/Hellfire does not manage to handle such a situation well.</p>
+
+<div class=Section id=10.4>10.4 Backing up your character</div><br>
+
+<p>In case you are worried of losing your character due to crashes or other computer problems, the easiest way to back up your character is to simply copy the save files to a safe place (a floppy disk for example). To restore it later, you simply copy the save file back to the proper folder. See chapter 10.2 for more information about the save files and where they are located.</p>
+
+<div class=Section id=10.5>10.5 Daylight-saving time problems in Diablo 1.00</div><br>
+
+<p>Version 1.00 of Diablo had a bug concerning the daylight-saving time. Due to this bug, <I>any</I> character saved by a game from a later version will lose all its items if you run version 1.00. This is important to remember if you ever have to reinstall Diablo. If you do so, you should <I>not</I> update via Battle.net. You should <I>not</I> press the &quot;Multi player&quot; option on the game menu until you have manually updated to a later version. An alternative would be to backup your characters, update in whatever way you want, and then restore your characters after you have updated.</p>
+
+<div class=Section id=10.6>10.6 Avoiding the Game End movie</div><br>
+
+<p>Every time you or someone else kill Diablo, the game will end and the Game End movie will start to play. As the movie is quite long, it is worth using the following way to terminate it before it reaches the end. As soon as it starts, press Alt-Tab. This will bring you out to your Windows desktop. Now either press Alt-Tab again until you get back to Diablo, or click on Diablo on the Task Bar. You will then be back to the Battle.net chat room or the pre-game menu, depending on what type of game you were playing.</p>
+
+<p>An alternative is to rename (or move) the file <I>Smackw32.dll</I> found in your Diablo folder. It is the file that plays the movies in the game. It wwill also result in that you will not be able to see the introduction movies though. It seems the game will not be affected in any other way if you rename or move this file but be aware that if you get into any trouble, you may have to reinstall the game. If you do this, pay attention to the Daylight-saving time problem mentioned in chapter 10.5.</p>
+
+<div class=Section id=10.7>10.7 Meaningless information about this guide</div><br>
+
+<p>As this is a guide about numbers and formulas it is not more than right that it has a few numbers about itself. Thus, below is a table with some information about this guide. Some of the values may vary with the printer, paper size and format used.</p>
+
+<div align=center>
+<table class=Item1 border>
+<tr>
+   <th class=Left>Version</th>
+   <th>Pages</th>
+   <th>Paragraphs</th>
+   <th>Lines</th>
+   <th>Words</th>
+   <th>Characters</th>
+   <th>Bytes</th>
+</tr>
+<tr>
+   <td class=Left>1.00</td>
+   <td class=Right>68</td>
+   <td class=Right>10 757</td>
+   <td class=Right>13 399</td>
+   <td class=Right>26 238</td>
+   <td class=Right>104 883</td>
+   <td class=Right>594 432</td>
+</tr>
+<tr>
+   <td class=Left>1.10</td>
+   <td class=Right>71</td>
+   <td class=Right>12 040</td>
+   <td class=Right>14 434</td>
+   <td class=Right>30 358</td>
+   <td class=Right>121 563</td>
+   <td class=Right>676 864</td>
+</tr>
+<tr>
+   <td class=Left>1.20</td>
+   <td class=Right>91</td>
+   <td class=Right>13 611</td>
+   <td class=Right>16 119</td>
+   <td class=Right>41 978</td>
+   <td class=Right>172 594</td>
+   <td class=Right>786 944</td>
+</tr>
+<tr>
+   <td class=Left>1.30</td>
+   <td class=Right>101</td>
+   <td class=Right>14 506</td>
+   <td class=Right>17 280</td>
+   <td class=Right>46 973</td>
+   <td class=Right>193 806</td>
+   <td class=Right>846 336</td>
+</tr>
+<tr>
+   <td class=Left>1.31</td>
+   <td class=Right>101</td>
+   <td class=Right>14 596</td>
+   <td class=Right>17 390</td>
+   <td class=Right>47 863</td>
+   <td class=Right>197 838</td>
+   <td class=Right>859 136</td>
+</tr>
+<tr>
+   <td class=Left>1.40</td>
+   <td class=Right>124</td>
+   <td class=Right>17 749</td>
+   <td class=Right>22 206</td>
+   <td class=Right>58 865</td>
+   <td class=Right>244 474</td>
+   <td class=Right>1 084 416</td>
+</tr>
+<tr>
+   <td class=Left>1.50</td>
+   <td class=Right>146</td>
+   <td class=Right>18 745</td>
+   <td class=Right>23 662</td>
+   <td class=Right>74 267</td>
+   <td class=Right>306 580</td>
+   <td class=Right>1 199 104</td>
+</tr>
+<tr>
+   <td class=Left>1.51</td>
+   <td class=Right>147</td>
+   <td class=Right>18 886</td>
+   <td class=Right>23 837</td>
+   <td class=Right>75 006</td>
+   <td class=Right>310 256</td>
+   <td class=Right>1 210 880</td>
+</tr>
+<tr>
+   <td class=Left>1.52</td>
+   <td class=Right>147</td>
+   <td class=Right>18 953</td>
+   <td class=Right>23 929</td>
+   <td class=Right>75 864</td>
+   <td class=Right>314 175</td>
+   <td class=Right>1 219 584</td>
+</tr>
+<tr>
+   <td class=Left>1.60</td>
+   <td class=Right>169</td>
+   <td class=Right>21 510</td>
+   <td class=Right>26 996</td>
+   <td class=Right>88 915</td>
+   <td class=Right>370 027</td>
+   <td class=Right>1 367 040</td>
+</tr>
+<tr>
+   <td class=Left>1.61</td>
+   <td class=Right>171</td>
+   <td class=Right>21 563</td>
+   <td class=Right>27 093</td>
+   <td class=Right>90 371</td>
+   <td class=Right>376 459</td>
+   <td class=Right>1 381 840</td>
+</tr>
+<tr>
+   <td class=Left>1.62</td>
+   <td class=Right>172</td>
+   <td class=Right>21 597</td>
+   <td class=Right>27 136</td>
+   <td class=Right>90 792</td>
+   <td class=Right>378 298</td>
+   <td class=Right>1 384 448</td>
+</tr>
+<tr>
+   <td class=Left>1.00 to 1.10</td>
+   <td class=Right>3</td>
+   <td class=Right>1 283</td>
+   <td class=Right>1 035</td>
+   <td class=Right>4 120</td>
+   <td class=Right>16 883</td>
+   <td class=Right>82 432</td>
+</tr>
+<tr>
+   <td class=Left>1.10 to 1.20</td>
+   <td class=Right>20</td>
+   <td class=Right>1 571</td>
+   <td class=Right>1 685</td>
+   <td class=Right>11 620</td>
+   <td class=Right>51 031</td>
+   <td class=Right>110 080</td>
+</tr>
+<tr>
+   <td class=Left>1.20 to 1.30</td>
+   <td class=Right>10</td>
+   <td class=Right>895</td>
+   <td class=Right>1 161</td>
+   <td class=Right>4 995</td>
+   <td class=Right>31 212</td>
+   <td class=Right>59 392</td>
+</tr>
+<tr>
+   <td class=Left>1.30 to 1.31</td>
+   <td class=Right>0</td>
+   <td class=Right>90</td>
+   <td class=Right>110</td>
+   <td class=Right>890</td>
+   <td class=Right>4 032</td>
+   <td class=Right>12 800</td>
+</tr>
+<tr>
+   <td class=Left>1.31 to 1.40</td>
+   <td class=Right>23</td>
+   <td class=Right>3 153</td>
+   <td class=Right>4 816</td>
+   <td class=Right>11 002</td>
+   <td class=Right>46 636</td>
+   <td class=Right>225 280</td>
+</tr>
+<tr>
+   <td class=Left>1.40 to 1.50</td>
+   <td class=Right>22</td>
+   <td class=Right>996</td>
+   <td class=Right>1 456</td>
+   <td class=Right>15 402</td>
+   <td class=Right>62 106</td>
+   <td class=Right>114 688</td>
+</tr>
+<tr>
+   <td class=Left>1.50 to 1.51</td>
+   <td class=Right>1</td>
+   <td class=Right>141</td>
+   <td class=Right>175</td>
+   <td class=Right>739</td>
+   <td class=Right>3 676</td>
+   <td class=Right>11 776</td>
+</tr>
+<tr>
+   <td class=Left>1.51 to 1.52</td>
+   <td class=Right>0</td>
+   <td class=Right>67</td>
+   <td class=Right>92</td>
+   <td class=Right>858</td>
+   <td class=Right>3 919</td>
+   <td class=Right>8 704</td>
+</tr>
+<tr>
+   <td class=Left>1.52 to 1.60</td>
+   <td class=Right>22</td>
+   <td class=Right>2 557</td>
+   <td class=Right>3 067</td>
+   <td class=Right>13 051</td>
+   <td class=Right>55 852</td>
+   <td class=Right>147 456</td>
+</tr>
+<tr>
+   <td class=Left>1.60 to 1.61</td>
+   <td class=Right>2</td>
+   <td class=Right>53</td>
+   <td class=Right>97</td>
+   <td class=Right>1 456</td>
+   <td class=Right>6 432</td>
+   <td class=Right>14 800</td>
+</tr>
+<tr>
+   <td class=Left>1.61 to 1.62</td>
+   <td class=Right>1</td>
+   <td class=Right>34</td>
+   <td class=Right>43</td>
+   <td class=Right>421</td>
+   <td class=Right>1 839</td>
+   <td class=Right>2 608</td>
+</tr>
+<tr>
+   <td class=Left>1.00 to 1.62</td>
+   <td class=Right>104</td>
+   <td class=Right>10 840</td>
+   <td class=Right>13 737</td>
+   <td class=Right>64 554</td>
+   <td class=Right>273 415</td>
+   <td class=Right>790 016</td>
+</tr>
+</table>
+</div>
+
+<br>
+<br>
+<div class=Section id=10.8>10.8 The End</div><br>
+
+<p>It is worth noticing that there are 3 kinds of people in the world, those who can count and those who can't.</p>
+
+</body>
+
+

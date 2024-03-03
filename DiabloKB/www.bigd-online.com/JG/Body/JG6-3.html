@@ -1,0 +1,305 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG6-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Section 6.3</title>
+
+</head>
+
+<body>
+
+<div class=Section>6.3 Non melee attacks</div><br>
+
+<p>Here we will deal with all other attacks, which include spells, arrows and traps (which are either spells or arrows). As there are so many more possibilities and special cases, some sections have been divided up to handle specific cases.</p>
+
+<div class=Sub id=6.3.1>6.3.1 Player versus Monster</div><br>
+
+<p class=BodyBold>To Hit</p>
+
+<ol>
+   <li>if the effect is Holy Bolt and the monster is not undead or Diablo, exit as other monsters are immune</li>
+   <li>if the target monster is an Illusion Weaver that is currently running away, exit as it is at the moment immune to any attack</li>
+   <li>if the monster is immune to the spell type, exit as it can't be damaged</li>
+   <li>if the target is a monster that is Stone Cursed, the attack is an automatic hit, go directly to damage calculations</li>
+   <li>if the effect is an arrow, calculate 50 + Dex + ToHit<sub>items</sub> + clvl + bonus<sub>player</sub> - distance·distance/2</li>
+   <li>if the effect is an arrow, subtract Ac<sub>monster</sub></li>
+   <li>if the effect is a spell, calculate 50 + Mag + bonus<sub>player</sub></li>
+   <li>if the effect is a spell, subtract 2·mlvl</li>
+   <li>if the value calculated is below 5, set it to 5</li>
+   <li>if the value calculated is above 95, set it to 95</li>
+   <li>the value now achieved is the final chance to hit (FTH)</li>
+   <li>a hit is secured if Rnd[100] &lt; FTH</li>
+</ol>
+
+<p>The steps 5-11 above can be summarized to:</p>
+
+<p class=HalfInd>FTH<sub>arrow</sub> = 50 + Dex + ToHit<sub>items</sub> + clvl + bonus<sub>player</sub> - distance·distance/2 - Ac<sub>monster</sub></p>
+
+<p class=HalfInd>FTH<sub>spell</sub> = 50 + Mag + bonus<sub>player</sub> - 2·mlvl</p>
+
+<ul>
+   <li>The bonus<sub>player</sub> for arrows is 10 for Warriors and Bards, 20 for Rogues, and 0 for all other classes.</li>
+   <li>The bonus<sub>player</sub> for spells is 20 for Sorcerers, 10 for Bards, and 0 for all other classes.</li>
+   <li>Note that if FTH is below 5 or above 95 it is adjusted to 5 and 95. This is commonly referred to as the auto hit and auto miss of a character.</li>
+</ul>
+
+<p class=BodyBold>Damage</p>
+
+<ol>
+   <li>for spells, the actual damage is calculated upon cast. For information about damage ranges for spells, see chapter 4.1.2.</li>
+   <li>if the effect is an arrow, calculate Rnd[max<sub>base weapon damage</sub> - min<sub>base weapon damage</sub> + 1] + min<sub>base weapon damage</sub> (this is basically a random value within the weapons base damage range)</li>
+   <li>if the effect is an arrow, add +% damage</li>
+   <li>if the effect is an arrow, add +damage</li>
+   <li>if the effect is an arrow, add character damage</li>
+   <li>if the effect is a spell and the monster has resistance, divide damage by 4</li>
+   <li>if the spell is Bone Spirit, damage is [current life<sub>monster</sub>]/3</li>
+   <li>the value now achieved is the final damage (FD)</li>
+   <li>deal FD to the target</li>
+</ol>
+
+<p>Steps 2-5 above will generate a damage value that is within the range shown for damage on the character screen.</p>
+
+<p>Note that in Hellfire, Diablo and Bone Demons have resistance to Holy Bolt.</p>
+
+<p class=BodyBold>Hit consequences</p>
+
+<ol>
+   <li>for firing bows, the durability loss check is done regardless of a hit or miss; it is checked each time the character <I>fires</I></li>
+   <li>if the monster was <I>not</I> Stone Cursed and the player had a bow with the &quot;knock back&quot; effect, move the monster one step backwards (backwards is defined according to the monster's facing)</li>
+   <li>if the attack was done with arrows or by a spell to which the monster was not resistant, mark the attacker to be entitled to experience points when the monster die</li>
+   <li>if the target was not a golem and it was not resistant to the spell and FD &gt;= mlvl+3, put monster into hit recovery; a Scavenger or Grave Digger will also be set in a mode to find a carcass to feast/dig upon</li>
+   <li>if the target was a Hidden type of monster and it was not resistant to the spell, put monster into hit recovery as well as in retreat mode (see chapter 5.5.9 under Hidden).</li>
+   <li>if the monster had no specific target before, set the player as the target, this basically activates a monster that gets hit regardless of distance</li>
+   <li>if the monster died, check for any item dropping (see chapter 3.8) and add any experience to the players that are eligible for it (see chapter 2.6)</li>
+   <li>if the monster died and it was Diablo, terminate game and show ending movie</li>
+</ol>
+
+<br>
+<div class=Sub id=6.3.2>6.3.2 Player versus Player</div><br>
+
+<p class=BodyBold>To Hit</p>
+
+<ol>
+   <li>if the target is immune to the spell type, exit as it can't be damaged; this is true for spells like Apocalypse and Holy Bolt</li>
+   <li>if the effect is an arrow, calculate 50 + Dex<sub>attacker</sub> + ToHit<sub>items,attacker</sub> + clvl<sub>attacker</sub> + bonus<sub>attacker</sub> - distance·distance/2</li>
+   <li>if the effect is an arrow, calculate Dex<sub>target</sub>/5 + Ac<sub>items,target</sub> + bonus<sub>target</sub>2.1.4</li>
+   <li>subtract the value in step 3 from the value in step 2</li>
+   <li>if the effect is a spell, calculate 50 + Mag<sub>attacker</sub> + bonus<sub>attacker</sub></li>
+   <li>if the effect is a spell, subtract 2·clvl<sub>target</sub></li>
+   <li>if the value calculated is below 5, set it to 5</li>
+   <li>if the value calculated is above 95, set it to 95</li>
+   <li>the value now achieved is the final chance to hit (FTH)</li>
+   <li>a hit is secured if Rnd[100] &lt; FTH</li>
+</ol>
+
+<p>The steps 2-9 above can be summarized to:</p>
+
+<p class=HalfInd>FTH<sub>arrow</sub> = 50 + Dex<sub>attacker</sub> + ToHit<sub>items,attacker</sub> + clvl<sub>attacker</sub> + bonus<sub>attacker</sub> - distance·distance/2 - Dex<sub>target</sub>/5 - Ac<sub>items,target</sub> - bonus<sub>target</sub></p>
+
+<p class=HalfInd>FTH<sub>spell</sub> = 50 + Mag<sub>attacker</sub> + bonus<sub>attacker</sub> - 2·clvl<sub>target</sub></p>
+
+<ul>
+   <li>The bonus<sub>attacker</sub> for arrows is 10 for Warriors and Bards, 20 for Rogues, and 0 for all other classes.</li>
+   <li>The bonus<sub>attacker</sub> for spells is 20 for Sorcerers, 10 for Bards, and 0 for all other classes.</li>
+   <li>The bonus<sub>target</sub> is clvl/4 for Barbarians, depends on the armor type for Monks (0 for non unique plate, clvl/2 for non unique mail or unique plates and 2·clvl for light armor and unique mail or if naked) and 0 for all other classes.</li>
+   <li>Note that if FTH is below 5 or above 95 it is adjusted to 5 and 95. This is common referred to as the auto To Hit and auto miss of a character.</li>
+</ul>
+
+<p class=BodyBold>Block</p>
+
+<ol>
+   <li>if the target is doing anything other than standing still or performing a melee attack, skip blocking</li>
+   <li>if the target is not a Monk and is not carrying a shield, skip blocking</li>
+   <li>if the target is a Monk and is not carrying a shield, a staff or has at least one hand bear, skip blocking</li>
+   <li>if the spell type is not blockable, skip blocking</li>
+   <li>if the spell type is blockable but the target has resistance to it, skip blocking</li>
+   <li>calculate block Dex<sub>target</sub> + 2·clvl<sub>target</sub> + bonus<sub>target</sub></li>
+   <li>subtract 2·clvl<sub>attacker</sub></li>
+   <li>if the value calculated is below 0, set it to 0</li>
+   <li>if the value calculated is above 100, set it to 100</li>
+   <li>the value now achieved is the final chance to block (FB)</li>
+   <li>a block of the attack is done if Rnd[100] &lt; FB</li>
+</ol>
+
+<p>The steps 5-10 above can be summarized to:</p>
+
+<p class=HalfInd>FB = Dex<sub>target</sub> + 2·(clvl<sub>target</sub> - clvl<sub>attacker</sub>) + bonus<sub>target</sub></p>
+
+<ul>
+   <li>The bonus<sub>target</sub> is 30 for Warriors and Barbarians, 25 for Monks and Bards, 20 for Rogues, and 10 for Sorcerers. Note that there seems to be a bug that makes all those bonus values be 0.</li>
+   <li>In the cases according to step 1-4 above when a block is not checked, the game actually DOES a random check but the value checked against is 100 and thus will never result in a block.</li>
+   <li>It is possible to achieve 100% blocking.</li>
+   <li>Although a player will block monsters even with resistance in Hellfire, they will never block an attack from another player when having resistance.</li>
+</ul>
+
+<p class=BodyBold>Damage</p>
+
+<ol>
+   <li>for spells, the actual damage is calculated upon cast. For information about damage ranges for spells, see chapter 4.1.2.</li>
+   <li>if the effect is an arrow, calculate Rnd[max<sub>base weapon damage</sub> - min<sub>base weapon damage</sub> + 1] + min<sub>base weapon damage</sub> (this is basically a random value within the weapons base damage range)</li>
+   <li>if the effect is an arrow, add +% damage</li>
+   <li>if the effect is an arrow, add +damage</li>
+   <li>if the effect is an arrow and the attacker is a Rogue, add character damage</li>
+   <li>if the effect is an arrow and the attacker is a Warrior or Sorcerer, add double character damage</li>
+   <li>if the spell is Bone Spirit, damage is [current life<sub>target</sub>]/3</li>
+   <li>if the effect is a spell, divide damage by 2</li>
+   <li>if the effect is a spell and the target has resistance to it, reduce the damage by the amount specified by the resistance</li>
+   <li>the value now achieved is the final damage (FD)</li>
+   <li>deal FD to the target</li>
+</ol>
+
+<p>Steps 2-5 above will generate a damage value that is within the range shown for damage on the character screen.</p>
+
+<p>Step 6 above will further modify the damage by factors that will not be shown on the character screen. Shown on character screen is normal character damage, not double, for all character classes.</p>
+
+<p class=BodyBold>Hit consequences</p>
+
+<ol>
+   <li>for firing bows, the durability loss check is done regardless of a hit or miss; it is checked each time the character <I>fires</I></li>
+   <li>if the attacker hits and the target did not block, check if life went down to 0 or below; if so, put target player into death mode and skip further steps</li>
+   <li>if the target did not block and effect was an arrow or it was a spell and the target had no resistance to the spell type, check if FD &gt;= clvl<sub>target</sub> and, if so, put target player into hit recovery and check for durability loss on helm and armor</li>
+   <li>if the target blocked, put target player into block mode and check for durability loss on shield</li>
+</ol>
+
+<br>
+<div class=Sub id=6.3.3>6.3.3 Monster/Trap versus Player</div><br>
+
+<p>Fire Wall, Flame Wave and Ring of Fire also uses this chapter when attacking players.</p>
+
+<p class=BodyBold>To Hit</p>
+
+<ol>
+   <li>if the effect is an arrow from a monster, calculate 30 + ToHit<sub>base,monster</sub> + 2·mlvl - 2·distance</li>
+   <li>if the effect is an arrow from a monster, subtract Dex/5 + Ac<sub>items,player</sub> + bonus<sub>player</sub> + 2·clvl</li>
+   <li>if the effect is an arrow from a trap, calculate 100 - (Dex/5 + Ac<sub>items,player</sub> + bonus<sub>player</sub> + 2·clvl) / 2 - 2·distance</li>
+   <li>if the effect is a spell from a monster, calculate 40 + 2·mlvl</li>
+   <li>if the effect is a spell from a monster, subtract 2·clvl</li>
+   <li>if the effect is a spell from a trap or a player, set To Hit to 40</li>
+   <li>if the value calculated is below 10, set it to 10</li>
+   <li>on dlvl 14 if the value calculated is below 20, set it to 20</li>
+   <li>on dlvl 15 if the value calculated is below 25, set it to 25</li>
+   <li>on dlvl 16 if the value calculated is below 30, set it to 30</li>
+   <li>the value now achieved is the final chance to hit (FTH)</li>
+   <li>a hit is secured if Rnd[100] &lt; FTH</li>
+</ol>
+
+<p>The steps 1-11 above can be summarized to:</p>
+
+<p class=HalfInd>FTH<sub>monster arrow</sub> = 30 + ToHit<sub>base,monster</sub> + 2·mlvl - 2·distance - Dex/5 - Ac<sub>items,player</sub> - bonus<sub>player</sub> - 2·clvl</p>
+
+<p class=HalfInd>FTH<sub>trap arrow</sub> = 100 - (Dex/5 + Ac<sub>items,player</sub> + bonus<sub>player</sub> + 2·clvl) / 2 - 2·distance</p>
+
+<p class=HalfInd>FTH<sub>monster spell</sub> = 40 + 2·mlvl - 2·clvl</p>
+
+<p class=HalfInd>FTH<sub>trap spell</sub> = 40</p>
+
+<p class=HalfInd>FTH<sub>player spell</sub> = 40</p>
+
+<ul>
+   <li>ToHit<sub>base,monster</sub> is the value found in the tables for each monster in chapter 5.2 and 5.4.</li>
+   <li>Fire Wall, Flame Wave and Ring of Fire always attack players as if they were traps.</li>
+   <li>For unique monsters, use mlvl<sub>battle</sub></li>
+   <li>The bonus<sub>player</sub> is clvl/4 for the Barbarian, depends on the armor type for Monks (0 for non unique plate, clvl/2 for non unique mail or unique plates and 2·clvl for light armor and unique mail or if naked) and 0 for all other classes.</li>
+   <li>Note that the FTH is adjusted for auto hit values.</li>
+</ul>
+
+<p Class=BodyBold>Block</p>
+
+<ol>
+   <li>if the target is doing anything other than standing still or performing a melee attack, skip blocking</li>
+   <li>if the target is not a Monk and is not carrying a shield, skip blocking</li>
+   <li>if the target is a Monk and is not carrying a shield, a staff or has at least one hand bear, skip blocking</li>
+   <li>if the spell type is not blockable, skip blocking</li>
+   <li><I>in Diablo</I>, if the spell type is blockable but the target has resistance to it, skip blocking</li>
+   <li>if the attacker is a monster calculate block Dex + 2·clvl + bonus<sub>plasyer</sub></li>
+   <li>if the attacker is a monster subtract 2·mlvl</li>
+   <li>if the attacker is a trap, calculate Dex<sub>target</sub> + bonus<sub>target</sub></li>
+   <li>if the value calculated is below 0, set it to 0</li>
+   <li>if the value calculated is above 100, set it to 100</li>
+   <li>the value now achieved is the final chance to block (FB)</li>
+   <li>a block of the attack is done if Rnd[100] &lt; FB</li>
+</ol>
+
+<p>The steps 5-11 above can be summarized to:</p>
+
+<p class=HalfInd>FB = Dex + 2·(clvl - mlvl) + bonus<sub>player</sub></p>
+
+<ul>
+   <li>The bonus<sub>player</sub> is 30 for Warriors and Barbarians, 25 for Monks and Bards, 20 for Rogues, and 10 for Sorcerers. Note that there seems to be a bug that makes all those bonus values be 0.</li>
+   <li>For unique monsters, use mlvl<sub>battle</sub></li>
+   <li>In the cases according to step 1-4 above when a block is not checked, the game actually DOES a random check, but the value checked against is 100 and thus will never result in a block.</li>
+   <li>It is possible to achieve 100% blocking.</li>
+</ul>
+
+<p class=BodyBold>Damage</p>
+
+<ol>
+   <li>for spells and traps, the actual damage is calculated upon cast. For information about damage ranges for spells, see chapter 4.1.2 for traps and chapter 4.1.2 for spells from players.</li>
+   <li>if the attacker is a trap and the player has an item of thieves, divide damage by 2</li>
+   <li><I>in Hellfire</I>, if the attacker is <I>not</I> a trap, divide damage by 2</li>
+   <li>add -damage</li>
+   <li>if damage is below 1, set it to 1</li>
+   <li>if the effect is a spell and the target has resistance to it, reduce the damage by the amount specified by the resistance</li>
+   <li>the value now achieved is the final damage (FD)</li>
+   <li>deal FD to target</li>
+</ol>
+
+<p class=BodyBold>Hit consequences</p>
+
+<ol>
+   <li>if the effect was an arrow and the monster had the knock back ability, move the player one step backwards (backwards is defined according to the player's facing)</li>
+   <li>if the attacker hit and the target did not block, check if life went down to 0 or below; if so, put target player into death mode and skip further steps</li>
+   <li>if the target did not block and effect was an arrow or it was a spell and the target had no resistance to the spell type, check if FD &gt;= clvl and, if so, put target player into hit recovery and check for durability loss on helm and armor</li>
+   <li>if the target blocked, put target player into block mode and check for durability loss on shield</li>
+</ol>
+
+<br>
+<div class=Sub id=6.3.4>6.3.4 Monster/Trap versus Monster</div><br>
+
+<p class=BodyBold>To Hit</p>
+
+<ol>
+   <li>if the target monster is an Illusion Weaver that is currently running away, exit as it is at the moment immune to any attack</li>
+   <li>if the monster is immune to the spell type, exit as it can't be damaged</li>
+   <li>if the target is a monster that is Stone Cursed, the attack is an automatic hit; go directly to damage calculations</li>
+   <li>if the effect is an arrow, calculate 90 - Ac<sub>target</sub> - distance</li>
+   <li>if the effect is a spell, calculate 90 - Ac<sub>target</sub></li>
+   <li>if the value calculated is below 5, set it to 5</li>
+   <li>if the value calculated is above 95, set it to 95</li>
+   <li>the value now achieved is the final chance to hit (FTH)</li>
+   <li>a hit is secured if Rnd[100] &lt; FTH</li>
+</ol>
+
+<p>The steps 4-7 above can be summarized to:</p>
+
+<p class=HalfInd>FTH<sub>arrow</sub> = 90 - Ac<sub>target</sub> - distance</p>
+
+<p class=HalfInd>FTH<sub>spell</sub> = 90 - Ac<sub>target</sub></p>
+
+<ul>
+   <li>Note that if FTH is below 5 or above 95 it is adjusted to 5 and 95. This is the same auto To Hit and auto miss that characters have.</li>
+</ul>
+
+<p class=BodyBold>Damage</p>
+
+<ol>
+   <li>for spells and traps, the actual damage is calculated upon cast. For information about damage ranges for spells, see chapter 4.1.2.</li>
+   <li>if the effect is a spell and the monster has resistance, divide damage by 4</li>
+   <li>the value now achieved is the final damage (FD)</li>
+   <li>deal FD to the target</li>
+</ol>
+
+<p class=BodyBold>Hit consequences</p>
+
+<ol>
+   <li>if the target was not a golem and it was not resistant to the spell and FD &gt;= mlvl+3, put monster into hit recovery; a Scavenger or Grave Digger will also be set in a mode to find a carcass to feast/dig upon</li>
+   <li>if the target was a Hidden type of monster and it was not resistant to the spell, put monster into hit recovery as well as in retreat mode (see chapter 5.5.9).</li>
+   <li>if the monster died, check for any item dropping (see chapter 3.8) and add any experience to the players that are eligible for it (see chapter 2.6)</li>
+   <li>if the monster died and it was Diablo, terminate game and show ending movie</li>
+</ol>
+
+</body>
+
+

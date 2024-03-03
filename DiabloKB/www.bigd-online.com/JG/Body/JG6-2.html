@@ -1,0 +1,284 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG6-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Section 6.2</title>
+
+</head>
+
+<body>
+
+<div class=Section>6.2 Melee attacks</div><br>
+
+<p>Here we will only discuss melee attacks; this does <I>not</I> apply to attacks with bows, and is always done to an adjacent target.</p>
+
+<div class=Sub id=6.2.1>6.2.1 Player versus Monster</div><br>
+
+<p class=BodyBold>To Hit</p>
+
+<ol>
+   <li>if the target monster is an Illusion Weaver that is currently running away, exit as it is at the moment immune to any attack</li>
+   <li>if the target monster is Stone Cursed, the attack is an automatic hit, go directly to damage calculations</li>
+   <li>calculate 50 + Dex/2 + ToHit<sub>items</sub> + clvl + bonus<sub>player</sub></li>
+   <li><I>in Hellfire</I>, if the player has any item with the &quot;penetrate armor&quot; effect, temporarily reduce Ac<sub>monster</sub> as appropriate</li>
+   <li>subtract Ac<sub>monster</sub></li>
+   <li><I>in Hellfire</I>, if the attack is an adjacent quarter damage attack, subtract 70 - 2·clvl (minimum 30)</li>
+   <li>if the value calculated is below 5, set it to 5</li>
+   <li>if the value calculated is above 95, set it to 95</li>
+   <li>the value now achieved is the final chance to hit (FTH)</li>
+   <li>a hit is secured if Rnd[100] &lt; FTH</li>
+</ol>
+
+<p>The steps 3-8 above can be summarized to:</p>
+
+<p class=HalfInd>FTH = 50 + Dex/2 + ToHit<sub>items</sub> + clvl + bonus<sub>player</sub> - Ac<sub>monster</sub> <I>- penalty<sub>quarter damage</sub></I></p>
+
+<ul>
+   <li><I>In Diablo</I>, ToHit<sub>items</sub> includes the effect of items with the &quot;penetrate armor&quot; effect.</li>
+   <li>The bonus<sub>player</sub> is 20 for Warriors and 0 for all other classes.</li>
+   <li>penalty<sub>quarter damage</sub> only apply to certain attacks in Hellfire, see chapter 2.2.2 for more information.</li>
+   <li>Note that if FTH is below 5 or above 95 it is adjusted to 5 and 95. This is commonly referred to as the auto hit and auto miss of a character.</li>
+</ul>
+
+<p class=BodyBold>Damage</p>
+
+<ol>
+   <li>calculate Rnd[max<sub>base weapon damage</sub> - min<sub>base weapon damage</sub> + 1] + min<sub>base weapon damage</sub> (this is basically a random value within the weapons base damage range)</li>
+   <li>add +% damage</li>
+   <li>add +damage</li>
+   <li>add character damage</li>
+   <li>if the attacker is a Warrior or Barbarian then double damage if Rnd[100] &lt; clvl (critical hit)</li>
+   <li>if the monster is undead or an animal, adjust the damage according to the table in chapter 5.1 under monster type, that is, under certain circumstances multiply damage by 1.5 or divide damage by 2</li>
+   <li>if the monster is a demon, triple the damage if the player is carrying any item with the &quot;+200% damage versus demons&quot; effect</li>
+   <li><I>in Hellfire</I>, if the attacker has an item with the devastation effect and Rnd[100] &lt; 5, triple the damage</li>
+   <li><I>in Hellfire</I>, if the attacker has an item with the jester's effect 50% of the time multiply damage by Rnd[100]/100, the other 50% multiply damage by 5·(Rnd[100]+20)/100</li>
+   <li><I>in Hellfire</I>, if the attack is an adjacent &quot;quarter&quot; damage attack, divide the damage by 4 (hence the &quot;quarter&quot; damage)</li>
+   <li><I>in Hellfire</I>, if the attacker has an item with the peril effect, double the damage</li>
+   <li>the value now achieved is the final damage (FD)</li>
+   <li>deal FD to the target</li>
+</ol>
+
+<p>Steps 1-4 above will generate a damage value that is within the range shown for damage on the character screen.</p>
+
+<p>Steps 5-12 above will further modify the damage by factors that will not be shown on the character screen.</p>
+
+<p>Step 9 above is actually done as:</p>
+
+<ol>
+   <li>calculate Rnd[200]</li>
+   <li>if the value is below 100 multiply the damage by this value and then divide by 100</li>
+   <li>otherwise subtract 80 and multiply by 5, then multiply the damage by this value and divide by 100</li>
+</ol>
+
+<p class=BodyBold>Hit consequences</p>
+
+<ol>
+   <li><I>in Hellfire</I>, if the attacker has an item of doppelganger's effect and the monster is not Diablo or an unique monster, duplicate the monster if Rnd[100] &lt; 5</li>
+   <li><I>in Hellfire</I>, if the attacker has an item with the peril effect, take the damage from step 3 under Damage above, modify it for the -damage effect and deal it to the attacker</li>
+   <li>if the attacker has an item equipped that has the &quot;random life stealing&quot; effect, calculate Rnd[FD/8] and add this to current life (while checking so that current life never exceeds max life)</li>
+   <li>if the attacker has an item equipped that has 3% mana stealing, calculate 0.03·FD</li>
+   <li>if the attacker has an item equipped that has 5% mana stealing, calculate 0.05·FD</li>
+   <li>if the attacker do <I>not</I> have any item of <I>corruption</I> add the amount calculated in step 4 or 5 to the current mana (while checking so that current mana never exceeds max mana)</li>
+   <li>if the attacker has an item equipped that has 3% life stealing, calculate 0.03·FD</li>
+   <li>if the attacker has an item equipped that has 5% life stealing, calculate 0.05·FD</li>
+   <li>add the amount calculated in step 7 or 8 to the current life (while checking so that current life never exceeds max life)</li>
+   <li><I>in Hellfire</I>, if the attacker hit and has an item equipped with the decay effect, subtract 5 from its To Hit bonus, if it reaches -100%, destroy the item</li>
+   <li>if the attacker hit, check for weapon durability loss</li>
+   <li>if the monster was <I>not</I> Stone Cursed and the player had an item with the &quot;knock back&quot; effect, move the monster one step backwards (backwards is defined according to the monster's facing)</li>
+   <li>mark the attacker to be entitled to experience points when the monster dies</li>
+   <li>if the target was not a golem and it was not resistant to the spell and FD &gt;= mlvl+3, put monster into hit recovery; a Scavenger or Grave Digger will also be set in a mode to find a carcass to feast/dig upon</li>
+   <li>if the target was a Hidden type of monster and it was not resistant to the spell, put monster into hit recovery as well as in retreat mode (see chapter 5.5.9 under Hidden).</li>
+   <li>if the monster died, check for any item dropping (see chapter 3.8) and add any experience to the players that are eligible for it (see chapter 2.6)</li>
+   <li>if the monster died and it was Diablo, terminate game and show ending movie for players on dlvl 16</li>
+</ol>
+
+<br>
+<div class=Sub id=6.2.2>6.2.2 Player versus Player</div><br>
+
+<p class=BodyBold>To Hit</p>
+
+<ol>
+   <li>calculate 50 + Dex<sub>attacker</sub>/2 + ToHit<sub>items,attacker</sub> + clvl<sub>attacker</sub> + bonus<sub>attacker</sub></li>
+   <li>calculate Dex<sub>target</sub>/5 + Ac<sub>items,target</sub> + bonus<sub>target</sub></li>
+   <li>subtract the value in step 2 from the value in step 1</li>
+   <li>if the value calculated is below 5, set it to 5</li>
+   <li>if the value calculated is above 95, set it to 95</li>
+   <li>the value now achieved is the final chance to hit (FTH)</li>
+   <li>a hit is secured if Rnd[100] &lt; FTH</li>
+</ol>
+
+<p>The steps 1-6 above can be summarized to:</p>
+
+<p class=HalfInd>FTH = 50 + Dex<sub>attacker</sub>/2 + ToHit<sub>items,attacker</sub> + clvl<sub>attacker</sub> + bonus<sub>attacker</sub> - Dex<sub>target</sub>/5 - Ac<sub>items,target</sub> - bonus<sub>target</sub></p>
+
+<ul>
+   <li><I>In Diablo</I>, ToHit<sub>items</sub> includes the effect of items with the &quot;penetrate armor&quot; effect.</li>
+   <li>The bonus<sub>attacker</sub> is 20 for Warriors and 0 for all other classes.</li>
+   <li>The bonus<sub>target</sub> is clvl/4 for Barbarians, depends on the armor type for Monks (0 for non unique plate, clvl/2 for non unique mail or unique plates and 2·clvl for light armor and unique mail or if naked), and 0 for all other classes.</li>
+   <li>Note that if FTH is below 5 or above 95 it is adjusted to 5 and 95. This is commonly referred to as the auto hit and auto miss of a character.</li></ul>
+
+<p class=BodyBold>Block</p>
+
+<ol>
+   <li>if the target is doing anything other than standing still or performing a melee attack, skip blocking</li>
+   <li>if the target is not a Monk and is not carrying a shield, skip blocking</li>
+   <li>if the target is a Monk and is not carrying a shield, a staff or has at least one hand bear, skip blocking</li>
+   <li>calculate Dex<sub>target</sub> + 2·clvl<sub>target</sub> + bonus<sub>target</sub></li>
+   <li>subtract 2·clvl<sub>attacker</sub></li>
+   <li>if the value calculated is below 0, set it to 0</li>
+   <li>if the value calculated is above 100, set it to 100</li>
+   <li>the value now achieved is the final chance to block (FB)</li>
+   <li>a block of the attack is done if Rnd[100] &lt; FB</li>
+</ol>
+
+<p>The steps 3-8 above can be summarized to:</p>
+
+<p class=HalfInd>FB = Dex<sub>target</sub> + 2·(clvl<sub>target</sub> - clvl<sub>attacker</sub>) + bonus<sub>target</sub></p>
+
+<ul>
+   <li>The bonus<sub>target</sub> is 30 for Warriors and Barbarians, 25 for Monks and Bards, 20 for Rogues, and 10 for Sorcerers. Note that there seems to be a bug that makes all those bonus values be 0.</li>
+   <li>It is possible to achieve 100% blocking.</li>
+</ul>
+
+<p class=BodyBold>Damage</p>
+
+<ol>
+   <li>calculate Rnd[max<sub>base weapon damage</sub> - min<sub>base weapon damage</sub> + 1] + min<sub>base weapon damage</sub> (this is basically a random value within the weapons base damage range)</li>
+   <li>add +% damage</li>
+   <li>add +damage</li>
+   <li>add character damage</li>
+   <li>if the attacker is a Warrior or Barbarian then double damage if Rnd[100] &lt; clvl<sub>attacker</sub> (critical hit)</li>
+  <li>the value now achieved is the final damage (FD)</li>
+  <li>deal FD to the target</li>
+</ol>
+
+<p>Steps 1-4 above will generate a damage value that is within the range shown for damage on the character screen.</p>
+
+<p>Steps 5-6 above will further modify the damage by factors that will not be shown on the character screen.</p>
+
+<p class=BodyBold>Hit consequences</p>
+
+<ol>
+   <li>if the attacker has an item equipped that has the &quot;random life stealing&quot; effect, calculate Rnd[FD/8] and add this to current life (while checking so that current life never exceeds max life). It is worth noticing that in normal Diablo, the random stealing effect is <I>only</I> present on a single player quest item, so this step is this never performed.</li>
+   <li><I>in Hellfire</I>, if the attacker hit (regardless of blocking) and has an item equipped with the decay effect, subtract 5 from its To Hit bonus, if it reaches -100%, destroy the item</li>
+   <li>if the attacker hit (regardless of blocking), check for weapon durability loss</li>
+   <li>if the attacker hit and the target did not block, check if life went down to 0 or below, if so put target player into death mode and skip further steps</li>
+   <li>if FD &gt;= clvl<sub>target</sub> and the target did not block then put target player into hit recovery and check for durability loss on helm and armor</li>
+   <li>if the target blocked, put target player into block mode and check for durability loss on shield</li>
+</ol>
+
+<p>For the probabilities of durability losses, see chapter 3.7.1.</p>
+
+<div class=Sub id=6.2.3>6.2.3 Monster versus Player</div><br>
+
+<p class=BodyBold>To Hit</p>
+
+<ol>
+   <li>calculate 30 + ToHit<sub>base,monster</sub> + 2·mlvl</li>
+   <li>calculate Dex/5 + Ac<sub>items,player</sub> + bonus<sub>player</sub> + 2·clvl</li>
+   <li>subtract the value in step 2 from the value in step 1</li>
+   <li><I>in Hellfire</I>, if the player has extra AC versus Demons or Undead, subtract 40/20 if the monster is of the correct type</li>
+   <li>if the value calculated is below 15, set it to 15</li>
+   <li>on dlvl 14 if the value calculated is below 20, set it to 20</li>
+   <li>on dlvl 15 if the value calculated is below 25, set it to 25</li>
+   <li>on dlvl 16 if the value calculated is below 30, set it to 30</li>
+   <li>the value now achieved is the final chance to hit (FTH)</li>
+   <li>a hit is secured if Rnd[100] &lt; FTH</li>
+</ol>
+
+<p>The steps 1-9 above can be summarized to:</p>
+
+<p class=HalfInd>FTH = 30 + ToHit<sub>base,monster</sub> + 2·(mlvl-clvl) - Dex/5 - Ac<sub>items,player</sub> - bonus<sub>player</sub></p>
+
+<ul>
+   <li>ToHit<sub>base,monster</sub> is the value found in the tables for each monster in chapter 5.2 and 5.4. For the second attack of Magma Demons it is 10 higher, and for the second attack of Lightning Demons it is 20 lower. For charges the base value is always 500%.</li>
+   <li>For unique monsters, use mlvl<sub>battle</sub></li>
+   <li>The bonus<sub>player</sub> is clvl/4 for Barbarians, depends on the armor type for Monks (0 for non unique plate, clvl/2 for non unique mail or unique plates, and 2·clvl for light armor and unique mail or if naked), and 0 for all other classes.</li>
+   <li>Note that the FTH is adjusted for auto hit values.</li>
+</ul>
+
+<p class=BodyBold>Block</p>
+
+<ol>
+   <li>if the target is doing anything other than standing still or performing a melee attack, skip blocking</li>
+   <li>if the target is not a Monk and is not carrying a shield, skip blocking</li>
+   <li>if the target is a Monk and is not carrying a shield, a staff or has at least one hand bear, skip blocking</li>
+   <li>calculate Dex + 2·clvl + bonus<sub>player</sub></li>
+   <li>subtract 2·mlvl</li>
+   <li>if the value calculated is below 0, set it to 0</li>
+   <li>if the value calculated is above 100, set it to 100</li>
+   <li>the value now achieved is the final chance to block (FB)</li>
+   <li>a block of the attack is done if Rnd[100] &lt; FB</li>
+</ol>
+
+<p>The steps 3-8 above can be summarized to:</p>
+
+<p class=HalfInd>FB = Dex + 2·(clvl - mlvl) + bonus<sub>player</sub></p>
+
+<ul>
+   <li>The bonus<sub>player</sub> is 30 for Warriors and Barbarians, 25 for Monks and Bards, 20 for Rogues, and 10 for Sorcerers. Note that there seems to be a bug that makes all those bonus values be 0.</li>
+   <li>For unique monsters, use mlvl<sub>battle</sub></li>
+   <li>In the cases according to step 1-2 above when a block is not checked, the game actually DOES a random check, but the value checked against is 100 and thus will never result in a block.</li>
+   <li>It is possible to achieve 100% blocking.</li>
+</ul>
+
+<p class=BodyBold>Damage</p>
+
+<ol>
+   <li>calculate Rnd[max<sub>base damage</sub> - min<sub>base damage</sub> + 1] + min<sub>base damage</sub> (this is basically a random value within the monsters base damage range)</li>
+   <li>add -damage</li>
+   <li>if damage is below 1, set it to 1</li>
+   <li><I>in Hellfire</I>, if the player has a Reflect spell running, calculate the final reflected damage (FRD) by multiplying the damage by (Rnd[10] + 20)/100</li>
+   <li><I>in Hellfire</I>, if the player has a Reflect spell running, subtract FRD from the damage calculated in steps 1-3</li>
+   <li>the value now achieved is the final damage (FD)</li>
+   <li>deal FD to target</li>
+</ol>
+
+<p class=BodyBold>Hit consequences</p>
+
+<ol>
+   <li><I>in Hellfire</I>, if the monster hits and the player has a Reflect spell running, reflect FRD to it and check for death and hit recovery of the monster normally</li>
+   <li>if the monster hits and it is a Black Death, remove 1 permanently from life</li>
+   <li>if the player has any item equipped that has the &quot;damage to attacker&quot; effect, deal Rnd[3] + 1 damage to it and check for death and hit recovery of the monster normally</li>
+   <li>if the monster had the knock back ability, move the player one step backwards (backwards is defined according to the player's facing)</li>
+   <li>if the attacker hits and the target did not block, check if life went down to 0 or below; if so, put target player into death mode and skip further steps</li>
+   <li>if FD &gt;= clvl and the target did not block, put target player into hit recovery and check for durability loss on helm and armor</li>
+   <li>if the target blocked, put target player into block mode and check for durability loss on shield</li>
+</ol>
+
+<p>For the probabilities of durability losses, see chapter 3.7.1.</p>
+
+<div class=Sub id=6.2.4>6.2.4 Monster versus Monster</div><br>
+
+<p class=BodyBold>To Hit</p>
+
+<ol>
+   <li>if the target monster is an Illusion Weaver that is currently running away, exit as it is at the moment immune to any attack</li>
+   <li>if the target is a monster that is Stone Cursed, the attack is an automatic hit, go directly to damage calculations</li>
+   <li>the monsters base To Hit will also be the monsters final chance to hit (FTH) so the AC of the target has no effect</li>
+   <li>a hit is secured if Rnd[100] &lt; FTH</li>
+</ol>
+
+<p class=BodyBold>Damage</p>
+
+<ol>
+   <li>calculate Rnd[max<sub>base damage</sub> - min<sub>base damage</sub> + 1] + min<sub>base damage</sub> (this is basically a random value within the monsters base damage range)</li>
+   <li>the value now achieved is the final damage (FD)</li>
+   <li>deal FD to target</li>
+</ol>
+
+<p class=BodyBold>Hit consequences</p>
+
+<ol>
+   <li>if the target was <I>not</I> Stone Cursed and the attacker had attack type with the &quot;knock back&quot; effect, move the target one step backwards (backwards is defined according to the target's facing).</li>
+   <li>if the attacker was a golem, mark the golem's owner to be entitled to experience points when the monster dies</li>
+   <li>if FD &gt;= mlvl<sub>target</sub>+3 or if the target is a Hidden type of monster put target into hit recovery; a Scavenger or Grave Digger will also be set in a mode to find a carcass to feast/dig upon</li>
+   <li>if the target died, check for any item dropping (see chapter 3.8) and add any experience to the players that are eligible for it (see chapter 2.6)</li>
+   <li>if the target died and it was Diablo, terminate game and show ending movie</li>
+</ol>
+
+</body>
+
+

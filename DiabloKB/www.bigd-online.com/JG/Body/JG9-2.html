@@ -1,0 +1,157 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG9-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Section 9.2</title>
+
+</head>
+
+<body>
+
+<div class=Section>9.2 Commands available in chat channels</div><br>
+
+<p>Any command which accepts a username can also accept an account number instead. For example, instead of typing <I>/whois Jarulf</I>, you can type <I>/whois #995959</I>. That way your commands work on a specific person regardless of which character or game he/she is using at the moment. The lists below are based on Blizzard's own list of commands, but have been completed and updated by myself. Also note that some commands may work slightly different in other games and there may also exists commands that do not apply to Diablo. This guide, however, only cover Diablo and its commands.</p>
+
+<p class=BodyBold>Basic commands</p>
+
+<p>These commands can be used by anyone in any channel or game. For exceptions to what commands that can be used in games, see chapter 9.3.</p>
+
+<div align=left>
+<table class=Texttable valign=top width=100%>
+<col width=200>
+<tr>
+   <td>/away &lt;reason&gt;</td>
+   <td><I>Example: /away chatting at ICQ.</I> Typing this and specifying a reason that you are away will tell anyone who does a /whois on you or anyone that whispers to you that you are away and the reason you specified. Typing /away with no &lt;reason&gt; will toggle it on/off depending on its previous status. So to turn it off, make sure it is already on, and type only /away.</td>
+</tr>
+<tr>
+   <td>/channel &lt;channel name&gt;</td>
+   <td><I>Example: /channel bar.</I> Joins a different channel without having to use the channel join screen. Aliases for this command: <I>/join</I>.</td>
+</tr>
+<tr>
+   <td>/dnd &lt;reason&gt;</td>
+   <td><I>Example: /dnd I am currently in a game playing.</I> This command prevents all messages whispered to you from being displayed on your screen. This is excellent if you are in a game and do not want to be disturbed. Typing /dnd with no &lt;reason&gt; will toggle it on/off depending on its previous status. So to turn it off, make sure it is already on, and type only /dnd.</td>
+</tr>
+<tr>
+   <td>/help &lt;topic&gt;</td>
+   <td><I>Examples: /help commands or /help /away</I>. Gives you help on the commands available on Battle.net. Typing /help without any &lt;topic&gt; will give you a list of possible topics.</td>
+</tr>
+<tr>
+   <td>/me</td>
+   <td><I>Example: /me feels tired</I>. Displays emotion text, as in &quot;Jarulf feels tired&quot;. Aliases for this command: <I>/emote</I>.</td>
+</tr>
+<tr>
+   <td>/squelch &lt;username&gt;</td>
+   <td><I>Examples: /squelch Jarulf or /squelch #683989.</I> Ignores any future messages from the specified user, effectively muting him/her to you. You cannot squelch yourself. Aliases for this command: <I>/ignore</I>.</td>
+</tr>
+<tr>
+   <td>/stats &lt;username&gt; &lt;ID&gt;</td>
+   <td><I>Examples: /stats Jarulf STAR or /stats #683989</I>. Shows the stats of player in the game with the specified ID. If no ID is given, it will be given for the same game as you are currently using. As Diablo has no ladders, you will be given an error message if you don't specify an ID when using Diablo. This command works even if the user is not currently on Battle.net. It is thus a good way to see if a certain account name is in use or not. It also works even if the user does not have the specified game as each account will always have information about all existing games, the stats for such games will, of course, always be 0-0-0. The ID for the current games existing on Battle.net, that has ladders, are:<br><br>
+	<table class=Texttable>
+         <tr><td>STAR</td><td>Starcraft</td></tr>
+	   <tr><td>SSHR</td><td>Starcraft Shareware</td></tr>
+	   <tr><td>JSTR</td><td>Starcraft, Japanese version</td></tr>
+	   <tr><td>SEXP</td><td>Brood War</td></tr>
+	   <tr><td>W2BNE</td><td>Warcraft II, Battle.net Edition</td></tr>
+	</table>
+   </td>
+</tr>
+<tr>
+   <td>/time</td>
+   <td><I>Example: /time.</I> Gives you Battle.net's time as well as your own local time. For some, it shows the local time to incorrectly be the same as Battle.net's time.</td>
+</tr>
+<tr>
+   <td>/unsquelch &lt;username&gt;</td>
+   <td><I>Examples: /unsquelch Jarulf or /unsquelch #995959.</I> Allows a previously squelched user to talk to you normally. Aliases for this command: <I>/unignore</I>.</td>
+</tr>
+<tr>
+   <td>/users</td>
+   <td><I>Example: /users.</I> Displays statistics about the number of users currently connected to Battle.net.</td>
+</tr>
+<tr>
+   <td>/whisper &lt;username&gt; &lt;message&gt;</td>
+   <td><I>Example: /whisper Jarulf Hi Jarulf!</I> Sends a private message to a user on-line regardless of which channel or game that user is in. This is an excellent way to let your friends know you are on-line. Aliases for this command: <I>/w, /msg, /m</I>.</td>
+</tr>
+<tr>
+   <td>/who &lt;channel name&gt;</td>
+   <td><I>Example: /who bar.</I> Displays a list of all the users in the channel specified. If no channel name is specified it lists the users in the current channel.</td>
+</tr>
+<tr>
+   <td>/whoami</td>
+   <td><I>Example: /whoami</I>. Tells your account number and in what channel you are. Basically this is the same as doing a <I>/whois &lt;your name&gt;</I>.</td>
+</tr>
+<tr>
+   <td>/whois &lt;username&gt;</td>
+   <td><I>Examples: /whois Jarulf or /whois #995959.</I> Looks up some basic information on a user, including the user's current location (channel or game, but will not list the password for private games or channel name of a private channel) and account number. This is a great way to find your friends on-line. Aliases for this command: <I>/whereis, /where</I>.</td>
+</tr>
+</table>
+</div>
+
+<p class=BodyBold>Operator commands</p>
+
+<p>Operator commands only apply to private channels. The first person to create a private channel becomes the operator of that channel (except in special clan channels where the person using the clan account name automatically gains operator status upon entry, see chapter 9.1 for more information). You can tell who is the operator of a channel by looking for the user with the gavel. When you list all persons in a channel with the /who command, the operator will have [ ] around his/her name. It is possible to use [ ] in ones name. When the channel operator leaves, he can pass on the gavel to an heir that he designates. If he or she does not designate an heir, the person below him on the list will be the new operator.</p>
+
+<div align=left>
+<table class=Texttable valign=top width=100%>
+<col width=200>
+<tr>
+   <td>/ban &lt;username&gt; &lt;message&gt;</td>
+   <td><I>Examples: /ban Jarulf because I don't like him or /ban #995959.</I> Kicks a user out of the channel, while showing the message, and prevents him/her from returning until the current operator steps down, leaves the channel, or /unban you. This is the most powerful command at an operator's disposal, so use it wisely.</td>
+</tr>
+<tr>
+   <td>/kick &lt;username&gt; &lt;message&gt;</td>
+   <td><I>Examples: /kick Jarulf or /kick #995959 because he does not belong in this channel.</I> Kicks a user out of the channel, while showing the message. This is best used as a warning since a kicked user can return at his/her leisure.</td>
+</tr>
+<tr>
+   <td>/designate &lt;username&gt;</td>
+   <td><I>Examples: /designate Jarulf or /designate #995959</I>. Selects a person to become the channel operator when you step down, either by resigning or by leaving the channel. If no one is designated, the gavel will be passed on to the person below the operator.</td>
+</tr>
+<tr>
+   <td>/resign</td>
+   <td><I>Example: /resign.</I> Steps you down as channel operator to become a normal user again. Aliases for this command: <I>/rejoin</I>.</td>
+</tr>
+<tr>
+   <td>/unban &lt;username&gt;</td>
+   <td><I>Examples: /unban Jarulf or /unban #995959.</I> Allows a banned user to return to the channel.</td>
+</tr>
+</table>
+</div>
+
+<p class=BodyBold>Other important information</p>
+
+<p>There are a few other important keys that are worth knowing about while on Battle.net.</p>
+
+<div align=left>
+<table class=Texttable valign=top width=100%>
+<col width=200>
+<tr>
+   <td>F1</td>
+   <td>Gives you basic help and information about Battle.net. If you press F1 while in a game you will instead be given important information about playing the game. Disregard anything about choosing maps and about ladders as it does not apply to Diablo. Who knows why they have that information here.</td>
+</tr>
+<tr>
+   <td>ALT-N</td>
+   <td>Copies the name highlighted down to where you write.</td>
+</tr>
+<tr>
+   <td>ALT-V</td>
+   <td>Toggles on/off information about players entering and leaving a channel.</td>
+</tr>
+<tr>
+   <td>Tab</td>
+   <td>Command cycle.</td>
+</tr>
+<tr>
+   <td>Print Screen</td>
+   <td>Saves a PCX format file of the current screen. You will be prompted for the filename if you press it in a channel. If you press it in a game it will have the default name of <I>screen##.pcx</I> where ## is a number starting at 0 and then increases for each picture (max 99). All pictures are saved in your Diablo/Hellfire folder.</td>
+</tr>
+<tr>
+   <td>Double click on name</td>
+   <td>Gives you the profile of the player. To enter an URL in the profile, simply type it in. You will not see the link underscored and in blue on your own profile but other persons will.</td>
+</tr>
+</table>
+</div>
+
+</body>
+
+

@@ -1,0 +1,702 @@
+
+<!-- Mirrored from www.bigd-online.com/JG/Body/JG2-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Mar 2024 20:36:53 GMT -->
+<head>
+
+<link rel=stylesheet type=text/css href=JGBodyStyle.css>
+
+<title>JG Online: Section 2.2</title>
+
+</head>
+
+<body>
+
+<div class=Section>2.2 Fighting</div><br>
+
+<p>The main activity in Diablo and Hellfire is fighting. You either fight against the monsters or against other players. This chapter will briefly explain how your characters stats and the items you wear affect your character while fighting. For a more detailed explanation on battle between players and monsters, see chapter 5.6.5.</p>
+
+<div class=Sub id=2.2.1>2.2.1 Getting hit</div><br>
+
+<p>When someone or something attacks you, the first step is to see if it hits you or not. Formulas for the chance of hitting a player can be found in chapter 2.1.4 (players), 4.3 (traps) and 5.1 (monsters).</p>
+<p>When you are hit by a melee weapon, an arrow, or magic (while not having any resistance), you will try to block the attack (in Hellfire you will try to block even if you have resistance). See chapter 4 for information about what spells can be blocked. To block the attack you must have a shield. A Monk can also block with a staff and with at least one hand bare. If you fail to block or you can't block you will get hit, which will result in damage and the possibility of having to do a hit recovery (getting stunned). For formulas for monsters hitting players, see chapter 5.1.</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=200>
+<tr>
+   <td class=BodyBold align=left colspan=3>Blocking</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>The chance of blocking is calculated according to:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Blocking monster:</td>
+   <td>Dex + 2·(clvl - mlvl) + bonus</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Blocking player:</td>
+   <td>Dex + 2·(clvl<SUB>target</SUB> - clvl<SUB>attacker</SUB>) + bonus</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Blocking trap:</td>
+   <td>Dex + bonus</td>
+</tr>
+</table>
+</div>
+<ul class=Tablelist>
+   <li>There exists a bug so that the bonus is always 0, except during the first game a character play. For information about what the bonus should be, see table under To Hit %, chapter 2.1.4.</li>
+   <li>You can only block while standing still or while doing a melee attack.</li>
+   <li>Monsters can never block attacks against them.</li>
+</ul>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=125>
+<tr>
+   <td class=BodyBold align=left colspan=3>Modified damage received</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>There are a few ways by which the damage done to a player is modified depending upon the target. Below is listed what those effects are and in what order they are applied. Note that not all effects are applicable to all situations.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>1. <I>of thieves</I></td>
+   <td>Having an item with this suffix will reduce any trap damage by 50%. In Hellfire it will in addition reduce the damage from any magical or ranged attack from monsters by 50%. This effect is not cumulative if you have more than one item with the suffix.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>2. - damage taken</td>
+   <td>Having any item with a suffix that reduces damage (or in the case of a cursed suffix, increases it), will reduce any damage, even magical, done by a monster by the combined amount of all the suffixes you are wearing. Damage can never be reduced below 1 by this effect.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>3. Reflect</td>
+   <td>In Hellfire the Reflect spell will reduce the amount of melee damage a monster does to a player by 20 to 29%.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>4. player vs player</td>
+   <td>All magic damage is halved in player versus player attacks. This includes the damage by Bone Spirit, which will only reduce 1/6 of current life.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>5. resistance</td>
+   <td>Having any item which gives you resistance will reduce any magical attack of the same type by the total resistance of that type you have. Maximum resistance is 75%, which is shown with the letters MAX.</td>
+</tr>
+<tr>
+   <td></td>
+   <td>6. Mana Shield</td>
+   <td>If you are using a Mana Shield, it will reduce the damage by 33% in Diablo and by (1/(3·slvl) ·100)% (if slvl is higher than 7, set slvl to 7) in Hellfire. In addition it will remove mana instead of life.</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>Checks for hit recovery are done between step 4 and 5 and will thus not be affected by the use of Mana Shield.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=350>
+<tr>
+   <td class=BodyBold align=left colspan=3>Hit recovery</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>When you are hit and don't block it, you will take damage. If the damage is big enough, your character will go through a hit recovery animation; you are stunned, during which you can't do anything. If you get hit again before you manage to hit back or move this repeats and you are stun locked and can't react away (for information about entering a new location, see chapter 6.1.9). The hit recovery is initiated if the following conditions are met:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Any character except the Barbarian:</td>
+   <td>damage &gt;= clvl</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Barbarian:</td>
+   <td>damage &gt;= 1.25·clvl</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>It is worth noticing that the check for hit recovery is made prior to any damage reduction due to using a Mana Shield. There are also some bugs regarding hit recovery while using Mana Shield. So while using a Mana Shield, in addition to the requirements above, damage must also be below your current life for you to be put into hit recovery:</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Any character, except the Barbarian, using Mana Shield:</td>
+   <td>current life &gt; damage &gt;= clvl</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Barbarian using Mana Shield:</td>
+   <td>current life &gt; damage &gt;= 1.25·clvl</td>
+</tr>
+<tr>
+   <td class=Body align=left colspan=3>The table below list the time, in seconds, it takes to block and to do a hit recovery for each character class. It also lists the effects of some specific suffixes that influence blocking or hit recovery. For more information on the suffixes, see chapter 3.2.2.</td>
+</tr>
+</table>
+</div>
+
+<br>
+<div align=center>
+<table border>
+<tr>
+   <th class=Left>Class/Suffix</th>
+   <th>Blocking</th>
+   <th>Fast block<SUP>1</SUP></th>
+   <th>Hit recovery</th>
+   <th>of balance</th>
+   <th>of stability</th>
+   <th>of harmony</th>
+</tr>
+<tr>
+   <td class=Left>Warrior</td>
+   <td>0.10</td>
+   <td>0.10</td>
+   <td>0.30</td>
+   <td>0.25</td>
+   <td>0.20</td>
+   <td>0.15<SUP>3</SUP></td>
+</tr>
+<tr>
+   <td class=Left>Rogue</td>
+   <td>0.20</td>
+   <td>0.10</td>
+   <td>0.35</td>
+   <td>0.30</td>
+   <td>0.25</td>
+   <td>0.20<SUP>3</SUP></td>
+</tr>
+<tr>
+   <td class=Left>Sorcerer</td>
+   <td>0.30</td>
+   <td>0.10</td>
+   <td>0.40</td>
+   <td>0.35</td>
+   <td>0.30</td>
+   <td>0.25<SUP>3</SUP></td>
+</tr>
+<tr>
+   <td class=Left>Monk</td>
+   <td>0.15</td>
+   <td>0.10</td>
+   <td>0.30</td>
+   <td>0.25</td>
+   <td>0.20</td>
+   <td>0.15</td>
+</tr>
+<tr>
+   <td class=Left>Bard</td>
+   <td>0.20</td>
+   <td>0.10</td>
+   <td>0.35</td>
+   <td>0.30</td>
+   <td>0.25</td>
+   <td>0.20</td>
+</tr>
+<tr>
+   <td class=Left>Barbarian</td>
+   <td>0.10</td>
+   <td>0.10</td>
+   <td>0.30<SUP>2</SUP></td>
+   <td>0.25<SUP>2</SUP></td>
+   <td>0.20</td>
+   <td>0.15</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=8>
+	<sup>1</sup>Fast block indicates the use of an item with the <I>of blocking</I> suffix or a unique item with the fast block effect.<br>
+	<sup>2</sup>The Barbarian has built-in <I>of stability</I> while using an axe or a club and the hit recovery time in those cases is 0.20 unless he is using an item <I>of harmony</I><br>
+	<sup>3</sup>In Diablo, but not in Hellfire, equipping three or more items having together all of the three suffixes (of balance, of stability, and of harmony), will reduce the hit recovery time a further 0.05 seconds to: Warrior: 0.10, Rogue: 0.15 and Sorcerer: 0.20. Just equipping two items with different suffixes will do no difference.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br>
+<div class=Sub id=2.2.2>2.2.2 Damage done</div><br>
+
+<p>Damage done by players is composed of two parts, character damage and weapon damage. The character damage is based on your character's stats and can be calculated with the formulas below. To that damage you add the damage of any weapon, or weapons in the case of the Bard, you have equipped. For information about damage from spells, see chapter 4.</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=300>
+<tr>
+   <td class=BodyBold align=left colspan=3>Bow character damage</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Warrior:</td>
+   <td>Str·clvl/200</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Rogue:</td>
+   <td>(Str+Dex)·clvl/200</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Sorcerer:</td>
+   <td>Str·clvl/200</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Monk:</td>
+   <td>(Str+Dex)·clvl/600</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Bard:</td>
+   <td>(Str+Dex)·clvl/500</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Barbarian:</td>
+   <td>Str·clvl/600</td>
+</tr>
+<tr>
+   <td class=BodyBold align=left colspan=3>Melee character damage</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Warrior:</td>
+   <td> Str·clvl / 100</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Rogue:</td>
+   <td> (Str+Dex) · clvl / 200</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Sorcerer:</td>
+   <td> Str·clvl / 100</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Monk with staff or bare-handed:</td>
+   <td> (Str+Dex) · clvl / 150</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Monk with other weapons:</td>
+   <td> (Str+Dex) · clvl / 300</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Bard with at least one sword:</td>
+   <td> (Str+Dex) · clvl / 150</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Bard with any weapon(s) except sword:</td>
+   <td> Str·clvl / 100</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Barbarian with axes and clubs:</td>
+   <td> Str·clvl / 75</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Barbarian except for axes and clubs:</td>
+   <td> Str·clvl / 100</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Extra bonus for Barbarian without shield:</td>
+   <td> Vit·clvl / 100</td>
+</tr>
+</table>
+</div>
+<ul class=Tablelist>
+   <li>All Bow character damage is doubled for player versus player except for Rogues.</li>
+   <li>There are quite a few bugs associated with fire and lightning arrows which makes them often deal erroneous damage (way too high or no additional damage at all). For more information, see chapter 6.1.6.</li>
+   <li>For the Monk, <I>other weapons</I> include just having a shield equiped.</li>
+   <li>For the Bard, damage enhancements from the <I>king's</I> and <I>merciless</I> series of prefixes (+% damage) are added together if they occur on both weapons. It is then applied to the sum of both weapons' damage. Damage from enhancements of the <I>slaughter</I> series is only applicable to the weapon it comes on.</li>
+   <li>The Barbarian can use a maul and two-handed swords in one hand.</li>
+   <li>The Barbarian's bonus for not using a shield does not apply if he is using a staff.</li>
+   <li>Magic damage is halved in player versus player.</li>
+</ul>
+
+<p>As already stated, you add weapon damage to the damage above to get the final damage. Some &quot;weapons&quot; don't have any damage listed and are given below. Shield damage only applies if you wear no other weapon and hand/feet damage only applies if you have no other weapon or shield equipped.</p>
+
+<div align=left>
+<table class=Texttable valign=top>
+<col width=20><col width=200>
+<tr>
+   <td class=BodyBold align=left colspan=3>Special &quot;weapon&quot; damage</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Hands/Feet except for Monk:</td>
+   <td>1</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Shield except for Monk:</td>
+   <td>1 - 3</td>
+</tr>
+<tr>
+   <td></td>
+   <td>Feet or shield for Monk:</td>
+   <td>clvl/2 - clvl</td>
+</tr>
+</table>
+</div>
+<ul class=Tablelist>
+   <li>The special damage for a Monk using his feet or just a shield will never be below those values listed for non Monks (min and max damage checked separately).</li>
+</ul>
+
+<p>The table below shows maximum naked character damage for various types of weapons. As character damage is based on a character's level, it (in the table below) only applies to level 50 characters. On top of the listed damage you should then add weapon damage and possibly modify either or both character damage and weapon damage.</p>
+
+<div align=center>
+<table border>
+<tr>
+   <th class=Left>Class</th>
+   <th>Bare-handed<SUP>1</SUP></th>
+   <th>Swords</th>
+   <th>Clubs</th>
+   <th>Axes</th>
+   <th>Bows</th>
+   <th>Staves</th>
+</tr>
+<tr>
+   <td class=Left>Warrior</td>
+   <td>125</td>
+   <td>125</td>
+   <td>125</td>
+   <td>125</td>
+   <td>62</td>
+   <td>125</td>
+</tr>
+<tr>
+   <td class=Left>Rogue</td>
+   <td>76</td>
+   <td>76</td>
+   <td>76</td>
+   <td>76</td>
+   <td>76</td>
+   <td>76</td>
+</tr>
+<tr>
+   <td class=Left>Sorcerer</td>
+   <td>22</td>
+   <td>22</td>
+   <td>22</td>
+   <td>22</td>
+   <td>11</td>
+   <td>22</td>
+</tr>
+<tr>
+   <td class=Left>Monk</td>
+   <td>100</td>
+   <td>50</td>
+   <td>50</td>
+   <td>50</td>
+   <td>25</td>
+   <td>100</td>
+</tr>
+<tr>
+   <td class=Left>Bard</td>
+   <td>60</td>
+   <td>80</td>
+   <td>60</td>
+   <td>60</td>
+   <td>40</td>
+   <td>60</td>
+</tr>
+<tr>
+   <td class=Left>Barbarian</td>
+   <td>202</td>
+   <td>202<SUP>2</SUP></td>
+   <td>245<SUP>2</SUP></td>
+   <td>245</td>
+   <td>21</td>
+   <td>202</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=7>
+	<sup>1</sup>To this value you should add the &quot;weapon&quot; damage of bare hands/feet.<br>
+	<sup>2</sup>Subtract 75 if using a shield at the same time
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br><br>
+<div class=BodyBold>Things that affect damage done</div>
+
+<p>Various things affect the amount of damage a character does. Mostly those things are related to various prefixes, suffixes, or unique properties, but a few exceptions exist. Critical Hits are explained below and type of monster is explained in chapter 5.1. The modifications to the damage can either modify weapon damage alone or your total damage; that is, both your character damage and your weapon damage. In the table below is a list of all modifications that apply to your total damage. They are each cumulative with each other and are applied on top of each other.</p>
+
+<div align=center>
+<table border class=Left>
+<tr>
+   <th>Reason</th>
+   <th>Effect</th>
+</tr>
+<tr>
+   <td>Critical Hit</td>
+   <td>Double damage</td>
+</tr>
+<tr>
+   <td>Monster type</td>
+   <td>Half damage or increased damage by 50%</td>
+</tr>
+<tr>
+   <td>+200% damage against demons<SUP>1</SUP></td>
+   <td>Triple damage</td>
+</tr>
+<tr>
+   <td>suffix of devastation</td>
+   <td>Triple damage</td>
+</tr>
+<tr>
+   <td>prefix jester's</td>
+   <td>Between zero and six times the damage.</td>
+</tr>
+<tr>
+   <td>suffix of peril</td>
+   <td>Double damage</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=2>
+	<sup>1</sup>Does not work on bows.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<br><br>
+<div class=BodyBold>Critical Hit</div>
+
+<p>Warriors and Barbarians have the ability to do a critical hit while doing melee attacks. The chance for a critical hit is clvl% and a critical hit does twice the damage.</p>
+
+<br>
+<div class=BodyBold>Adjacent quarter damage</div>
+
+<p>All the new characters in Hellfire have the ability to hit up to three monsters at a time in certain circumstances. It works by dealing ¼<SUP>th</SUP> of the damage to the monsters beside the one you swing at. A separate To Hit check is done for each of those monsters. The To Hit is lowered accordingly to the formula in chapter 2.1.4 under To Hit %. The adjacent quarter damage is done in the following situations:</p>
+
+<ul>
+<li>A Monk using a staff.</li>
+<li>A Bard using two swords.</li>
+<li>A Barbarian using an axe, a two-handed sword or a maul, without having a shield equipped at the same time.</li>
+</ul>
+
+<p class=NoInd>Adjacent quarter damage can never hit a player, only monsters.</p>
+
+<br>
+<div class=Sub id=2.2.3>2.2.3 Weapon speed</div><br>
+
+<p>A very important factor is how quickly you swing different weapons. A faster weapon not only causes more damage per unit of time, but also helps you stun lock your enemies more easily. Below are listed values for how quickly each character class swings each weapon. Only the Barbarian has different weapon speed for clubs and swords, for all other classes they are identical. The value given is the time in seconds it takes to do one swing.</p>
+
+<div align=center>
+<table border class=Left>
+<tr>
+   <th class=LeftHead>Weapon</th>
+   <th>Suffix</th>
+   <th>Warrior</th>
+   <th>Rogue</th>
+   <th>Sorcerer</th>
+   <th>Monk</th>
+   <th>Bard</th>
+   <th>Barbarian</th>
+</tr>
+<tr>
+   <td class=LeftHead rowspan=3>Swords/Clubs</td>
+   <td>Normal & Readiness</td>
+   <td>0.45</td>
+   <td>0.5</td>
+   <td>0.6</td>
+   <td>0.6</td>
+   <td>0.5</td>
+   <td>0.45 / 0.40</td>
+</tr>
+<tr>
+   <td>Swiftness</td>
+   <td>0.4</td>
+   <td>0.45</td>
+   <td>0.55</td>
+   <td>0.55</td>
+   <td>0.45</td>
+   <td>0.40 / 0.35</td>
+</tr>
+<tr>
+   <td>Speed & Haste</td>
+   <td>0.35</td>
+   <td>0.4</td>
+   <td>0.5</td>
+   <td>0.5</td>
+   <td>0.4</td>
+   <td>0.35 / 0.30</td>
+</tr>
+<tr>
+   <td class=LeftHead rowspan=3>Axes</td>
+   <td>Normal & Readiness</td>
+   <td>0.5</td>
+   <td>0.65</td>
+   <td>0.8</td>
+   <td>0.7</td>
+   <td>0.65</td>
+   <td>0.4</td>
+</tr>
+<tr>
+   <td>Swiftness</td>
+   <td>0.45</td>
+   <td>0.6</td>
+   <td>0.75</td>
+   <td>0.65</td>
+   <td>0.6</td>
+   <td>0.35</td>
+</tr>
+<tr>
+   <td>Speed & Haste</td>
+   <td>0.4</td>
+   <td>0.55</td>
+   <td>0.7</td>
+   <td>0.6</td>
+   <td>0.55</td>
+   <td>0.3</td>
+</tr>
+<tr>
+   <td class=LeftHead rowspan=3>Staves</td>
+   <td>Normal & Readiness</td>
+   <td>0.55</td>
+   <td>0.55</td>
+   <td>0.6</td>
+   <td>0.4</td>
+   <td>0.55</td>
+   <td>0.55</td>
+</tr>
+<tr>
+   <td>Swiftness</td>
+   <td>0.5</td>
+   <td>0.5</td>
+   <td>0.55</td>
+   <td>0.35</td>
+   <td>0.5</td>
+   <td>0.5</td>
+</tr>
+<tr>
+   <td>Speed & Haste</td>
+   <td>0.45</td>
+   <td>0.45</td>
+   <td>0.5</td>
+   <td>0.3</td>
+   <td>0.45</td>
+   <td>0.45</td>
+</tr>
+<tr>
+   <td class=LeftHead rowspan=2>Bows</td>
+   <td>Normal & Readiness</td>
+   <td>0.55</td>
+   <td>0.35</td>
+   <td>0.8</td>
+   <td>0.7</td>
+   <td>0.55</td>
+   <td>0.55</td>
+</tr>
+<tr>
+   <td>Swiftness</td>
+   <td>0.50<SUP>1</SUP></td>
+   <td>0.30<SUP>1</SUP></td>
+   <td>0.75<SUP>1</SUP></td>
+   <td>0.7</td>
+   <td>0.55</td>
+   <td>0.55</td>
+</tr>
+<tr>
+   <td class=LeftHead rowspan=3>Other</td>
+   <td>Shield</td>
+   <td>0.45</td>
+   <td>0.5</td>
+   <td>0.45</td>
+   <td>0.35</td>
+   <td>0.5</td>
+   <td>0.45</td>
+</tr>
+<tr>
+   <td>Bare hands & feet</td>
+   <td>0.45</td>
+   <td>0.5</td>
+   <td>0.6</td>
+   <td>0.35</td>
+   <td>0.5</td>
+   <td>0.45</td>
+</tr>
+<tr>
+   <td>Spell</td>
+   <td>0.7</td>
+   <td>0.6</td>
+   <td>0.4</td>
+   <td>0.65</td>
+   <td>0.6</td>
+   <td>0.7</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=8>
+	<sup>1</sup>In Hellfire Readiness and Swiftness make the arrows fly faster, the time is still the same as for Normal.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<p>The speed with which the arrows travel also varies with character class. Below is given the speed of arrows for all characters as well as some other factors affecting the speed of an arrow. The actual value is just a value given for comparison with other traveling effects, such as spells. The higher the number, the faster it will be. Arrows from monsters will always have a speed of 32. For the speed of arrows from traps, see chapter 4.3.</p>
+
+<div align=center>
+<table border>
+<tr>
+   <th class=Left>Arrow or other effect</th>
+   <th>Warrior, Monk</th>
+   <th>Rogue</th>
+   <th>Sorcerer, Bard, Barbarian</th>
+</tr>
+<tr>
+   <td class=Left>Normal arrow</td>
+   <td>32 + (clvl-1)/8</td>
+   <td>32 + (clvl-1)/4</td>
+   <td>32</td>
+</tr>
+<tr>
+   <td class=Left nowrap>Fire and Lightning arrow</td>
+   <td>31 + clvl/8</td>
+   <td>31 + clvl/4</td>
+   <td>32</td>
+</tr>
+<tr>
+   <td class=Left>Random speed arrows</td>
+   <td nowrap>16 + Rnd[32] + (clvl-1)/8</td>
+   <td nowrap>16 + Rnd[32] + (clvl-1)/4</td>
+   <td>16 + Rnd[32]</td>
+</tr>
+<tr>
+   <td class=Left>readiness<SUP>1</SUP></td>
+   <td>+1</td>
+   <td>+1</td>
+   <td>+1</td>
+</tr>
+<tr>
+   <td class=Left>swiftness<SUP>1</SUP></td>
+   <td>+2</td>
+   <td>+2</td>
+   <td>+2</td>
+</tr>
+<tfoot>
+<tr>
+   <td colspan=8>
+	<sup>1</sup>Will only affect the arrow speed in Hellfire. In Diablo it will affect the weapon speed instead.
+   </td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+
+</body>
